@@ -1,13 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:whats_you/data.dart';
-import 'constants.dart';
+import '../constants/constants.dart';
 
-class DetailPage extends StatelessWidget {
-  final PlanetInfo planetInfo;
-
-  const DetailPage({Key key, this.planetInfo}) : super(key: key);
-
+class InstagramDetails extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -26,7 +22,7 @@ class DetailPage extends StatelessWidget {
                       children: <Widget>[
                         SizedBox(height: 300),
                         Text(
-                          planetInfo.name,
+                          "Instagram",
                           style: GoogleFonts.ubuntu(
                             fontSize: 56,
                             color: primaryTextColor,
@@ -35,7 +31,7 @@ class DetailPage extends StatelessWidget {
                           textAlign: TextAlign.left,
                         ),
                         Text(
-                          planetInfo.website,
+                          "Instagram.com",
                           style: GoogleFonts.ubuntu(
                             fontSize: 25,
                             color: primaryTextColor,
@@ -46,7 +42,7 @@ class DetailPage extends StatelessWidget {
                         Divider(color: Colors.black38),
                         SizedBox(height: 32),
                         Text(
-                          planetInfo.description ?? '',
+                          "Instagram is an American photo and video-sharing social networking service owned by Facebook, Inc. It was created by Kevin Systrom and Mike Krieger and launched in October 2010 on iOS.",
                           maxLines: 5,
                           overflow: TextOverflow.ellipsis,
                           style: GoogleFonts.ubuntu(
@@ -76,22 +72,26 @@ class DetailPage extends StatelessWidget {
               ),
             ),
             Positioned(
-              right: -64,
+              right: 30,
+              top: 50,
               child: Hero(
-                  tag: planetInfo.position,
-                  child: Image.asset(planetInfo.iconImage)),
+                  tag: 5,
+                  child: SvgPicture.asset("assets/icons/Instagram.svg",height: 250,width: 250)),
             ),
             Positioned(
               top: 60,
               left: 32,
-              child: Text(
-                planetInfo.position.toString(),
-                style: GoogleFonts.ubuntu(
-                  fontSize: 247,
-                  color: primaryTextColor.withOpacity(0.08),
-                  fontWeight: FontWeight.w900,
+              child: Hero(
+                tag: 6,
+                child: Text(
+                  "3",
+                  style: GoogleFonts.ubuntu(
+                    fontSize: 247,
+                    color: primaryTextColor.withOpacity(0.08),
+                    fontWeight: FontWeight.w900,
+                  ),
+                  textAlign: TextAlign.left,
                 ),
-                textAlign: TextAlign.left,
               ),
             ),
             IconButton(

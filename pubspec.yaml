@@ -31,6 +31,7 @@ dependencies:
   url_launcher:
   flutter_swiper:
   share: ^0.5.2
+  flutter_svg:
   google_fonts: ^1.1.0
 
 dev_dependencies:
@@ -50,7 +51,7 @@ flutter:
 
   # To add assets to your application, add an assets section, like this:
   assets:
-    - assets/
+    - assets/icons/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

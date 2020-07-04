@@ -9,10 +9,11 @@ class InstagramDetails extends StatelessWidget {
     return Scaffold(
       body: SafeArea(
         bottom: false,
-        child: Stack(
-          children: <Widget>[
-            SingleChildScrollView(
-              child: Column(
+        child: SingleChildScrollView(
+          physics: BouncingScrollPhysics(),
+          child: Stack(
+            children: <Widget>[
+              Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
                   Padding(
@@ -70,37 +71,38 @@ class InstagramDetails extends StatelessWidget {
                   ),
                 ],
               ),
-            ),
-            Positioned(
-              right: 30,
-              top: 50,
-              child: Hero(
-                  tag: 5,
-                  child: SvgPicture.asset("assets/icons/Instagram.svg",height: 250,width: 250)),
-            ),
-            Positioned(
-              top: 60,
-              left: 32,
-              child: Hero(
-                tag: 6,
-                child: Text(
-                  "3",
-                  style: GoogleFonts.ubuntu(
-                    fontSize: 247,
-                    color: primaryTextColor.withOpacity(0.08),
-                    fontWeight: FontWeight.w900,
+              Positioned(
+                right: 30,
+                top: 50,
+                child: Hero(
+                    tag: 5,
+                    child: SvgPicture.asset("assets/icons/Instagram.svg",
+                        height: 240, width: 240)),
+              ),
+              Positioned(
+                top: 60,
+                left: 32,
+                child: Hero(
+                  tag: 6,
+                  child: Text(
+                    "3",
+                    style: GoogleFonts.ubuntu(
+                      fontSize: 247,
+                      color: primaryTextColor.withOpacity(0.08),
+                      fontWeight: FontWeight.w900,
+                    ),
+                    textAlign: TextAlign.left,
                   ),
-                  textAlign: TextAlign.left,
                 ),
               ),
-            ),
-            IconButton(
-              icon: Icon(Icons.arrow_back_ios),
-              onPressed: () {
-                Navigator.pop(context);
-              },
-            ),
-          ],
+              IconButton(
+                icon: Icon(Icons.arrow_back_ios),
+                onPressed: () {
+                  Navigator.pop(context);
+                },
+              ),
+            ],
+          ),
         ),
       ),
     );

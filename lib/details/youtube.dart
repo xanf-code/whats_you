@@ -3,7 +3,7 @@ import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import '../constants/constants.dart';
 
-class FacebookDetails extends StatelessWidget {
+class YoutubeDetails extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -23,7 +23,7 @@ class FacebookDetails extends StatelessWidget {
                       children: <Widget>[
                         SizedBox(height: 300),
                         Text(
-                          "Facebook",
+                          "Youtube",
                           style: GoogleFonts.ubuntu(
                             fontSize: 56,
                             color: primaryTextColor,
@@ -32,7 +32,7 @@ class FacebookDetails extends StatelessWidget {
                           textAlign: TextAlign.left,
                         ),
                         Text(
-                          "Facebook.com",
+                          "Youtube.com",
                           style: GoogleFonts.ubuntu(
                             fontSize: 25,
                             color: primaryTextColor,
@@ -43,8 +43,8 @@ class FacebookDetails extends StatelessWidget {
                         Divider(color: Colors.black38),
                         SizedBox(height: 32),
                         Text(
-                          "Facebook is a social networking site that makes it easy for you to connect and share with family and friends online. Originally designed for college students, Facebook was created in 2004 by Mark Zuckerberg while he was enrolled at Harvard University.",
-                          maxLines: 6,
+                          "YouTube is a video sharing service that allows users to watch videos posted by other users and upload videos of their own. ... While several companies and organizations also use YouTube to promote their business, the vast majority of YouTube videos are created and uploaded by amateurs.",
+                          maxLines: 5,
                           overflow: TextOverflow.ellipsis,
                           style: GoogleFonts.ubuntu(
                             fontSize: 20,
@@ -75,17 +75,17 @@ class FacebookDetails extends StatelessWidget {
                 right: 30,
                 top: 50,
                 child: Hero(
-                    tag: 1,
-                    child: SvgPicture.asset("assets/icons/facebook.svg",
+                    tag: 7,
+                    child: SvgPicture.asset("assets/icons/youtube.svg",
                         height: 240, width: 240)),
               ),
               Positioned(
                 top: 60,
                 left: 32,
                 child: Hero(
-                  tag: 2,
+                  tag: 8,
                   child: Text(
-                    "1",
+                    "4",
                     style: GoogleFonts.ubuntu(
                       fontSize: 247,
                       color: primaryTextColor.withOpacity(0.08),

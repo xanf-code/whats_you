@@ -33,8 +33,11 @@ class _HomePageState extends State<HomePage> {
               physics: BouncingScrollPhysics(),
               children: <Widget>[
                 InkWell(
-                  onTap: (){
-                    Navigator.push(context, CupertinoPageRoute(builder: (context) => FacebookDetails()));
+                  onTap: () {
+                    Navigator.push(
+                        context,
+                        CupertinoPageRoute(
+                            builder: (context) => FacebookDetails()));
                   },
                   child: Container(
                     height: 150,
@@ -69,8 +72,9 @@ class _HomePageState extends State<HomePage> {
                                   children: [
                                     TextSpan(
                                         text: "Facebook Data\n",
-                                        style: GoogleFonts.ubuntu(fontSize: 25,fontWeight: FontWeight.bold)
-                                    ),
+                                        style: GoogleFonts.ubuntu(
+                                            fontSize: 25,
+                                            fontWeight: FontWeight.bold)),
                                     TextSpan(
                                       text: "Facebook.com\n",
                                       style: GoogleFonts.ubuntu(
@@ -80,38 +84,69 @@ class _HomePageState extends State<HomePage> {
                                   ],
                                 ),
                               ),
-                              SizedBox(height: 10,),
+                              SizedBox(
+                                height: 10,
+                              ),
                               Row(
                                 mainAxisAlignment: MainAxisAlignment.start,
                                 crossAxisAlignment: CrossAxisAlignment.center,
                                 children: <Widget>[
-                                  Text("Know More",
+                                  Text(
+                                    "Know More",
                                     style: GoogleFonts.ubuntu(
                                       fontSize: 18,
-                                      color: Colors.white.withOpacity(0.4),),
+                                      color: Colors.white.withOpacity(0.4),
+                                    ),
                                   ),
-                                  SizedBox(width: 10,),
-                                  Icon(Icons.arrow_forward_ios,color: Colors.white.withOpacity(0.4),size: 15,),
+                                  SizedBox(
+                                    width: 10,
+                                  ),
+                                  Icon(
+                                    Icons.arrow_forward_ios,
+                                    color: Colors.white.withOpacity(0.4),
+                                    size: 15,
+                                  ),
                                 ],
-                              )],
+                              )
+                            ],
                           ),
                         ),
                         Positioned(
                             bottom: 10,
-                            left: 5,child: Hero(tag: 1,child: SvgPicture.asset("assets/icons/facebook.svg",height: 150,width: 150,))),
+                            left: 5,
+                            child: Hero(
+                                tag: 1,
+                                child: SvgPicture.asset(
+                                  "assets/icons/facebook.svg",
+                                  height: 150,
+                                  width: 150,
+                                ))),
                         Positioned(
                           top: 10,
                           right: 10,
-                          child: Hero(tag: 2 ,child: Text("1",style: GoogleFonts.ubuntu(fontWeight: FontWeight.bold,fontSize: 150,color: Colors.white.withOpacity(0.2)),)),
+                          child: Hero(
+                              tag: 2,
+                              child: Text(
+                                "1",
+                                style: GoogleFonts.ubuntu(
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 150,
+                                    color: Colors.white.withOpacity(0.2)),
+                              )),
                         ),
                       ],
                     ),
                   ),
                 ),
-                SizedBox(height: 20,),
+                SizedBox(
+                  height: 20,
+                ),
                 InkWell(
-                  onTap: (){
-                    Navigator.push(context, CupertinoPageRoute(builder: (context) => TwitterDetails()));
+                  onTap: () {
+                    Navigator.push(
+                        context,
+                        CupertinoPageRoute(
+                            builder: (context) => TwitterDetails()));
                   },
                   child: Container(
                     height: 150,
@@ -146,8 +181,9 @@ class _HomePageState extends State<HomePage> {
                                   children: [
                                     TextSpan(
                                         text: "Twitter Data\n",
-                                        style: GoogleFonts.ubuntu(fontSize: 25,fontWeight: FontWeight.bold)
-                                    ),
+                                        style: GoogleFonts.ubuntu(
+                                            fontSize: 25,
+                                            fontWeight: FontWeight.bold)),
                                     TextSpan(
                                       text: "Twitter.com\n",
                                       style: GoogleFonts.ubuntu(
@@ -157,38 +193,69 @@ class _HomePageState extends State<HomePage> {
                                   ],
                                 ),
                               ),
-                              SizedBox(height: 10,),
+                              SizedBox(
+                                height: 10,
+                              ),
                               Row(
                                 mainAxisAlignment: MainAxisAlignment.start,
                                 crossAxisAlignment: CrossAxisAlignment.center,
                                 children: <Widget>[
-                                  Text("Know More",
+                                  Text(
+                                    "Know More",
                                     style: GoogleFonts.ubuntu(
                                       fontSize: 18,
-                                      color: Colors.white.withOpacity(0.4),),
+                                      color: Colors.white.withOpacity(0.4),
+                                    ),
                                   ),
-                                  SizedBox(width: 10,),
-                                  Icon(Icons.arrow_forward_ios,color: Colors.white.withOpacity(0.4),size: 15,),
+                                  SizedBox(
+                                    width: 10,
+                                  ),
+                                  Icon(
+                                    Icons.arrow_forward_ios,
+                                    color: Colors.white.withOpacity(0.4),
+                                    size: 15,
+                                  ),
                                 ],
-                              )],
+                              )
+                            ],
                           ),
                         ),
                         Positioned(
                             bottom: 15,
-                            left: 5,child: Hero(tag: 3,child: SvgPicture.asset("assets/icons/twitter.svg",height: 150,width: 150,))),
+                            left: 5,
+                            child: Hero(
+                                tag: 3,
+                                child: SvgPicture.asset(
+                                  "assets/icons/twitter.svg",
+                                  height: 150,
+                                  width: 150,
+                                ))),
                         Positioned(
                           top: 10,
                           right: 10,
-                          child: Hero(tag: 4,child: Text("2",style: GoogleFonts.ubuntu(fontWeight: FontWeight.bold,fontSize: 150,color: Colors.white.withOpacity(0.2)),)),
+                          child: Hero(
+                              tag: 4,
+                              child: Text(
+                                "2",
+                                style: GoogleFonts.ubuntu(
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 150,
+                                    color: Colors.white.withOpacity(0.2)),
+                              )),
                         ),
                       ],
                     ),
                   ),
                 ),
-                SizedBox(height: 20,),
+                SizedBox(
+                  height: 20,
+                ),
                 InkWell(
-                  onTap: (){
-                    Navigator.push(context, CupertinoPageRoute(builder: (context) => InstagramDetails()));
+                  onTap: () {
+                    Navigator.push(
+                        context,
+                        CupertinoPageRoute(
+                            builder: (context) => InstagramDetails()));
                   },
                   child: Container(
                     height: 150,
@@ -223,8 +290,9 @@ class _HomePageState extends State<HomePage> {
                                   children: [
                                     TextSpan(
                                         text: "Instagram Data\n",
-                                        style: GoogleFonts.ubuntu(fontSize: 25,fontWeight: FontWeight.bold)
-                                    ),
+                                        style: GoogleFonts.ubuntu(
+                                            fontSize: 25,
+                                            fontWeight: FontWeight.bold)),
                                     TextSpan(
                                       text: "Instagram.com\n",
                                       style: GoogleFonts.ubuntu(
@@ -234,38 +302,69 @@ class _HomePageState extends State<HomePage> {
                                   ],
                                 ),
                               ),
-                              SizedBox(height: 10,),
+                              SizedBox(
+                                height: 10,
+                              ),
                               Row(
                                 mainAxisAlignment: MainAxisAlignment.start,
                                 crossAxisAlignment: CrossAxisAlignment.center,
                                 children: <Widget>[
-                                  Text("Know More",
+                                  Text(
+                                    "Know More",
                                     style: GoogleFonts.ubuntu(
                                       fontSize: 18,
-                                      color: Colors.white.withOpacity(0.4),),
+                                      color: Colors.white.withOpacity(0.4),
+                                    ),
                                   ),
-                                  SizedBox(width: 10,),
-                                  Icon(Icons.arrow_forward_ios,color: Colors.white.withOpacity(0.4),size: 15,),
+                                  SizedBox(
+                                    width: 10,
+                                  ),
+                                  Icon(
+                                    Icons.arrow_forward_ios,
+                                    color: Colors.white.withOpacity(0.4),
+                                    size: 15,
+                                  ),
                                 ],
-                              )],
+                              )
+                            ],
                           ),
                         ),
                         Positioned(
                             bottom: 10,
-                            left: 5,child: Hero(tag: 5,child: SvgPicture.asset("assets/icons/Instagram.svg",height: 150,width: 150,))),
+                            left: 5,
+                            child: Hero(
+                                tag: 5,
+                                child: SvgPicture.asset(
+                                  "assets/icons/Instagram.svg",
+                                  height: 150,
+                                  width: 150,
+                                ))),
                         Positioned(
                           top: 10,
                           right: 10,
-                          child: Hero(tag: 6,child: Text("3",style: GoogleFonts.ubuntu(fontWeight: FontWeight.bold,fontSize: 150,color: Colors.white.withOpacity(0.2)),)),
+                          child: Hero(
+                              tag: 6,
+                              child: Text(
+                                "3",
+                                style: GoogleFonts.ubuntu(
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 150,
+                                    color: Colors.white.withOpacity(0.2)),
+                              )),
                         ),
                       ],
                     ),
                   ),
                 ),
-                SizedBox(height: 20,),
+                SizedBox(
+                  height: 20,
+                ),
                 InkWell(
-                  onTap: (){
-                    Navigator.push(context, CupertinoPageRoute(builder: (context) => YoutubeDetails()));
+                  onTap: () {
+                    Navigator.push(
+                        context,
+                        CupertinoPageRoute(
+                            builder: (context) => YoutubeDetails()));
                   },
                   child: Container(
                     height: 150,
@@ -300,8 +399,9 @@ class _HomePageState extends State<HomePage> {
                                   children: [
                                     TextSpan(
                                         text: "Youtube Data\n",
-                                        style: GoogleFonts.ubuntu(fontSize: 25,fontWeight: FontWeight.bold)
-                                    ),
+                                        style: GoogleFonts.ubuntu(
+                                            fontSize: 25,
+                                            fontWeight: FontWeight.bold)),
                                     TextSpan(
                                       text: "Youtube.com\n",
                                       style: GoogleFonts.ubuntu(
@@ -311,38 +411,69 @@ class _HomePageState extends State<HomePage> {
                                   ],
                                 ),
                               ),
-                              SizedBox(height: 10,),
+                              SizedBox(
+                                height: 10,
+                              ),
                               Row(
                                 mainAxisAlignment: MainAxisAlignment.start,
                                 crossAxisAlignment: CrossAxisAlignment.center,
                                 children: <Widget>[
-                                  Text("Know More",
+                                  Text(
+                                    "Know More",
                                     style: GoogleFonts.ubuntu(
                                       fontSize: 18,
-                                      color: Colors.white.withOpacity(0.4),),
+                                      color: Colors.white.withOpacity(0.4),
+                                    ),
                                   ),
-                                  SizedBox(width: 10,),
-                                  Icon(Icons.arrow_forward_ios,color: Colors.white.withOpacity(0.4),size: 15,),
+                                  SizedBox(
+                                    width: 10,
+                                  ),
+                                  Icon(
+                                    Icons.arrow_forward_ios,
+                                    color: Colors.white.withOpacity(0.4),
+                                    size: 15,
+                                  ),
                                 ],
-                              )],
+                              )
+                            ],
                           ),
                         ),
                         Positioned(
                             bottom: 5,
-                            left: 5,child: Hero(tag: 7,child: SvgPicture.asset("assets/icons/youtube.svg",height: 150,width: 150,))),
+                            left: 5,
+                            child: Hero(
+                                tag: 7,
+                                child: SvgPicture.asset(
+                                  "assets/icons/youtube.svg",
+                                  height: 150,
+                                  width: 150,
+                                ))),
                         Positioned(
                           top: 10,
                           right: 10,
-                          child: Hero(tag: 8,child: Text("4",style: GoogleFonts.ubuntu(fontWeight: FontWeight.bold,fontSize: 150,color: Colors.white.withOpacity(0.2)),)),
+                          child: Hero(
+                              tag: 8,
+                              child: Text(
+                                "4",
+                                style: GoogleFonts.ubuntu(
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 150,
+                                    color: Colors.white.withOpacity(0.2)),
+                              )),
                         ),
                       ],
                     ),
                   ),
                 ),
-                SizedBox(height: 20,),
+                SizedBox(
+                  height: 20,
+                ),
                 InkWell(
-                  onTap: (){
-                    Navigator.push(context, CupertinoPageRoute(builder: (context) => GoogleDetails()));
+                  onTap: () {
+                    Navigator.push(
+                        context,
+                        CupertinoPageRoute(
+                            builder: (context) => GoogleDetails()));
                   },
                   child: Container(
                     height: 150,
@@ -377,8 +508,9 @@ class _HomePageState extends State<HomePage> {
                                   children: [
                                     TextSpan(
                                         text: "Google Data\n",
-                                        style: GoogleFonts.ubuntu(fontSize: 25,fontWeight: FontWeight.bold)
-                                    ),
+                                        style: GoogleFonts.ubuntu(
+                                            fontSize: 25,
+                                            fontWeight: FontWeight.bold)),
                                     TextSpan(
                                       text: "Google.com\n",
                                       style: GoogleFonts.ubuntu(
@@ -388,29 +520,55 @@ class _HomePageState extends State<HomePage> {
                                   ],
                                 ),
                               ),
-                              SizedBox(height: 10,),
+                              SizedBox(
+                                height: 10,
+                              ),
                               Row(
                                 mainAxisAlignment: MainAxisAlignment.start,
                                 crossAxisAlignment: CrossAxisAlignment.center,
                                 children: <Widget>[
-                                  Text("Know More",
+                                  Text(
+                                    "Know More",
                                     style: GoogleFonts.ubuntu(
                                       fontSize: 18,
-                                      color: Colors.white.withOpacity(0.4),),
+                                      color: Colors.white.withOpacity(0.4),
+                                    ),
                                   ),
-                                  SizedBox(width: 10,),
-                                  Icon(Icons.arrow_forward_ios,color: Colors.white.withOpacity(0.4),size: 15,),
+                                  SizedBox(
+                                    width: 10,
+                                  ),
+                                  Icon(
+                                    Icons.arrow_forward_ios,
+                                    color: Colors.white.withOpacity(0.4),
+                                    size: 15,
+                                  ),
                                 ],
-                              )],
+                              )
+                            ],
                           ),
                         ),
                         Positioned(
                             bottom: 5,
-                            left: 5,child: Hero(tag: 9,child: SvgPicture.asset("assets/icons/google.svg",height: 150,width: 150,))),
+                            left: 5,
+                            child: Hero(
+                                tag: 9,
+                                child: SvgPicture.asset(
+                                  "assets/icons/google.svg",
+                                  height: 150,
+                                  width: 150,
+                                ))),
                         Positioned(
                           top: 10,
                           right: 10,
-                          child: Hero(tag: 10,child: Text("5",style: GoogleFonts.ubuntu(fontWeight: FontWeight.bold,fontSize: 150,color: Colors.white.withOpacity(0.2)),)),
+                          child: Hero(
+                              tag: 10,
+                              child: Text(
+                                "5",
+                                style: GoogleFonts.ubuntu(
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 150,
+                                    color: Colors.white.withOpacity(0.2)),
+                              )),
                         ),
                       ],
                     ),

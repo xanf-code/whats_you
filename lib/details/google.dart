@@ -3,7 +3,7 @@ import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import '../constants/constants.dart';
 
-class FacebookDetails extends StatelessWidget {
+class GoogleDetails extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -23,7 +23,7 @@ class FacebookDetails extends StatelessWidget {
                       children: <Widget>[
                         SizedBox(height: 300),
                         Text(
-                          "Facebook",
+                          "Google",
                           style: GoogleFonts.ubuntu(
                             fontSize: 56,
                             color: primaryTextColor,
@@ -32,7 +32,7 @@ class FacebookDetails extends StatelessWidget {
                           textAlign: TextAlign.left,
                         ),
                         Text(
-                          "Facebook.com",
+                          "Google.com",
                           style: GoogleFonts.ubuntu(
                             fontSize: 25,
                             color: primaryTextColor,
@@ -43,7 +43,7 @@ class FacebookDetails extends StatelessWidget {
                         Divider(color: Colors.black38),
                         SizedBox(height: 32),
                         Text(
-                          "Facebook is a social networking site that makes it easy for you to connect and share with family and friends online. Originally designed for college students, Facebook was created in 2004 by Mark Zuckerberg while he was enrolled at Harvard University.",
+                          "Originally known as BackRub. Google is a search engine that started development in 1996 by Sergey Brin and Larry Page as a research project at Stanford University to find files on the Internet.",
                           maxLines: 6,
                           overflow: TextOverflow.ellipsis,
                           style: GoogleFonts.ubuntu(
@@ -75,17 +75,17 @@ class FacebookDetails extends StatelessWidget {
                 right: 30,
                 top: 50,
                 child: Hero(
-                    tag: 1,
-                    child: SvgPicture.asset("assets/icons/facebook.svg",
+                    tag: 9,
+                    child: SvgPicture.asset("assets/icons/google.svg",
                         height: 240, width: 240)),
               ),
               Positioned(
                 top: 60,
                 left: 32,
                 child: Hero(
-                  tag: 2,
+                  tag: 10,
                   child: Text(
-                    "1",
+                    "5",
                     style: GoogleFonts.ubuntu(
                       fontSize: 247,
                       color: primaryTextColor.withOpacity(0.08),

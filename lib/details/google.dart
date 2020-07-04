@@ -7,6 +7,7 @@ class GoogleDetails extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Color(0xFF121212),
       body: SafeArea(
         bottom: false,
         child: SingleChildScrollView(
@@ -40,7 +41,7 @@ class GoogleDetails extends StatelessWidget {
                           ),
                           textAlign: TextAlign.left,
                         ),
-                        Divider(color: Colors.black38),
+                        Divider(color: Colors.white38),
                         SizedBox(height: 32),
                         Text(
                           "Originally known as BackRub. Google is a search engine that started development in 1996 by Sergey Brin and Larry Page as a research project at Stanford University to find files on the Internet.",
@@ -53,7 +54,7 @@ class GoogleDetails extends StatelessWidget {
                           ),
                         ),
                         SizedBox(height: 32),
-                        Divider(color: Colors.black38),
+                        Divider(color: Colors.white38),
                       ],
                     ),
                   ),
@@ -63,7 +64,7 @@ class GoogleDetails extends StatelessWidget {
                       'What do they know?',
                       style: GoogleFonts.ubuntu(
                         fontSize: 25,
-                        color: const Color(0xff47455f),
+                        color: const Color(0xffe7dfd5),
                         fontWeight: FontWeight.w300,
                       ),
                       textAlign: TextAlign.left,
@@ -88,7 +89,7 @@ class GoogleDetails extends StatelessWidget {
                     "5",
                     style: GoogleFonts.ubuntu(
                       fontSize: 247,
-                      color: primaryTextColor.withOpacity(0.08),
+                      color: primaryTextColor.withOpacity(0.2),
                       fontWeight: FontWeight.w900,
                     ),
                     textAlign: TextAlign.left,
@@ -96,7 +97,7 @@ class GoogleDetails extends StatelessWidget {
                 ),
               ),
               IconButton(
-                icon: Icon(Icons.arrow_back_ios),
+                icon: Icon(Icons.arrow_back_ios,color: Colors.white),
                 onPressed: () {
                   Navigator.pop(context);
                 },

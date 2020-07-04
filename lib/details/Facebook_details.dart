@@ -7,6 +7,7 @@ class FacebookDetails extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Color(0xFF121212),
       body: SafeArea(
         bottom: false,
         child: SingleChildScrollView(
@@ -40,7 +41,7 @@ class FacebookDetails extends StatelessWidget {
                           ),
                           textAlign: TextAlign.left,
                         ),
-                        Divider(color: Colors.black38),
+                        Divider(color: Colors.white38),
                         SizedBox(height: 32),
                         Text(
                           "Facebook is a social networking site that makes it easy for you to connect and share with family and friends online. Originally designed for college students, Facebook was created in 2004 by Mark Zuckerberg while he was enrolled at Harvard University.",
@@ -53,7 +54,7 @@ class FacebookDetails extends StatelessWidget {
                           ),
                         ),
                         SizedBox(height: 32),
-                        Divider(color: Colors.black38),
+                        Divider(color: Colors.white38),
                       ],
                     ),
                   ),
@@ -63,7 +64,7 @@ class FacebookDetails extends StatelessWidget {
                       'What do they know?',
                       style: GoogleFonts.ubuntu(
                         fontSize: 25,
-                        color: const Color(0xff47455f),
+                        color: const Color(0xffe7dfd5),
                         fontWeight: FontWeight.w300,
                       ),
                       textAlign: TextAlign.left,
@@ -88,7 +89,7 @@ class FacebookDetails extends StatelessWidget {
                     "1",
                     style: GoogleFonts.ubuntu(
                       fontSize: 247,
-                      color: primaryTextColor.withOpacity(0.08),
+                      color: primaryTextColor.withOpacity(0.2),
                       fontWeight: FontWeight.w900,
                     ),
                     textAlign: TextAlign.left,
@@ -96,6 +97,7 @@ class FacebookDetails extends StatelessWidget {
                 ),
               ),
               IconButton(
+                color: Colors.white,
                 icon: Icon(Icons.arrow_back_ios),
                 onPressed: () {
                   Navigator.pop(context);

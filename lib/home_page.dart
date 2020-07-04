@@ -1,5 +1,8 @@
+import 'package:cached_network_image/cached_network_image.dart';
+import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:whats_you/details/Facebook_details.dart';
@@ -7,6 +10,9 @@ import 'package:whats_you/details/google.dart';
 import 'package:whats_you/details/instagram.dart';
 import 'package:whats_you/details/twitter.dart';
 import 'package:whats_you/details/youtube.dart';
+import 'Widgets/ChartCard.dart';
+import 'Widgets/FAQCard.dart';
+import 'Widgets/line_chart.dart';
 import 'constants/constants.dart';
 
 class HomePage extends StatefulWidget {
@@ -18,11 +24,11 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: gradientEndColor,
+      backgroundColor: Color(0xFF132502),
       body: Container(
         decoration: BoxDecoration(
             gradient: LinearGradient(
-                colors: [gradientStartColor, gradientEndColor],
+                colors: [Color(0xFF000000), Color(0xFF132502)],
                 begin: Alignment.topCenter,
                 end: Alignment.bottomCenter,
                 stops: [0.3, 0.7])),
@@ -32,6 +38,21 @@ class _HomePageState extends State<HomePage> {
             child: ListView(
               physics: BouncingScrollPhysics(),
               children: <Widget>[
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Container(
+                    child: Text(
+                      "Access Your Data",
+                      style: GoogleFonts.ubuntu(
+                          color: Colors.white,
+                          fontSize: 25,
+                          fontWeight: FontWeight.bold),
+                    ),
+                  ),
+                ),
+                SizedBox(
+                  height: 20,
+                ),
                 InkWell(
                   onTap: () {
                     Navigator.push(
@@ -57,8 +78,8 @@ class _HomePageState extends State<HomePage> {
                           decoration: BoxDecoration(
                             gradient: LinearGradient(
                               colors: [
-                                Color(0xFF60BE93),
-                                Color(0xFF1B8D59),
+                                Color(0xFF043B8E),
+                                Color(0xFF103755),
                               ],
                             ),
                             borderRadius: BorderRadius.circular(20),
@@ -166,8 +187,8 @@ class _HomePageState extends State<HomePage> {
                           decoration: BoxDecoration(
                             gradient: LinearGradient(
                               colors: [
-                                Color(0xFF60BE93),
-                                Color(0xFF1B8D59),
+                                Color(0xFF043B8E),
+                                Color(0xFF103755),
                               ],
                             ),
                             borderRadius: BorderRadius.circular(20),
@@ -275,8 +296,8 @@ class _HomePageState extends State<HomePage> {
                           decoration: BoxDecoration(
                             gradient: LinearGradient(
                               colors: [
-                                Color(0xFF60BE93),
-                                Color(0xFF1B8D59),
+                                Color(0xFF043B8E),
+                                Color(0xFF103755),
                               ],
                             ),
                             borderRadius: BorderRadius.circular(20),
@@ -384,8 +405,8 @@ class _HomePageState extends State<HomePage> {
                           decoration: BoxDecoration(
                             gradient: LinearGradient(
                               colors: [
-                                Color(0xFF60BE93),
-                                Color(0xFF1B8D59),
+                                Color(0xFF043B8E),
+                                Color(0xFF103755),
                               ],
                             ),
                             borderRadius: BorderRadius.circular(20),
@@ -493,8 +514,8 @@ class _HomePageState extends State<HomePage> {
                           decoration: BoxDecoration(
                             gradient: LinearGradient(
                               colors: [
-                                Color(0xFF60BE93),
-                                Color(0xFF1B8D59),
+                                Color(0xFF043B8E),
+                                Color(0xFF103755),
                               ],
                             ),
                             borderRadius: BorderRadius.circular(20),
@@ -573,6 +594,99 @@ class _HomePageState extends State<HomePage> {
                       ],
                     ),
                   ),
+                ),
+                SizedBox(
+                  height: 20,
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Container(
+                    child: Text(
+                      "Data FAQ",
+                      style: GoogleFonts.ubuntu(
+                          color: Colors.white,
+                          fontSize: 25,
+                          fontWeight: FontWeight.bold),
+                    ),
+                  ),
+                ),
+                SizedBox(
+                  height: 20,
+                ),
+                FAQCard(
+                  text:
+                      "We’re entering a new world in which data may be more important than software.",
+                  image:
+                      "https://images.squarespace-cdn.com/content/v1/593460e85016e11115df644f/1580849788792-R8RX5ZQ3USAB04T8TI7Y/ke17ZwdGBToddI8pDm48kFQQgP34qnCpeHaeAOzTt7pZw-zPPgdn4jUwVcJE1ZvWQUxwkmyExglNqGp0IvTJZamWLI2zvYWH8K3-s_4yszcp2ryTI0HqTOaaUohrI8PIvwpK0aFuhG0GtLLHqvbV4raqY38tdDiF-KTEvoUH9G4/GD_Follow.gif",
+                  title: "Why data?",
+                ),
+                FAQCard(
+                  text:
+                      "- Know What You Are Doing Well\n- Make The Most Of Your Money\n - Improve People’s Lives",
+                  image:
+                      "https://www.intelligentvc.co.uk/wp-content/uploads/2015/11/animat-search-color.gif",
+                  title: "Why is data so important?",
+                ),
+                FAQCard(
+                  text: "Too Much.",
+                  image:
+                      "https://media1.giphy.com/media/UTjmeapJahb8asynPo/giphy.gif",
+                  title:
+                      "How much of my personal information is available online and to the public?",
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Container(
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: <Widget>[
+                        Text(
+                          "Data Collection Evolution Charts",
+                          style: GoogleFonts.ubuntu(
+                              color: Colors.white,
+                              fontSize: 25,
+                              fontWeight: FontWeight.bold),
+                        ),
+                        SizedBox(height: 5,),
+                        Text(
+                          "Amount of Data generated on the Internet",
+                          style: GoogleFonts.ubuntu(
+                              color: Colors.white,
+                              fontSize: 15),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+                SizedBox(
+                  height: 20,
+                ),
+                Wrap(
+                  runSpacing: 20.0,
+                  spacing: 20.0,
+                  children: <Widget>[
+                    ChartCard(
+                        title: "Data Per Day",
+                        subtitle: "1997",
+                        iconColor: Color(0xFFFF8C00),
+                        number: "100 GB"),
+                    ChartCard(
+                        title: "Data Per Hour",
+                        subtitle: "2002",
+                        iconColor: Color(0xFFFF8C00),
+                        number: "100 GB"),
+                    ChartCard(
+                        title: "Data Per Second",
+                        subtitle: "2016",
+                        iconColor: Color(0xFFFF8C00),
+                        number: "28,875 GB"),
+                    ChartCard(
+                        title: "Data Per Day",
+                        subtitle: "2020",
+                        iconColor: Color(0xFFFF8C00),
+                        number: "2.5 QB"),
+                  ],
                 ),
               ],
             ),

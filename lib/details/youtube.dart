@@ -7,6 +7,7 @@ class YoutubeDetails extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Color(0xFF121212),
       body: SafeArea(
         bottom: false,
         child: SingleChildScrollView(
@@ -40,7 +41,7 @@ class YoutubeDetails extends StatelessWidget {
                           ),
                           textAlign: TextAlign.left,
                         ),
-                        Divider(color: Colors.black38),
+                        Divider(color: Colors.white38),
                         SizedBox(height: 32),
                         Text(
                           "YouTube is a video sharing service that allows users to watch videos posted by other users and upload videos of their own. ... While several companies and organizations also use YouTube to promote their business, the vast majority of YouTube videos are created and uploaded by amateurs.",
@@ -53,7 +54,7 @@ class YoutubeDetails extends StatelessWidget {
                           ),
                         ),
                         SizedBox(height: 32),
-                        Divider(color: Colors.black38),
+                        Divider(color: Colors.white38),
                       ],
                     ),
                   ),
@@ -63,7 +64,7 @@ class YoutubeDetails extends StatelessWidget {
                       'What do they know?',
                       style: GoogleFonts.ubuntu(
                         fontSize: 25,
-                        color: const Color(0xff47455f),
+                        color: const Color(0xffe7dfd5),
                         fontWeight: FontWeight.w300,
                       ),
                       textAlign: TextAlign.left,
@@ -88,7 +89,7 @@ class YoutubeDetails extends StatelessWidget {
                     "4",
                     style: GoogleFonts.ubuntu(
                       fontSize: 247,
-                      color: primaryTextColor.withOpacity(0.08),
+                      color: primaryTextColor.withOpacity(0.2),
                       fontWeight: FontWeight.w900,
                     ),
                     textAlign: TextAlign.left,
@@ -96,7 +97,7 @@ class YoutubeDetails extends StatelessWidget {
                 ),
               ),
               IconButton(
-                icon: Icon(Icons.arrow_back_ios),
+                icon: Icon(Icons.arrow_back_ios,color: Colors.white),
                 onPressed: () {
                   Navigator.pop(context);
                 },

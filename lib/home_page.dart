@@ -9,6 +9,7 @@ import 'package:share/share.dart';
 import 'package:simple_animations/simple_animations.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:whats_you/Extras/Licences.dart';
+import 'package:whats_you/Extras/TC.dart';
 import 'package:whats_you/Presentation/presentation.dart';
 import 'package:whats_you/details/Facebook_details.dart';
 import 'package:whats_you/details/google.dart';
@@ -80,19 +81,6 @@ class _HomePageState extends State<HomePage> {
                       ),
                       actions: <Widget>[
                         CupertinoActionSheetAction(
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: <Widget>[
-                              Icon(Icons.library_books,color: Colors.white,),
-                              Text('Terms and Conditions',style: GoogleFonts.ubuntu(color: Colors.white),),
-                              Icon(Icons.arrow_forward_ios,color: Colors.white,),
-                            ],
-                          ),
-                          onPressed: () {
-                            Navigator.pop(context);
-                          },
-                        ),
-                        CupertinoActionSheetAction(
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: <Widget>[
@@ -125,23 +113,6 @@ class _HomePageState extends State<HomePage> {
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: <Widget>[
-                              Icon(Icons.verified_user,color: Colors.white,),
-                              Text('View Licences',style: GoogleFonts.ubuntu(color: Colors.white)),
-                              Icon(Icons.arrow_forward_ios,color: Colors.white,),
-                            ],
-                          ),
-                          onPressed: () {
-                            Navigator.pop(context);
-                            Navigator.push(
-                                context,
-                                CupertinoPageRoute(
-                                    builder: (context) => AppLicence()));
-                          },
-                        ),
-                        CupertinoActionSheetAction(
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: <Widget>[
                               Icon(BrandIcons.gmail,color: Colors.white,),
                               Text('Drop an E-Mail',style: GoogleFonts.ubuntu(color: Colors.white)),
                               Icon(Icons.arrow_forward_ios,color: Colors.white,),
@@ -166,6 +137,40 @@ class _HomePageState extends State<HomePage> {
                             Share.share(
                                 'Check out how much of your Private data is available online to the Public https://play.google.com/store/apps/details?id=co 4m.you.whats_you',
                                 subject: 'WhatsYou Data Privacy');
+                          },
+                        ),
+                        CupertinoActionSheetAction(
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: <Widget>[
+                              Icon(Icons.library_books,color: Colors.white,),
+                              Text('Terms and Conditions',style: GoogleFonts.ubuntu(color: Colors.white),),
+                              Icon(Icons.arrow_forward_ios,color: Colors.white,),
+                            ],
+                          ),
+                          onPressed: () {
+                            Navigator.pop(context);
+                            Navigator.push(
+                                context,
+                                CupertinoPageRoute(
+                                    builder: (context) => AppTC()));
+                          },
+                        ),
+                        CupertinoActionSheetAction(
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: <Widget>[
+                              Icon(Icons.verified_user,color: Colors.white,),
+                              Text('View Licences',style: GoogleFonts.ubuntu(color: Colors.white)),
+                              Icon(Icons.arrow_forward_ios,color: Colors.white,),
+                            ],
+                          ),
+                          onPressed: () {
+                            Navigator.pop(context);
+                            Navigator.push(
+                                context,
+                                CupertinoPageRoute(
+                                    builder: (context) => AppLicence()));
                           },
                         ),
                         CupertinoActionSheetAction(

@@ -2,10 +2,13 @@ import 'package:delayed_display/delayed_display.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
+import 'package:flutter_brand_icons/flutter_brand_icons.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:share/share.dart';
 import 'package:simple_animations/simple_animations.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'package:whats_you/Extras/Licences.dart';
 import 'package:whats_you/Presentation/presentation.dart';
 import 'package:whats_you/details/Facebook_details.dart';
 import 'package:whats_you/details/google.dart';
@@ -70,26 +73,114 @@ class _HomePageState extends State<HomePage> {
                     context: context,
                     builder: (BuildContext context) => CupertinoActionSheet(
                       cancelButton: CupertinoActionSheetAction(
-                        child: Text('Cancel'),
+                        child: Text('Cancel',style: GoogleFonts.ubuntu(color: Colors.white)),
                         onPressed: () {
                           Navigator.pop(context, 'Cancel');
                         },
                       ),
                       actions: <Widget>[
                         CupertinoActionSheetAction(
-                          child: Text('Terms and Conditions'),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: <Widget>[
+                              Icon(Icons.library_books,color: Colors.white,),
+                              Text('Terms and Conditions',style: GoogleFonts.ubuntu(color: Colors.white),),
+                              Icon(Icons.arrow_forward_ios,color: Colors.white,),
+                            ],
+                          ),
                           onPressed: () {
-                            Navigator.pop(context, 'One');
+                            Navigator.pop(context);
                           },
                         ),
                         CupertinoActionSheetAction(
-                          child: Text('Rate App'),
-                          onPressed: ()=> launch("https://play.google.com/store/apps/details?id=com.you.whats_you"),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: <Widget>[
+                                Icon(Icons.star,color: Colors.white,),
+                                Text('Rate App',style: GoogleFonts.ubuntu(color: Colors.white)),
+                                Icon(Icons.arrow_forward_ios,color: Colors.white,),
+                              ],
+                            ),
+                            onPressed: () {
+                              Navigator.pop(context);
+                              launch(
+                                  "https://play.google.com/store/apps/details?id=co 4m.you.whats_you");
+                            }),
+                        CupertinoActionSheetAction(
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: <Widget>[
+                              Icon(Icons.zoom_in,color: Colors.white,),
+                              Text('Check out other apps',style: GoogleFonts.ubuntu(color: Colors.white)),
+                              Icon(Icons.arrow_forward_ios,color: Colors.white,),
+                            ],
+                          ),
+                          onPressed: () {
+                            Navigator.pop(context);
+                            launch(
+                                "https://play.google.com/store/apps/dev?id=8692038640782019043");
+                          },
                         ),
                         CupertinoActionSheetAction(
-                          child: Text('Check out other apps'),
-                          onPressed: ()=> launch("https://play.google.com/store/apps/dev?id=8692038640782019043"),
-                        )
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: <Widget>[
+                              Icon(Icons.verified_user,color: Colors.white,),
+                              Text('View Licences',style: GoogleFonts.ubuntu(color: Colors.white)),
+                              Icon(Icons.arrow_forward_ios,color: Colors.white,),
+                            ],
+                          ),
+                          onPressed: () {
+                            Navigator.pop(context);
+                            Navigator.push(
+                                context,
+                                CupertinoPageRoute(
+                                    builder: (context) => AppLicence()));
+                          },
+                        ),
+                        CupertinoActionSheetAction(
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: <Widget>[
+                              Icon(BrandIcons.gmail,color: Colors.white,),
+                              Text('Drop an E-Mail',style: GoogleFonts.ubuntu(color: Colors.white)),
+                              Icon(Icons.arrow_forward_ios,color: Colors.white,),
+                            ],
+                          ),
+                          onPressed: () {
+                            Navigator.pop(context);
+                            launch("mailto:darshanaswath@gmail.com?subject=App: WhatsYou App");
+                          },
+                        ),
+                        CupertinoActionSheetAction(
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: <Widget>[
+                              Icon(Icons.share,color: Colors.white,),
+                              Text('Share App',style: GoogleFonts.ubuntu(color: Colors.white)),
+                              Icon(Icons.arrow_forward_ios,color: Colors.white,),
+                            ],
+                          ),
+                          onPressed: () {
+                            Navigator.pop(context);
+                            Share.share(
+                                'Check out how much of your Private data is available online to the Public https://play.google.com/store/apps/details?id=co 4m.you.whats_you',
+                                subject: 'WhatsYou Data Privacy');
+                          },
+                        ),
+                        CupertinoActionSheetAction(
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: <Widget>[
+                              Icon(Icons.feedback,color: Colors.white,),
+                              Text('Feedback',style: GoogleFonts.ubuntu(color: Colors.white)),
+                              Icon(Icons.arrow_forward_ios,color: Colors.white,),
+                            ],
+                          ),
+                          onPressed: () {
+                            Navigator.pop(context);
+                          },
+                        ),
                       ],
                     ),
                   ),

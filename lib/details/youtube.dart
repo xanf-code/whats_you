@@ -1,7 +1,9 @@
 import 'package:delayed_display/delayed_display.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_brand_icons/flutter_brand_icons.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:whats_you/Widgets/whatCard.dart';
 import '../constants/constants.dart';
 
 class YoutubeDetails extends StatelessWidget {
@@ -49,11 +51,11 @@ class YoutubeDetails extends StatelessWidget {
                           ),
                         ),
                         Divider(color: Colors.white38),
-                        SizedBox(height: 32),
+                        SizedBox(height: 28),
                         DelayedDisplay(
                           slidingCurve: Curves.fastLinearToSlowEaseIn,
                           child: Text(
-                            "YouTube is a video sharing service that allows users to watch videos posted by other users and upload videos of their own. ... While several companies and organizations also use YouTube to promote their business, the vast majority of YouTube videos are created and uploaded by amateurs.",
+                            "YouTube is a video sharing service that allows users to watch videos posted by other users and upload videos of their own. While several companies and organizations also use YouTube to promote their business.",
                             maxLines: 5,
                             overflow: TextOverflow.ellipsis,
                             style: GoogleFonts.ubuntu(
@@ -63,13 +65,13 @@ class YoutubeDetails extends StatelessWidget {
                             ),
                           ),
                         ),
-                        SizedBox(height: 32),
+                        SizedBox(height: 28),
                         Divider(color: Colors.white38),
                       ],
                     ),
                   ),
                   Padding(
-                    padding: const EdgeInsets.only(left: 32.0),
+                    padding: const EdgeInsets.only(left: 21.0),
                     child: DelayedDisplay(
                       slidingCurve: Curves.fastLinearToSlowEaseIn,
                       child: Text(
@@ -82,6 +84,12 @@ class YoutubeDetails extends StatelessWidget {
                         textAlign: TextAlign.left,
                       ),
                     ),
+                  ),
+                  WhatCard(
+                    title: """YouTube record every search term that you’ve ever typed or spoken into their search boxes. And log of every youtube video you have ever watched. See your youtube history.\n""",
+                    Subtitle: "Note:- You have to login in to the Google account through your browser to see your data.",
+                    link: "https://www.youtube.com/feed/history",
+                    brand: Icon(BrandIcons.youtube),
                   ),
                 ],
               ),

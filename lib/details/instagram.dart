@@ -1,5 +1,6 @@
 import 'package:delayed_display/delayed_display.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_brand_icons/flutter_brand_icons.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:whats_you/Widgets/whatCard.dart';
@@ -84,7 +85,18 @@ class InstagramDetails extends StatelessWidget {
                       ),
                     ),
                   ),
-
+                  WhatCard(
+                    title: """Are you in the instagram, check out your data, it contains your posts, likes, comments etc.\n""",
+                    Subtitle: "Note:- You have to login in the instagram through your browser to see your data.",
+                    link: "https://www.instagram.com/accounts/access_tool/",
+                    brand: Icon(BrandIcons.instagram),
+                  ),
+                  WhatCard(
+                    title: """Request your data and download your data, it contains info on your posts, likes, comments etc.\n""",
+                    Subtitle: "Note:- You have to login in the instagram through your browser to see your data.",
+                    link: "https://www.instagram.com/download/request/",
+                    brand: Icon(BrandIcons.instagram),
+                  ),
                 ],
               ),
               Positioned(

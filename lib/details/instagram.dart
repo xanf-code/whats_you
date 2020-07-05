@@ -1,6 +1,8 @@
+import 'package:delayed_display/delayed_display.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:whats_you/Widgets/whatCard.dart';
 import '../constants/constants.dart';
 
 class InstagramDetails extends StatelessWidget {
@@ -23,53 +25,66 @@ class InstagramDetails extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: <Widget>[
                         SizedBox(height: 300),
-                        Text(
-                          "Instagram",
-                          style: GoogleFonts.ubuntu(
-                            fontSize: 56,
-                            color: primaryTextColor,
-                            fontWeight: FontWeight.w900,
+                        DelayedDisplay(
+                          slidingCurve: Curves.fastLinearToSlowEaseIn,
+                          child: Text(
+                            "Instagram",
+                            style: GoogleFonts.ubuntu(
+                              fontSize: 56,
+                              color: primaryTextColor,
+                              fontWeight: FontWeight.w900,
+                            ),
+                            textAlign: TextAlign.left,
                           ),
-                          textAlign: TextAlign.left,
                         ),
-                        Text(
-                          "Instagram.com",
-                          style: GoogleFonts.ubuntu(
-                            fontSize: 25,
-                            color: primaryTextColor,
-                            fontWeight: FontWeight.w300,
+                        DelayedDisplay(
+                          slidingCurve: Curves.fastLinearToSlowEaseIn,
+                          child: Text(
+                            "Instagram.com",
+                            style: GoogleFonts.ubuntu(
+                              fontSize: 25,
+                              color: primaryTextColor,
+                              fontWeight: FontWeight.w300,
+                            ),
+                            textAlign: TextAlign.left,
                           ),
-                          textAlign: TextAlign.left,
                         ),
                         Divider(color: Colors.white38),
-                        SizedBox(height: 32),
-                        Text(
-                          "Instagram is an American photo and video-sharing social networking service owned by Facebook, Inc. It was created by Kevin Systrom and Mike Krieger and launched in October 2010 on iOS.",
-                          maxLines: 5,
-                          overflow: TextOverflow.ellipsis,
-                          style: GoogleFonts.ubuntu(
-                            fontSize: 20,
-                            color: contentTextColor,
-                            fontWeight: FontWeight.w500,
+                        SizedBox(height: 28),
+                        DelayedDisplay(
+                          slidingCurve: Curves.fastLinearToSlowEaseIn,
+                          child: Text(
+                            "Instagram is an American photo and video-sharing social networking service owned by Facebook, Inc. It was created by Kevin Systrom and Mike Krieger and launched in October 2010 on iOS.",
+                            maxLines: 5,
+                            overflow: TextOverflow.ellipsis,
+                            style: GoogleFonts.ubuntu(
+                              fontSize: 20,
+                              color: contentTextColor,
+                              fontWeight: FontWeight.w500,
+                            ),
                           ),
                         ),
-                        SizedBox(height: 32),
+                        SizedBox(height: 28),
                         Divider(color: Colors.white38),
                       ],
                     ),
                   ),
                   Padding(
-                    padding: const EdgeInsets.only(left: 32.0),
-                    child: Text(
-                      'What do they know?',
-                      style: GoogleFonts.ubuntu(
-                        fontSize: 25,
-                        color: const Color(0xffe7dfd5),
-                        fontWeight: FontWeight.w300,
+                    padding: const EdgeInsets.only(left: 21.0),
+                    child: DelayedDisplay(
+                      slidingCurve: Curves.fastLinearToSlowEaseIn,
+                      child: Text(
+                        'What do they know?',
+                        style: GoogleFonts.ubuntu(
+                          fontSize: 25,
+                          color: const Color(0xffe7dfd5),
+                          fontWeight: FontWeight.w300,
+                        ),
+                        textAlign: TextAlign.left,
                       ),
-                      textAlign: TextAlign.left,
                     ),
                   ),
+
                 ],
               ),
               Positioned(

@@ -1,3 +1,4 @@
+import 'package:delayed_display/delayed_display.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -23,34 +24,43 @@ class YoutubeDetails extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: <Widget>[
                         SizedBox(height: 300),
-                        Text(
-                          "Youtube",
-                          style: GoogleFonts.ubuntu(
-                            fontSize: 56,
-                            color: primaryTextColor,
-                            fontWeight: FontWeight.w900,
+                        DelayedDisplay(
+                          slidingCurve: Curves.fastLinearToSlowEaseIn,
+                          child: Text(
+                            "Youtube",
+                            style: GoogleFonts.ubuntu(
+                              fontSize: 56,
+                              color: primaryTextColor,
+                              fontWeight: FontWeight.w900,
+                            ),
+                            textAlign: TextAlign.left,
                           ),
-                          textAlign: TextAlign.left,
                         ),
-                        Text(
-                          "Youtube.com",
-                          style: GoogleFonts.ubuntu(
-                            fontSize: 25,
-                            color: primaryTextColor,
-                            fontWeight: FontWeight.w300,
+                        DelayedDisplay(
+                          slidingCurve: Curves.fastLinearToSlowEaseIn,
+                          child: Text(
+                            "Youtube.com",
+                            style: GoogleFonts.ubuntu(
+                              fontSize: 25,
+                              color: primaryTextColor,
+                              fontWeight: FontWeight.w300,
+                            ),
+                            textAlign: TextAlign.left,
                           ),
-                          textAlign: TextAlign.left,
                         ),
                         Divider(color: Colors.white38),
                         SizedBox(height: 32),
-                        Text(
-                          "YouTube is a video sharing service that allows users to watch videos posted by other users and upload videos of their own. ... While several companies and organizations also use YouTube to promote their business, the vast majority of YouTube videos are created and uploaded by amateurs.",
-                          maxLines: 5,
-                          overflow: TextOverflow.ellipsis,
-                          style: GoogleFonts.ubuntu(
-                            fontSize: 20,
-                            color: contentTextColor,
-                            fontWeight: FontWeight.w500,
+                        DelayedDisplay(
+                          slidingCurve: Curves.fastLinearToSlowEaseIn,
+                          child: Text(
+                            "YouTube is a video sharing service that allows users to watch videos posted by other users and upload videos of their own. ... While several companies and organizations also use YouTube to promote their business, the vast majority of YouTube videos are created and uploaded by amateurs.",
+                            maxLines: 5,
+                            overflow: TextOverflow.ellipsis,
+                            style: GoogleFonts.ubuntu(
+                              fontSize: 20,
+                              color: contentTextColor,
+                              fontWeight: FontWeight.w500,
+                            ),
                           ),
                         ),
                         SizedBox(height: 32),
@@ -60,14 +70,17 @@ class YoutubeDetails extends StatelessWidget {
                   ),
                   Padding(
                     padding: const EdgeInsets.only(left: 32.0),
-                    child: Text(
-                      'What do they know?',
-                      style: GoogleFonts.ubuntu(
-                        fontSize: 25,
-                        color: const Color(0xffe7dfd5),
-                        fontWeight: FontWeight.w300,
+                    child: DelayedDisplay(
+                      slidingCurve: Curves.fastLinearToSlowEaseIn,
+                      child: Text(
+                        'What do they know?',
+                        style: GoogleFonts.ubuntu(
+                          fontSize: 25,
+                          color: const Color(0xffe7dfd5),
+                          fontWeight: FontWeight.w300,
+                        ),
+                        textAlign: TextAlign.left,
                       ),
-                      textAlign: TextAlign.left,
                     ),
                   ),
                 ],

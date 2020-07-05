@@ -5,4 +5,5 @@ Color secondaryTextColor = Color(0xFFE4979E);
 Color titleTextColor = Colors.white;
 Color contentTextColor = Color(0xff868686);
 Color navigationColor = Color(0xFF6751B5);
-Color kPrimaryColor = Color(0xFF0D8E53);
+Color kPrimaryColor = Colors.deepPurple;
+Color buttonColor = Color(0xFF6751B5);

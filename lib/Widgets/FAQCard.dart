@@ -50,6 +50,7 @@ class FAQCard extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: <Widget>[
                     Text(title,
+                        maxLines: 3,
                         style: GoogleFonts.ubuntu(
                             fontSize: 18,
                             fontWeight: FontWeight.bold,
@@ -60,7 +61,7 @@ class FAQCard extends StatelessWidget {
                     Expanded(
                       child: Text(
                         text,
-                        maxLines: 4,
+                        maxLines: 3,
                         overflow: TextOverflow.ellipsis,
                         style: GoogleFonts.ubuntu(
                           color: Colors.white,

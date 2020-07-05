@@ -34,6 +34,11 @@ dependencies:
   google_fonts: ^1.1.0
   cached_network_image: ^2.2.0+1
   fl_chart: ^0.10.1
+  supercharged: ^1.6.0
+  simple_animations: ^2.2.1
+  delayed_display: ^1.0.3
+  expansion_tile_card: ^1.0.3
+  flutter_brand_icons: ^1.1.0
 
 dev_dependencies:
   flutter_test:
@@ -53,7 +58,7 @@ flutter:
   # To add assets to your application, add an assets section, like this:
   assets:
     - assets/icons/
-
+    - assets/Data/
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
 

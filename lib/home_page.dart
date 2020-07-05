@@ -5,6 +5,7 @@ import 'package:flutter/rendering.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:simple_animations/simple_animations.dart';
+import 'package:url_launcher/url_launcher.dart';
 import 'package:whats_you/Presentation/presentation.dart';
 import 'package:whats_you/details/Facebook_details.dart';
 import 'package:whats_you/details/google.dart';
@@ -55,15 +56,46 @@ class _HomePageState extends State<HomePage> {
             false;
       },
       child: MaterialApp(
+        debugShowCheckedModeBanner: false,
         home: Scaffold(
           appBar: AppBar(
             elevation: 0,
             backgroundColor: Color(0xFF121212),
-            leading: IconButton(
-              icon: SvgPicture.asset('assets/icons/menu.svg'),
-              onPressed: (){},
-            ),
-            centerTitle: true,
+            actions: <Widget>[
+              DelayedDisplay(
+                slidingCurve: Curves.fastLinearToSlowEaseIn,
+                child: IconButton(
+                  icon: Icon(Icons.settings),
+                  onPressed: () => showCupertinoModalPopup(
+                    context: context,
+                    builder: (BuildContext context) => CupertinoActionSheet(
+                      cancelButton: CupertinoActionSheetAction(
+                        child: Text('Cancel'),
+                        onPressed: () {
+                          Navigator.pop(context, 'Cancel');
+                        },
+                      ),
+                      actions: <Widget>[
+                        CupertinoActionSheetAction(
+                          child: Text('Terms and Conditions'),
+                          onPressed: () {
+                            Navigator.pop(context, 'One');
+                          },
+                        ),
+                        CupertinoActionSheetAction(
+                          child: Text('Rate App'),
+                          onPressed: ()=> launch("https://play.google.com/store/apps/details?id=com.you.whats_you"),
+                        ),
+                        CupertinoActionSheetAction(
+                          child: Text('Check out other apps'),
+                          onPressed: ()=> launch("https://play.google.com/store/apps/dev?id=8692038640782019043"),
+                        )
+                      ],
+                    ),
+                  ),
+                ),
+              ),
+            ],
             title: DelayedDisplay(
               slidingCurve: Curves.fastLinearToSlowEaseIn,
               child: Text(
@@ -113,7 +145,8 @@ class _HomePageState extends State<HomePage> {
                                 Container(
                                   padding: EdgeInsets.only(
                                     // left side padding is 40% of total width
-                                    left: MediaQuery.of(context).size.width * .4,
+                                    left:
+                                        MediaQuery.of(context).size.width * .4,
                                     top: 20,
                                     right: 20,
                                   ),
@@ -130,7 +163,8 @@ class _HomePageState extends State<HomePage> {
                                   ),
                                   child: Column(
                                     mainAxisAlignment: MainAxisAlignment.start,
-                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
                                     children: <Widget>[
                                       RichText(
                                         text: TextSpan(
@@ -139,12 +173,13 @@ class _HomePageState extends State<HomePage> {
                                                 text: "Facebook Data\n",
                                                 style: GoogleFonts.ubuntu(
                                                     fontSize: 25,
-                                                    fontWeight: FontWeight.bold)),
+                                                    fontWeight:
+                                                        FontWeight.bold)),
                                             TextSpan(
                                               text: "Facebook.com\n",
                                               style: GoogleFonts.ubuntu(
-                                                color:
-                                                    Colors.white.withOpacity(0.7),
+                                                color: Colors.white
+                                                    .withOpacity(0.7),
                                               ),
                                             ),
                                           ],
@@ -172,7 +207,8 @@ class _HomePageState extends State<HomePage> {
                                           ),
                                           Icon(
                                             Icons.arrow_forward_ios,
-                                            color: Colors.white.withOpacity(0.4),
+                                            color:
+                                                Colors.white.withOpacity(0.4),
                                             size: 15,
                                           ),
                                         ],
@@ -200,7 +236,8 @@ class _HomePageState extends State<HomePage> {
                                         style: GoogleFonts.ubuntu(
                                             fontWeight: FontWeight.bold,
                                             fontSize: 150,
-                                            color: Colors.white.withOpacity(0.2)),
+                                            color:
+                                                Colors.white.withOpacity(0.2)),
                                       )),
                                 ),
                               ],
@@ -229,7 +266,8 @@ class _HomePageState extends State<HomePage> {
                                 Container(
                                   padding: EdgeInsets.only(
                                     // left side padding is 40% of total width
-                                    left: MediaQuery.of(context).size.width * .4,
+                                    left:
+                                        MediaQuery.of(context).size.width * .4,
                                     top: 20,
                                     right: 20,
                                   ),
@@ -246,7 +284,8 @@ class _HomePageState extends State<HomePage> {
                                   ),
                                   child: Column(
                                     mainAxisAlignment: MainAxisAlignment.start,
-                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
                                     children: <Widget>[
                                       RichText(
                                         text: TextSpan(
@@ -255,12 +294,13 @@ class _HomePageState extends State<HomePage> {
                                                 text: "Twitter Data\n",
                                                 style: GoogleFonts.ubuntu(
                                                     fontSize: 25,
-                                                    fontWeight: FontWeight.bold)),
+                                                    fontWeight:
+                                                        FontWeight.bold)),
                                             TextSpan(
                                               text: "Twitter.com\n",
                                               style: GoogleFonts.ubuntu(
-                                                color:
-                                                    Colors.white.withOpacity(0.7),
+                                                color: Colors.white
+                                                    .withOpacity(0.7),
                                               ),
                                             ),
                                           ],
@@ -288,7 +328,8 @@ class _HomePageState extends State<HomePage> {
                                           ),
                                           Icon(
                                             Icons.arrow_forward_ios,
-                                            color: Colors.white.withOpacity(0.4),
+                                            color:
+                                                Colors.white.withOpacity(0.4),
                                             size: 15,
                                           ),
                                         ],
@@ -316,7 +357,8 @@ class _HomePageState extends State<HomePage> {
                                         style: GoogleFonts.ubuntu(
                                             fontWeight: FontWeight.bold,
                                             fontSize: 150,
-                                            color: Colors.white.withOpacity(0.2)),
+                                            color:
+                                                Colors.white.withOpacity(0.2)),
                                       )),
                                 ),
                               ],
@@ -345,7 +387,8 @@ class _HomePageState extends State<HomePage> {
                                 Container(
                                   padding: EdgeInsets.only(
                                     // left side padding is 40% of total width
-                                    left: MediaQuery.of(context).size.width * .4,
+                                    left:
+                                        MediaQuery.of(context).size.width * .4,
                                     top: 20,
                                     right: 20,
                                   ),
@@ -362,7 +405,8 @@ class _HomePageState extends State<HomePage> {
                                   ),
                                   child: Column(
                                     mainAxisAlignment: MainAxisAlignment.start,
-                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
                                     children: <Widget>[
                                       RichText(
                                         text: TextSpan(
@@ -371,12 +415,13 @@ class _HomePageState extends State<HomePage> {
                                                 text: "Instagram Data\n",
                                                 style: GoogleFonts.ubuntu(
                                                     fontSize: 25,
-                                                    fontWeight: FontWeight.bold)),
+                                                    fontWeight:
+                                                        FontWeight.bold)),
                                             TextSpan(
                                               text: "Instagram.com\n",
                                               style: GoogleFonts.ubuntu(
-                                                color:
-                                                    Colors.white.withOpacity(0.7),
+                                                color: Colors.white
+                                                    .withOpacity(0.7),
                                               ),
                                             ),
                                           ],
@@ -404,7 +449,8 @@ class _HomePageState extends State<HomePage> {
                                           ),
                                           Icon(
                                             Icons.arrow_forward_ios,
-                                            color: Colors.white.withOpacity(0.4),
+                                            color:
+                                                Colors.white.withOpacity(0.4),
                                             size: 15,
                                           ),
                                         ],
@@ -432,7 +478,8 @@ class _HomePageState extends State<HomePage> {
                                         style: GoogleFonts.ubuntu(
                                             fontWeight: FontWeight.bold,
                                             fontSize: 150,
-                                            color: Colors.white.withOpacity(0.2)),
+                                            color:
+                                                Colors.white.withOpacity(0.2)),
                                       )),
                                 ),
                               ],
@@ -461,7 +508,8 @@ class _HomePageState extends State<HomePage> {
                                 Container(
                                   padding: EdgeInsets.only(
                                     // left side padding is 40% of total width
-                                    left: MediaQuery.of(context).size.width * .4,
+                                    left:
+                                        MediaQuery.of(context).size.width * .4,
                                     top: 20,
                                     right: 20,
                                   ),
@@ -478,7 +526,8 @@ class _HomePageState extends State<HomePage> {
                                   ),
                                   child: Column(
                                     mainAxisAlignment: MainAxisAlignment.start,
-                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
                                     children: <Widget>[
                                       RichText(
                                         text: TextSpan(
@@ -487,12 +536,13 @@ class _HomePageState extends State<HomePage> {
                                                 text: "Youtube Data\n",
                                                 style: GoogleFonts.ubuntu(
                                                     fontSize: 25,
-                                                    fontWeight: FontWeight.bold)),
+                                                    fontWeight:
+                                                        FontWeight.bold)),
                                             TextSpan(
                                               text: "Youtube.com\n",
                                               style: GoogleFonts.ubuntu(
-                                                color:
-                                                    Colors.white.withOpacity(0.7),
+                                                color: Colors.white
+                                                    .withOpacity(0.7),
                                               ),
                                             ),
                                           ],
@@ -520,7 +570,8 @@ class _HomePageState extends State<HomePage> {
                                           ),
                                           Icon(
                                             Icons.arrow_forward_ios,
-                                            color: Colors.white.withOpacity(0.4),
+                                            color:
+                                                Colors.white.withOpacity(0.4),
                                             size: 15,
                                           ),
                                         ],
@@ -548,7 +599,8 @@ class _HomePageState extends State<HomePage> {
                                         style: GoogleFonts.ubuntu(
                                             fontWeight: FontWeight.bold,
                                             fontSize: 150,
-                                            color: Colors.white.withOpacity(0.2)),
+                                            color:
+                                                Colors.white.withOpacity(0.2)),
                                       )),
                                 ),
                               ],
@@ -577,7 +629,8 @@ class _HomePageState extends State<HomePage> {
                                 Container(
                                   padding: EdgeInsets.only(
                                     // left side padding is 40% of total width
-                                    left: MediaQuery.of(context).size.width * .4,
+                                    left:
+                                        MediaQuery.of(context).size.width * .4,
                                     top: 20,
                                     right: 20,
                                   ),
@@ -594,7 +647,8 @@ class _HomePageState extends State<HomePage> {
                                   ),
                                   child: Column(
                                     mainAxisAlignment: MainAxisAlignment.start,
-                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
                                     children: <Widget>[
                                       RichText(
                                         text: TextSpan(
@@ -603,12 +657,13 @@ class _HomePageState extends State<HomePage> {
                                                 text: "Google Data\n",
                                                 style: GoogleFonts.ubuntu(
                                                     fontSize: 25,
-                                                    fontWeight: FontWeight.bold)),
+                                                    fontWeight:
+                                                        FontWeight.bold)),
                                             TextSpan(
                                               text: "Google.com\n",
                                               style: GoogleFonts.ubuntu(
-                                                color:
-                                                    Colors.white.withOpacity(0.7),
+                                                color: Colors.white
+                                                    .withOpacity(0.7),
                                               ),
                                             ),
                                           ],
@@ -636,7 +691,8 @@ class _HomePageState extends State<HomePage> {
                                           ),
                                           Icon(
                                             Icons.arrow_forward_ios,
-                                            color: Colors.white.withOpacity(0.4),
+                                            color:
+                                                Colors.white.withOpacity(0.4),
                                             size: 15,
                                           ),
                                         ],
@@ -664,7 +720,8 @@ class _HomePageState extends State<HomePage> {
                                         style: GoogleFonts.ubuntu(
                                             fontWeight: FontWeight.bold,
                                             fontSize: 150,
-                                            color: Colors.white.withOpacity(0.2)),
+                                            color:
+                                                Colors.white.withOpacity(0.2)),
                                       )),
                                 ),
                               ],
@@ -773,17 +830,18 @@ class _HomePageState extends State<HomePage> {
                               ],
                             ),
                             IconButton(
-                                icon: Icon(
-                                  Icons.arrow_forward_ios,
-                                  color: Colors.white,
-                                  size: 18,
-                                ),
+                              icon: Icon(
+                                Icons.arrow_forward_ios,
+                                color: Colors.white,
+                                size: 18,
+                              ),
                               onPressed: () {
                                 Navigator.push(
                                     context,
                                     CupertinoPageRoute(
                                         builder: (context) => Presentation()));
-                              },),
+                              },
+                            ),
                           ],
                         ),
                       ),

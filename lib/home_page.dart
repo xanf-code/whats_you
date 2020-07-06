@@ -11,11 +11,13 @@ import 'package:url_launcher/url_launcher.dart';
 import 'package:whats_you/Extras/Licences.dart';
 import 'package:whats_you/Extras/TC.dart';
 import 'package:whats_you/Presentation/presentation.dart';
+import 'package:whats_you/Webview/attackmap.dart';
 import 'package:whats_you/details/Facebook_details.dart';
 import 'package:whats_you/details/google.dart';
 import 'package:whats_you/details/instagram.dart';
 import 'package:whats_you/details/twitter.dart';
 import 'package:whats_you/details/youtube.dart';
+import 'package:whats_you/kaspersky_widget/widget.dart';
 import 'Widgets/ChartCard.dart';
 import 'Widgets/FAQCard.dart';
 import 'package:supercharged/supercharged.dart';
@@ -74,7 +76,8 @@ class _HomePageState extends State<HomePage> {
                     context: context,
                     builder: (BuildContext context) => CupertinoActionSheet(
                       cancelButton: CupertinoActionSheetAction(
-                        child: Text('Cancel',style: GoogleFonts.ubuntu(color: Colors.white)),
+                        child: Text('Cancel',
+                            style: GoogleFonts.ubuntu(color: Colors.white)),
                         onPressed: () {
                           Navigator.pop(context, 'Cancel');
                         },
@@ -84,9 +87,17 @@ class _HomePageState extends State<HomePage> {
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: <Widget>[
-                                Icon(Icons.star,color: Colors.white,),
-                                Text('Rate App',style: GoogleFonts.ubuntu(color: Colors.white)),
-                                Icon(Icons.arrow_forward_ios,color: Colors.white,),
+                                Icon(
+                                  Icons.star,
+                                  color: Colors.white,
+                                ),
+                                Text('Rate App',
+                                    style: GoogleFonts.ubuntu(
+                                        color: Colors.white)),
+                                Icon(
+                                  Icons.arrow_forward_ios,
+                                  color: Colors.white,
+                                ),
                               ],
                             ),
                             onPressed: () {
@@ -98,9 +109,17 @@ class _HomePageState extends State<HomePage> {
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: <Widget>[
-                              Icon(Icons.zoom_in,color: Colors.white,),
-                              Text('Check out other apps',style: GoogleFonts.ubuntu(color: Colors.white)),
-                              Icon(Icons.arrow_forward_ios,color: Colors.white,),
+                              Icon(
+                                Icons.zoom_in,
+                                color: Colors.white,
+                              ),
+                              Text('Check out other apps',
+                                  style:
+                                      GoogleFonts.ubuntu(color: Colors.white)),
+                              Icon(
+                                Icons.arrow_forward_ios,
+                                color: Colors.white,
+                              ),
                             ],
                           ),
                           onPressed: () {
@@ -113,23 +132,40 @@ class _HomePageState extends State<HomePage> {
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: <Widget>[
-                              Icon(BrandIcons.gmail,color: Colors.white,),
-                              Text('Drop an E-Mail',style: GoogleFonts.ubuntu(color: Colors.white)),
-                              Icon(Icons.arrow_forward_ios,color: Colors.white,),
+                              Icon(
+                                BrandIcons.gmail,
+                                color: Colors.white,
+                              ),
+                              Text('Drop an E-Mail',
+                                  style:
+                                      GoogleFonts.ubuntu(color: Colors.white)),
+                              Icon(
+                                Icons.arrow_forward_ios,
+                                color: Colors.white,
+                              ),
                             ],
                           ),
                           onPressed: () {
                             Navigator.pop(context);
-                            launch("mailto:darshanaswath@gmail.com?subject=App: WhatsYou App");
+                            launch(
+                                "mailto:darshanaswath@gmail.com?subject=App: WhatsYou App");
                           },
                         ),
                         CupertinoActionSheetAction(
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: <Widget>[
-                              Icon(Icons.share,color: Colors.white,),
-                              Text('Share App',style: GoogleFonts.ubuntu(color: Colors.white)),
-                              Icon(Icons.arrow_forward_ios,color: Colors.white,),
+                              Icon(
+                                Icons.share,
+                                color: Colors.white,
+                              ),
+                              Text('Share App',
+                                  style:
+                                      GoogleFonts.ubuntu(color: Colors.white)),
+                              Icon(
+                                Icons.arrow_forward_ios,
+                                color: Colors.white,
+                              ),
                             ],
                           ),
                           onPressed: () {
@@ -143,9 +179,18 @@ class _HomePageState extends State<HomePage> {
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: <Widget>[
-                              Icon(Icons.library_books,color: Colors.white,),
-                              Text('Terms and Conditions',style: GoogleFonts.ubuntu(color: Colors.white),),
-                              Icon(Icons.arrow_forward_ios,color: Colors.white,),
+                              Icon(
+                                Icons.library_books,
+                                color: Colors.white,
+                              ),
+                              Text(
+                                'Terms and Conditions',
+                                style: GoogleFonts.ubuntu(color: Colors.white),
+                              ),
+                              Icon(
+                                Icons.arrow_forward_ios,
+                                color: Colors.white,
+                              ),
                             ],
                           ),
                           onPressed: () {
@@ -160,9 +205,17 @@ class _HomePageState extends State<HomePage> {
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: <Widget>[
-                              Icon(Icons.verified_user,color: Colors.white,),
-                              Text('View Licences',style: GoogleFonts.ubuntu(color: Colors.white)),
-                              Icon(Icons.arrow_forward_ios,color: Colors.white,),
+                              Icon(
+                                Icons.verified_user,
+                                color: Colors.white,
+                              ),
+                              Text('View Licences',
+                                  style:
+                                      GoogleFonts.ubuntu(color: Colors.white)),
+                              Icon(
+                                Icons.arrow_forward_ios,
+                                color: Colors.white,
+                              ),
                             ],
                           ),
                           onPressed: () {
@@ -177,9 +230,17 @@ class _HomePageState extends State<HomePage> {
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: <Widget>[
-                              Icon(Icons.feedback,color: Colors.white,),
-                              Text('Feedback',style: GoogleFonts.ubuntu(color: Colors.white)),
-                              Icon(Icons.arrow_forward_ios,color: Colors.white,),
+                              Icon(
+                                Icons.feedback,
+                                color: Colors.white,
+                              ),
+                              Text('Feedback',
+                                  style:
+                                      GoogleFonts.ubuntu(color: Colors.white)),
+                              Icon(
+                                Icons.arrow_forward_ios,
+                                color: Colors.white,
+                              ),
                             ],
                           ),
                           onPressed: () {
@@ -886,6 +947,113 @@ class _HomePageState extends State<HomePage> {
                         ),
                       ),
                       Padding(
+                        padding:
+                            const EdgeInsets.only(top: 8.0, left: 8, bottom: 8),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: <Widget>[
+                            Column(
+                              mainAxisAlignment: MainAxisAlignment.start,
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: <Widget>[
+                                DelayedDisplay(
+                                  slidingCurve: Curves.fastLinearToSlowEaseIn,
+                                  child: Text(
+                                    "Data Privacy",
+                                    style: GoogleFonts.ubuntu(
+                                        foreground: Paint()
+                                          ..shader = linearGradient,
+                                        fontSize: 25,
+                                        fontWeight: FontWeight.bold),
+                                  ),
+                                ),
+                                SizedBox(
+                                  height: 5,
+                                ),
+                                DelayedDisplay(
+                                  slidingCurve: Curves.fastLinearToSlowEaseIn,
+                                  child: Text(
+                                    "Cyberthreat stats and maps",
+                                    style: GoogleFonts.ubuntu(
+                                        color: Colors.white38, fontSize: 15),
+                                  ),
+                                ),
+                                Divider(
+                                  color: Colors.white38,
+                                  indent: 1,
+                                  endIndent: 300,
+                                  thickness: 1,
+                                ),
+                              ],
+                            ),
+                            IconButton(
+                              icon: Icon(
+                                Icons.arrow_forward_ios,
+                                color: Colors.white,
+                                size: 18,
+                              ),
+                              onPressed: () {
+                                Navigator.push(
+                                    context,
+                                    CupertinoPageRoute(
+                                        builder: (context) => KP()));
+                              },
+                            ),
+                          ],
+                        ),
+                      ),
+                      Column(
+                        children: <Widget>[
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: <Widget>[],
+                          ),
+                          SizedBox(height: 10),
+                          GestureDetector(
+                              onTap: () {
+                                Navigator.push(
+                                    context,
+                                    CupertinoPageRoute(
+                                        builder: (context) => Maps()));
+                              },
+                              child: Image.asset("assets/icons/map.png")),
+                        ],
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(top: 20, left: 12.0),
+                        child: GestureDetector(
+                          onTap: () {
+                            Navigator.push(
+                                context,
+                                CupertinoPageRoute(
+                                    builder: (context) => Maps()));
+                          },
+                          child: Row(
+                            children: [
+                              Text(
+                                "For In-Detail Stats",
+                                style: GoogleFonts.ubuntu(
+                                    color: Colors.blue,
+                                    fontWeight: FontWeight.w400,
+                                    fontSize: 16),
+                              ),
+                              SizedBox(
+                                width: 7,
+                              ),
+                              Icon(
+                                Icons.arrow_forward,
+                                color: Colors.blue,
+                                size: 16,
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                      SizedBox(
+                        height: 20,
+                      ),
+                      Padding(
                         padding: const EdgeInsets.only(top: 8.0, left: 8),
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -945,7 +1113,7 @@ class _HomePageState extends State<HomePage> {
                         height: 20,
                       ),
                       Padding(
-                        padding: const EdgeInsets.only(bottom: 20.0),
+                        padding: const EdgeInsets.only(bottom: 15.0),
                         child: Wrap(
                           runSpacing: 20.0,
                           spacing: 20.0,

@@ -40,6 +40,7 @@ dependencies:
   delayed_display: ^1.0.3
   expansion_tile_card: ^1.0.3
   flutter_brand_icons: ^1.1.0
+  flutter_inappwebview: ^4.0.0+4
 
 dev_dependencies:
   flutter_test:

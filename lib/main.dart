@@ -1,5 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:whats_you/webpage/webviewpage.dart';
+import 'NewsPage/NewsPageHome.dart';
 import 'home_page.dart';
 
 void main() {
@@ -13,6 +15,9 @@ class MyApp extends StatelessWidget {
     return CupertinoApp(
       title: 'Flutter Demo',
       home: HomePage(),
+      routes: <String, WidgetBuilder> {
+        '/newspage': (BuildContext context) => MyNewsApp(),
+      },
       debugShowCheckedModeBanner: false,
     );
   }

@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:delayed_display/delayed_display.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -10,7 +11,6 @@ import 'package:simple_animations/simple_animations.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:whats_you/Extras/Licences.dart';
 import 'package:whats_you/Extras/TC.dart';
-import 'package:whats_you/NewsPage/NewsPageHome.dart';
 import 'package:whats_you/Presentation/presentation.dart';
 import 'package:whats_you/Webview/attackmap.dart';
 import 'package:whats_you/Widgets/custom_cards.dart';
@@ -919,15 +919,9 @@ class _HomePageState extends State<HomePage> {
                         height: 10,
                       ),
                       InkWell(
-                        onTap: () {
-                          Navigator.push(
-                              context,
-                              CupertinoPageRoute(
-                                  builder: (context) => MyNewsApp()));
-                        },
-                        child: DelayedDisplay(
-                          slidingCurve: Curves.fastLinearToSlowEaseIn,
-                          child: Container(
+                        onTap: () => Navigator.of(context).pushNamed('/newspage'),
+                        child: FadeIn(
+                          5.5, Container(
                             height: 175.0,
                             width: MediaQuery.of(context).size.width,
                             child: customCard("News", "Trending Data Related News",
@@ -1066,7 +1060,10 @@ class _HomePageState extends State<HomePage> {
                                     CupertinoPageRoute(
                                         builder: (context) => Maps()));
                               },
-                              child: Image.asset("assets/icons/map.png")),
+                              child:
+                              Image.asset("assets/icons/map.png")
+//                            CachedNetworkImage(imageUrl: "https://www.comodo.co.in/assets/images/about-us-map1.png",)
+                            ),
                         ],
                       ),
                       Padding(

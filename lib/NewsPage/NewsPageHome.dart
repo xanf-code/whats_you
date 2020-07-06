@@ -42,7 +42,7 @@ class _MyNewsAppState extends State<MyNewsApp> {
 class MyHomePage extends StatelessWidget {
   final Shader linearGradient = LinearGradient(
     colors: <Color>[Color(0xFFec2F4B), Color(0xFF009FFF)],
-  ).createShader(Rect.fromLTWH(0.0, 0.0, 200.0, 70.0));
+  ).createShader(Rect.fromLTWH(0.0, 0.0, 500.0, 70.0));
   @override
   Widget build(BuildContext context) {
     return ChangeNotifierProvider(
@@ -50,6 +50,7 @@ class MyHomePage extends StatelessWidget {
       child: CupertinoPageScaffold(
         backgroundColor: Color(0xFF121212),
         navigationBar: CupertinoNavigationBar(
+          transitionBetweenRoutes: true,
           backgroundColor: Color(0xFF121212),
           middle: Text(
             "WhatsYou News",

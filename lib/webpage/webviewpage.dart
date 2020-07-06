@@ -1,16 +1,13 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:whats_you/NewsPage/NewsPageHome.dart';
 import 'package:whats_you/datamodel/newsmodel.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 
 class NewsWebViewPage extends StatefulWidget {
   final NewsModel newsModel;
-
-
-
   NewsWebViewPage(this.newsModel);
-
   @override
   _NewsWebViewPageState createState() => _NewsWebViewPageState();
 }
@@ -21,10 +18,8 @@ class _NewsWebViewPageState extends State<NewsWebViewPage> {
   final _key = UniqueKey();
   var box;
 
-
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
     _isLoadingPage = true;
   }
@@ -32,6 +27,12 @@ class _NewsWebViewPageState extends State<NewsWebViewPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      floatingActionButton: FloatingActionButton.extended(
+        onPressed: () => Navigator.pop(context),
+        backgroundColor: Colors.black,
+        icon: Icon(CupertinoIcons.back),
+        label: Text("Back to NewsPage"),
+      ),
       backgroundColor: Color(0xFF121212),
       key: _scaffoldKey,
       body: SafeArea(
@@ -40,13 +41,20 @@ class _NewsWebViewPageState extends State<NewsWebViewPage> {
             Column(
               children: <Widget>[
                 Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.center,
                   children: <Widget>[
-                    IconButton(
-                      icon: Icon(Icons.arrow_back,color: Colors.white,),
-                      onPressed: () => Navigator.of(context).pop(),
+                    Padding(
+                      padding: const EdgeInsets.all(15.0),
+                      child: Text(
+                        "News Detail Page",
+                        style: GoogleFonts.ubuntu(
+                            color: Colors.white,
+                            fontWeight: FontWeight.bold,
+                            fontSize: 21),
+                      ),
                     ),
-                    Text("News Detail Page",style: GoogleFonts.ubuntu(color: Colors.white,fontWeight: FontWeight.bold,fontSize: 21),),
+                    Spacer(),
                     _isLoadingPage
                         ? Container(
                             height: 30,

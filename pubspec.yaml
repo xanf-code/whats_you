@@ -41,6 +41,9 @@ dependencies:
   expansion_tile_card: ^1.0.3
   flutter_brand_icons: ^1.1.0
   flutter_inappwebview: ^4.0.0+4
+  provider: ^3.0.0+1
+  hive: ^1.1.1
+  hive_flutter: ^0.2.1
 
 dev_dependencies:
   flutter_test:
@@ -61,6 +64,7 @@ flutter:
   assets:
     - assets/icons/
     - assets/Data/
+    - assets/NewsCard/
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
 

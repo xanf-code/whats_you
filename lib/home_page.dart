@@ -10,8 +10,10 @@ import 'package:simple_animations/simple_animations.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:whats_you/Extras/Licences.dart';
 import 'package:whats_you/Extras/TC.dart';
+import 'package:whats_you/NewsPage/NewsPageHome.dart';
 import 'package:whats_you/Presentation/presentation.dart';
 import 'package:whats_you/Webview/attackmap.dart';
+import 'package:whats_you/Widgets/custom_cards.dart';
 import 'package:whats_you/details/Facebook_details.dart';
 import 'package:whats_you/details/google.dart';
 import 'package:whats_you/details/instagram.dart';
@@ -264,7 +266,7 @@ class _HomePageState extends State<HomePage> {
               ),
             ),
           ),
-          backgroundColor: Color(0xFF132502),
+          backgroundColor: Color(0xFF121212),
           body: Container(
             decoration: BoxDecoration(
                 gradient: LinearGradient(
@@ -891,6 +893,53 @@ class _HomePageState extends State<HomePage> {
                       ),
                       Padding(
                         padding: const EdgeInsets.only(top: 8.0, left: 8),
+                        child: Container(
+                          child: DelayedDisplay(
+                            slidingCurve: Curves.fastLinearToSlowEaseIn,
+                            child: Text(
+                              "Trending News",
+                              style: GoogleFonts.ubuntu(
+                                  foreground: Paint()..shader = linearGradient,
+                                  fontSize: 25,
+                                  fontWeight: FontWeight.bold),
+                            ),
+                          ),
+                        ),
+                      ),
+                      DelayedDisplay(
+                        slidingCurve: Curves.fastLinearToSlowEaseIn,
+                        child: Divider(
+                          color: Colors.white38,
+                          indent: 10,
+                          endIndent: 390,
+                          thickness: 1,
+                        ),
+                      ),
+                      SizedBox(
+                        height: 10,
+                      ),
+                      InkWell(
+                        onTap: () {
+                          Navigator.push(
+                              context,
+                              CupertinoPageRoute(
+                                  builder: (context) => MyNewsApp()));
+                        },
+                        child: DelayedDisplay(
+                          slidingCurve: Curves.fastLinearToSlowEaseIn,
+                          child: Container(
+                            height: 175.0,
+                            width: MediaQuery.of(context).size.width,
+                            child: customCard("News", "Trending Data Related News",
+                                Icons.trending_up, "https://images.newscientist.com/wp-content/uploads/2016/03/internet-copy.gif"),
+                          ),
+                        ),
+                      ),
+                      SizedBox(
+                        height: 18,
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(left: 8),
                         child: Container(
                           child: DelayedDisplay(
                             slidingCurve: Curves.fastLinearToSlowEaseIn,

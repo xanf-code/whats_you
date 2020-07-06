@@ -1,6 +1,5 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:whats_you/util/getnewsitem.dart';
 import 'package:whats_you/datamodel/newsmodel.dart';
@@ -40,7 +39,17 @@ class NewsCardContainer extends StatelessWidget {
               return Text("${snapshot.error}");
             }
             // By default, show a loading spinner.
-            return Center(child: CircularProgressIndicator());
+            return Center(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  CircularProgressIndicator(),
+                  SizedBox(height: 10),
+                  Text("Loading",style: GoogleFonts.ubuntu(fontWeight: FontWeight.bold),),
+                ],
+              ),
+            );
           },
         ),
       ),
@@ -88,9 +97,10 @@ class CardListView extends StatelessWidget {
                           model.title,
                           textAlign: TextAlign.justify,
                           style: GoogleFonts.ubuntu(
-                              color: model.lightMutedColor,
-                              fontWeight: FontWeight.w500,
-                              fontSize: 20,),
+                            color: model.lightMutedColor,
+                            fontWeight: FontWeight.w500,
+                            fontSize: 20,
+                          ),
                         )),
                   ),
                 ),

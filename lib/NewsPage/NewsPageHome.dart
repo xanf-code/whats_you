@@ -13,33 +13,9 @@ Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   final appDocumentDir = await path_provider.getApplicationDocumentsDirectory();
   Hive.init(appDocumentDir.path);
-  runApp(MyNewsApp());
 }
 
-class MyNewsApp extends StatefulWidget {
-  // This widget is the root of your application.
-  @override
-  _MyNewsAppState createState() => _MyNewsAppState();
-}
-
-class _MyNewsAppState extends State<MyNewsApp> {
-  @override
-  Widget build(BuildContext context) {
-    return CupertinoApp(
-      title: 'Daily News',
-      debugShowCheckedModeBanner: false,
-      home: MyHomePage(),
-    );
-  }
-
-  @override
-  void dispose() {
-    Hive.close();
-    super.dispose();
-  }
-}
-
-class MyHomePage extends StatelessWidget {
+class MyNewsPage extends StatelessWidget {
   final Shader linearGradient = LinearGradient(
     colors: <Color>[Color(0xFFec2F4B), Color(0xFF009FFF)],
   ).createShader(Rect.fromLTWH(0.0, 0.0, 500.0, 70.0));
@@ -50,7 +26,7 @@ class MyHomePage extends StatelessWidget {
       child: CupertinoPageScaffold(
         backgroundColor: Color(0xFF121212),
         navigationBar: CupertinoNavigationBar(
-          transitionBetweenRoutes: true,
+          leading: GestureDetector(onTap: ()=> Navigator.pop(context),child: Icon(CupertinoIcons.back,color: Colors.white)),
           backgroundColor: Color(0xFF121212),
           middle: Text(
             "WhatsYou News",

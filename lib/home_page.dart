@@ -993,7 +993,7 @@ class _HomePageState extends State<HomePage> {
                           text:
                               "We’re entering a new world in which data is more important than software.",
                           image:
-                              "https://images.squarespace-cdn.com/content/v1/593460e85016e11115df644f/1580849788792-R8RX5ZQ3USAB04T8TI7Y/ke17ZwdGBToddI8pDm48kFQQgP34qnCpeHaeAOzTt7pZw-zPPgdn4jUwVcJE1ZvWQUxwkmyExglNqGp0IvTJZamWLI2zvYWH8K3-s_4yszcp2ryTI0HqTOaaUohrI8PIvwpK0aFuhG0GtLLHqvbV4raqY38tdDiF-KTEvoUH9G4/GD_Follow.gif",
+                              "https://i.gifer.com/MXfm.gif",
                           title: "Why data?",
                         ),
                       ),
@@ -1006,7 +1006,7 @@ class _HomePageState extends State<HomePage> {
                           text:
                               "Goal is to turn data into Information, and Information into Insight.",
                           image:
-                              "https://www.intelligentvc.co.uk/wp-content/uploads/2015/11/animat-search-color.gif",
+                              "https://media-s3-us-east-1.ceros.com/vox-global/images/2018/08/16/b3d734f27a97756b3417bca56a105c98/graphic3.gif",
                           title: "Why is data important?",
                         ),
                       ),

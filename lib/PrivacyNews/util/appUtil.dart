@@ -12,5 +12,5 @@ const userImage ='https://content-static.upwork.com/uploads/2014/10/01073429/pro
 const newsApiKey= '3967de67cdf44876bd374b9c83e08f55';
 
 String getNewsUrl(String category){
-  return 'https://newsapi.org/v2/top-headlines?country=ca&category=$category&apiKey=$newsApiKey';
+  return 'https://newsapi.org/v2/everything?q=dataprivacy&apiKey=$newsApiKey';
 }

@@ -10,32 +10,11 @@ class TabBarData extends ChangeNotifier {
         tabTitle: 'Latest',
         isSelected: true,
         newsUrl:
-            'https://newsapi.org/v2/top-headlines?country=ca&apiKey=$newsApiKey'),
+            'https://newsapi.org/v2/everything?q=privacy&apiKey=$newsApiKey'),
     TabBarModel(
-        tabTitle: 'Business',
+        tabTitle: 'Data Privacy',
         isSelected: false,
-        newsUrl: getNewsUrl('Business')),
-
-    TabBarModel(
-        tabTitle: 'Entertainment',
-        isSelected: false,
-        newsUrl: getNewsUrl('Entertainment')),
-    TabBarModel(
-        tabTitle: 'Sports',
-        isSelected: false,
-        newsUrl:getNewsUrl('Sports')),
-    TabBarModel(
-        tabTitle: 'Technology',
-        isSelected: false,
-        newsUrl:getNewsUrl('Technology')),
-    TabBarModel(
-        tabTitle: 'Health',
-        isSelected: false,
-        newsUrl:getNewsUrl('Health')),
-    TabBarModel(
-        tabTitle: 'Science',
-        isSelected: false,
-        newsUrl:getNewsUrl('Science')),
+        newsUrl: getNewsUrl('Privacy')),
   ];
 
 

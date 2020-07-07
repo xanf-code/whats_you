@@ -275,27 +275,27 @@ class _HomePageState extends State<HomePage> {
                     end: Alignment.bottomCenter,
                     stops: [0.3, 0.7])),
             child: SafeArea(
-              child: Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: SingleChildScrollView(
-                  physics: BouncingScrollPhysics(),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: <Widget>[
-                      SizedBox(
-                        height: 20,
-                      ),
-                      InkWell(
-                        onTap: () {
-                          Navigator.push(
-                              context,
-                              CupertinoPageRoute(
-                                  builder: (context) => FacebookDetails()));
-                        },
-                        child: FadeIn(
-                          1,
-                          Container(
+              child: SingleChildScrollView(
+                physics: BouncingScrollPhysics(),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: <Widget>[
+                    SizedBox(
+                      height: 20,
+                    ),
+                    InkWell(
+                      onTap: () {
+                        Navigator.push(
+                            context,
+                            CupertinoPageRoute(
+                                builder: (context) => FacebookDetails()));
+                      },
+                      child: FadeIn(
+                        1,
+                        Padding(
+                          padding: const EdgeInsets.only(left:8.0,right: 8,bottom: 8),
+                          child: Container(
                             height: 150,
                             width: double.infinity,
                             child: Stack(
@@ -404,19 +404,22 @@ class _HomePageState extends State<HomePage> {
                           ),
                         ),
                       ),
-                      SizedBox(
-                        height: 20,
-                      ),
-                      InkWell(
-                        onTap: () {
-                          Navigator.push(
-                              context,
-                              CupertinoPageRoute(
-                                  builder: (context) => TwitterDetails()));
-                        },
-                        child: FadeIn(
-                          2,
-                          Container(
+                    ),
+                    SizedBox(
+                      height: 20,
+                    ),
+                    InkWell(
+                      onTap: () {
+                        Navigator.push(
+                            context,
+                            CupertinoPageRoute(
+                                builder: (context) => TwitterDetails()));
+                      },
+                      child: FadeIn(
+                        2,
+                        Padding(
+                          padding: const EdgeInsets.only(left:8.0,right: 8,bottom: 8),
+                          child: Container(
                             height: 150,
                             width: double.infinity,
                             child: Stack(
@@ -525,19 +528,22 @@ class _HomePageState extends State<HomePage> {
                           ),
                         ),
                       ),
-                      SizedBox(
-                        height: 20,
-                      ),
-                      InkWell(
-                        onTap: () {
-                          Navigator.push(
-                              context,
-                              CupertinoPageRoute(
-                                  builder: (context) => InstagramDetails()));
-                        },
-                        child: FadeIn(
-                          3,
-                          Container(
+                    ),
+                    SizedBox(
+                      height: 20,
+                    ),
+                    InkWell(
+                      onTap: () {
+                        Navigator.push(
+                            context,
+                            CupertinoPageRoute(
+                                builder: (context) => InstagramDetails()));
+                      },
+                      child: FadeIn(
+                        3,
+                        Padding(
+                          padding: const EdgeInsets.only(left:8.0,right: 8,bottom: 8),
+                          child: Container(
                             height: 150,
                             width: double.infinity,
                             child: Stack(
@@ -646,19 +652,22 @@ class _HomePageState extends State<HomePage> {
                           ),
                         ),
                       ),
-                      SizedBox(
-                        height: 20,
-                      ),
-                      InkWell(
-                        onTap: () {
-                          Navigator.push(
-                              context,
-                              CupertinoPageRoute(
-                                  builder: (context) => YoutubeDetails()));
-                        },
-                        child: FadeIn(
-                          4,
-                          Container(
+                    ),
+                    SizedBox(
+                      height: 20,
+                    ),
+                    InkWell(
+                      onTap: () {
+                        Navigator.push(
+                            context,
+                            CupertinoPageRoute(
+                                builder: (context) => YoutubeDetails()));
+                      },
+                      child: FadeIn(
+                        4,
+                        Padding(
+                          padding: const EdgeInsets.only(left:8.0,right: 8,bottom: 8),
+                          child: Container(
                             height: 150,
                             width: double.infinity,
                             child: Stack(
@@ -767,19 +776,22 @@ class _HomePageState extends State<HomePage> {
                           ),
                         ),
                       ),
-                      SizedBox(
-                        height: 20,
-                      ),
-                      InkWell(
-                        onTap: () {
-                          Navigator.push(
-                              context,
-                              CupertinoPageRoute(
-                                  builder: (context) => GoogleDetails()));
-                        },
-                        child: FadeIn(
-                          5,
-                          Container(
+                    ),
+                    SizedBox(
+                      height: 20,
+                    ),
+                    InkWell(
+                      onTap: () {
+                        Navigator.push(
+                            context,
+                            CupertinoPageRoute(
+                                builder: (context) => GoogleDetails()));
+                      },
+                      child: FadeIn(
+                        5,
+                        Padding(
+                          padding: const EdgeInsets.only(left:8.0,right: 8,bottom: 8),
+                          child: Container(
                             height: 150,
                             width: double.infinity,
                             child: Stack(
@@ -888,80 +900,96 @@ class _HomePageState extends State<HomePage> {
                           ),
                         ),
                       ),
-                      SizedBox(
-                        height: 20,
+                    ),
+                    SizedBox(
+                      height: 20,
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(top: 8.0, left: 15),
+                      child: Container(
+                        child: DelayedDisplay(
+                          slidingCurve: Curves.fastLinearToSlowEaseIn,
+                          child: Text(
+                            "Trending News",
+                            style: GoogleFonts.ubuntu(
+                                foreground: Paint()..shader = linearGradient,
+                                fontSize: 25,
+                                fontWeight: FontWeight.bold),
+                          ),
+                        ),
                       ),
-                      Padding(
-                        padding: const EdgeInsets.only(top: 8.0, left: 8),
-                        child: Container(
-                          child: DelayedDisplay(
-                            slidingCurve: Curves.fastLinearToSlowEaseIn,
-                            child: Text(
-                              "Trending News",
-                              style: GoogleFonts.ubuntu(
-                                  foreground: Paint()..shader = linearGradient,
-                                  fontSize: 25,
-                                  fontWeight: FontWeight.bold),
+                    ),
+                    DelayedDisplay(
+                      slidingCurve: Curves.fastLinearToSlowEaseIn,
+                      child: Divider(
+                        color: Colors.white38,
+                        indent: 19,
+                        endIndent: 360,
+                        thickness: 1,
+                      ),
+                    ),
+                    SizedBox(
+                      height: 19,
+                    ),
+                    FadeIn(
+                      5.5, Row(
+                        children: [
+                          InkWell(
+                            onTap: () => Navigator.of(context).pushNamed('/newspage'),
+                            child: Container(
+                              height: 180,
+                              width: MediaQuery.of(context).size.width * 0.5,
+                              child: customCard("News", "Trending Data Related News",
+                                  Icons.trending_up, "https://images.newscientist.com/wp-content/uploads/2016/03/internet-copy.gif"),
                             ),
                           ),
-                        ),
-                      ),
-                      DelayedDisplay(
-                        slidingCurve: Curves.fastLinearToSlowEaseIn,
-                        child: Divider(
-                          color: Colors.white38,
-                          indent: 10,
-                          endIndent: 390,
-                          thickness: 1,
-                        ),
-                      ),
-                      SizedBox(
-                        height: 10,
-                      ),
-                      InkWell(
-                        onTap: () => Navigator.of(context).pushNamed('/newspage'),
-                        child: FadeIn(
-                          5.5, Container(
-                            height: 175.0,
-                            width: MediaQuery.of(context).size.width,
-                            child: customCard("News", "Trending Data Related News",
-                                Icons.trending_up, "https://images.newscientist.com/wp-content/uploads/2016/03/internet-copy.gif"),
-                          ),
-                        ),
-                      ),
-                      SizedBox(
-                        height: 18,
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.only(left: 8),
-                        child: Container(
-                          child: DelayedDisplay(
-                            slidingCurve: Curves.fastLinearToSlowEaseIn,
-                            child: Text(
-                              "Data FAQ",
-                              style: GoogleFonts.ubuntu(
-                                  foreground: Paint()..shader = linearGradient,
-                                  fontSize: 25,
-                                  fontWeight: FontWeight.bold),
+                          InkWell(
+                            onTap: () => Navigator.of(context).pushNamed('/privacypage'),
+                            child: Container(
+                              height: 180,
+                              width: MediaQuery.of(context).size.width * 0.5,
+                              child: customCard("Privacy", "Trending Privacy Related News",
+                                  Icons.security, "https://content.fortune.com/wp-content/uploads/2018/11/pri12_finalwider.gif"),
                             ),
                           ),
+                        ],
+                      ),
+                    ),
+                    SizedBox(
+                      height: 18,
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(left: 15),
+                      child: Container(
+                        child: DelayedDisplay(
+                          slidingCurve: Curves.fastLinearToSlowEaseIn,
+                          child: Text(
+                            "Data FAQ",
+                            style: GoogleFonts.ubuntu(
+                                foreground: Paint()..shader = linearGradient,
+                                fontSize: 25,
+                                fontWeight: FontWeight.bold),
+                          ),
                         ),
                       ),
-                      DelayedDisplay(
-                        slidingCurve: Curves.fastLinearToSlowEaseIn,
-                        child: Divider(
-                          color: Colors.white38,
-                          indent: 10,
-                          endIndent: 390,
-                          thickness: 1,
-                        ),
+                    ),
+                    DelayedDisplay(
+                      slidingCurve: Curves.fastLinearToSlowEaseIn,
+                      child: Divider(
+                        color: Colors.white38,
+                        indent: 19,
+                        endIndent: 360,
+                        thickness: 1,
                       ),
-                      SizedBox(
-                        height: 20,
-                      ),
-                      FadeIn(
-                        6,
-                        FAQCard(
+                    ),
+                    SizedBox(
+                      height: 20,
+                    ),
+                    FadeIn(
+                      6,
+                      Padding(
+                        padding: const EdgeInsets.only(left:8.0,right: 8),
+                        child: FAQCard(
                           text:
                               "We’re entering a new world in which data is more important than software.",
                           image:
@@ -969,9 +997,12 @@ class _HomePageState extends State<HomePage> {
                           title: "Why data?",
                         ),
                       ),
-                      FadeIn(
-                        7,
-                        FAQCard(
+                    ),
+                    FadeIn(
+                      7,
+                      Padding(
+                        padding: const EdgeInsets.only(left:8.0,right: 8),
+                        child: FAQCard(
                           text:
                               "Goal is to turn data into Information, and Information into Insight.",
                           image:
@@ -979,9 +1010,12 @@ class _HomePageState extends State<HomePage> {
                           title: "Why is data important?",
                         ),
                       ),
-                      FadeIn(
-                        8,
-                        FAQCard(
+                    ),
+                    FadeIn(
+                      8,
+                      Padding(
+                        padding: const EdgeInsets.only(left:8.0,right: 8),
+                        child: FAQCard(
                           text: "Too Much.",
                           image:
                               "https://media1.giphy.com/media/UTjmeapJahb8asynPo/giphy.gif",
@@ -989,205 +1023,199 @@ class _HomePageState extends State<HomePage> {
                               "How much of my personal information is available online and to the public?",
                         ),
                       ),
-                      Padding(
-                        padding:
-                            const EdgeInsets.only(top: 8.0, left: 8, bottom: 8),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: <Widget>[
-                            Column(
-                              mainAxisAlignment: MainAxisAlignment.start,
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: <Widget>[
-                                DelayedDisplay(
-                                  slidingCurve: Curves.fastLinearToSlowEaseIn,
-                                  child: Text(
-                                    "Data Privacy",
-                                    style: GoogleFonts.ubuntu(
-                                        foreground: Paint()
-                                          ..shader = linearGradient,
-                                        fontSize: 25,
-                                        fontWeight: FontWeight.bold),
-                                  ),
-                                ),
-                                SizedBox(
-                                  height: 5,
-                                ),
-                                DelayedDisplay(
-                                  slidingCurve: Curves.fastLinearToSlowEaseIn,
-                                  child: Text(
-                                    "Cyberthreat stats and maps",
-                                    style: GoogleFonts.ubuntu(
-                                        color: Colors.white38, fontSize: 15),
-                                  ),
-                                ),
-                                Divider(
-                                  color: Colors.white38,
-                                  indent: 1,
-                                  endIndent: 300,
-                                  thickness: 1,
-                                ),
-                              ],
-                            ),
-                            IconButton(
-                              icon: Icon(
-                                Icons.arrow_forward_ios,
-                                color: Colors.white,
-                                size: 18,
-                              ),
-                              onPressed: () {
-                                Navigator.push(
-                                    context,
-                                    CupertinoPageRoute(
-                                        builder: (context) => KP()));
-                              },
-                            ),
-                          ],
-                        ),
-                      ),
-                      Column(
+                    ),
+                    Padding(
+                      padding:
+                          const EdgeInsets.only(top: 8.0, left: 15, bottom: 15),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        crossAxisAlignment: CrossAxisAlignment.start,
                         children: <Widget>[
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: <Widget>[],
-                          ),
-                          SizedBox(height: 10),
-                          GestureDetector(
-                              onTap: () {
-                                Navigator.push(
-                                    context,
-                                    CupertinoPageRoute(
-                                        builder: (context) => Maps()));
-                              },
-                              child:
-                              Image.asset("assets/icons/map.png")
-//                            CachedNetworkImage(imageUrl: "https://www.comodo.co.in/assets/images/about-us-map1.png",)
-                            ),
-                        ],
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.only(top: 20, left: 12.0),
-                        child: GestureDetector(
-                          onTap: () {
-                            Navigator.push(
-                                context,
-                                CupertinoPageRoute(
-                                    builder: (context) => Maps()));
-                          },
-                          child: Row(
-                            children: [
-                              Text(
-                                "For In-Detail Stats",
-                                style: GoogleFonts.ubuntu(
-                                    color: Colors.blue,
-                                    fontWeight: FontWeight.w400,
-                                    fontSize: 16),
+                          Column(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: <Widget>[
+                              DelayedDisplay(
+                                slidingCurve: Curves.fastLinearToSlowEaseIn,
+                                child: Text(
+                                  "Data Privacy",
+                                  style: GoogleFonts.ubuntu(
+                                      foreground: Paint()
+                                        ..shader = linearGradient,
+                                      fontSize: 25,
+                                      fontWeight: FontWeight.bold),
+                                ),
                               ),
                               SizedBox(
-                                width: 7,
+                                height: 5,
                               ),
-                              Icon(
-                                Icons.arrow_forward,
-                                color: Colors.blue,
-                                size: 16,
+                              DelayedDisplay(
+                                slidingCurve: Curves.fastLinearToSlowEaseIn,
+                                child: Text(
+                                  "Cyberthreat stats and maps",
+                                  style: GoogleFonts.ubuntu(
+                                      color: Colors.white38, fontSize: 15),
+                                ),
                               ),
                             ],
                           ),
-                        ),
+                          IconButton(
+                            icon: Icon(
+                              Icons.arrow_forward_ios,
+                              color: Colors.white,
+                              size: 18,
+                            ),
+                            onPressed: () {
+                              Navigator.push(
+                                  context,
+                                  CupertinoPageRoute(
+                                      builder: (context) => KP()));
+                            },
+                          ),
+                        ],
                       ),
-                      SizedBox(
-                        height: 20,
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.only(top: 8.0, left: 8),
-                        child: Row(
+                    ),
+                    Column(
+                      children: <Widget>[
+                        Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: <Widget>[
-                            Column(
-                              mainAxisAlignment: MainAxisAlignment.start,
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: <Widget>[
-                                DelayedDisplay(
-                                  slidingCurve: Curves.fastLinearToSlowEaseIn,
-                                  child: Text(
-                                    "Data Collection Evolution",
-                                    style: GoogleFonts.ubuntu(
-                                        foreground: Paint()
-                                          ..shader = linearGradient,
-                                        fontSize: 25,
-                                        fontWeight: FontWeight.bold),
-                                  ),
-                                ),
-                                SizedBox(
-                                  height: 5,
-                                ),
-                                DelayedDisplay(
-                                  slidingCurve: Curves.fastLinearToSlowEaseIn,
-                                  child: Text(
-                                    "Amount of Data generated on the Internet",
-                                    style: GoogleFonts.ubuntu(
-                                        color: Colors.white38, fontSize: 15),
-                                  ),
-                                ),
-                                Divider(
-                                  color: Colors.white38,
-                                  indent: 1,
-                                  endIndent: 300,
-                                  thickness: 1,
-                                ),
-                              ],
+                          children: <Widget>[],
+                        ),
+                        SizedBox(height: 10),
+                        GestureDetector(
+                            onTap: () {
+                              Navigator.push(
+                                  context,
+                                  CupertinoPageRoute(
+                                      builder: (context) => Maps()));
+                            },
+                            child:
+                            Padding(
+                              padding: const EdgeInsets.only(left:8.0,right: 8),
+                              child: Image.asset("assets/icons/map.png"),
+                            )
+//                            CachedNetworkImage(imageUrl: "https://www.comodo.co.in/assets/images/about-us-map1.png",)
+                          ),
+                      ],
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(top: 20, left: 15.0),
+                      child: GestureDetector(
+                        onTap: () {
+                          Navigator.push(
+                              context,
+                              CupertinoPageRoute(
+                                  builder: (context) => Maps()));
+                        },
+                        child: Row(
+                          children: [
+                            Text(
+                              "For In-Detail Stats",
+                              style: GoogleFonts.ubuntu(
+                                  color: Colors.blue,
+                                  fontWeight: FontWeight.w400,
+                                  fontSize: 16),
                             ),
-                            IconButton(
-                              icon: Icon(
-                                Icons.arrow_forward_ios,
-                                color: Colors.white,
-                                size: 18,
+                            SizedBox(
+                              width: 7,
+                            ),
+                            Icon(
+                              Icons.arrow_forward,
+                              color: Colors.blue,
+                              size: 16,
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                    SizedBox(
+                      height: 20,
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(top: 8.0, left: 15,bottom: 15),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: <Widget>[
+                          Column(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: <Widget>[
+                              DelayedDisplay(
+                                slidingCurve: Curves.fastLinearToSlowEaseIn,
+                                child: Text(
+                                  "Data Collection Evolution",
+                                  style: GoogleFonts.ubuntu(
+                                      foreground: Paint()
+                                        ..shader = linearGradient,
+                                      fontSize: 25,
+                                      fontWeight: FontWeight.bold),
+                                ),
                               ),
-                              onPressed: () {
-                                Navigator.push(
-                                    context,
-                                    CupertinoPageRoute(
-                                        builder: (context) => Presentation()));
-                              },
+                              SizedBox(
+                                height: 5,
+                              ),
+                              DelayedDisplay(
+                                slidingCurve: Curves.fastLinearToSlowEaseIn,
+                                child: Text(
+                                  "Amount of Data generated on the Internet",
+                                  style: GoogleFonts.ubuntu(
+                                      color: Colors.white38, fontSize: 15),
+                                ),
+                              ),
+                            ],
+                          ),
+                          IconButton(
+                            icon: Icon(
+                              Icons.arrow_forward_ios,
+                              color: Colors.white,
+                              size: 18,
                             ),
-                          ],
-                        ),
+                            onPressed: () {
+                              Navigator.push(
+                                  context,
+                                  CupertinoPageRoute(
+                                      builder: (context) => Presentation()));
+                            },
+                          ),
+                        ],
                       ),
-                      SizedBox(
-                        height: 20,
+                    ),
+                    SizedBox(
+                      height: 20,
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(bottom: 15.0,left: 15,right: 15),
+                      child: Wrap(
+                        runSpacing: 20.0,
+                        spacing: 20.0,
+                        children: <Widget>[
+                          ChartCard(
+                              title: "Data Per Day",
+                              subtitle: "1997",
+                              iconColor: Color(0xFFFF8C00),
+                              number: "100 GB"),
+                          ChartCard(
+                              title: "Data Per Hour",
+                              subtitle: "2002",
+                              iconColor: Color(0xFFFF8C00),
+                              number: "100 GB"),
+                          ChartCard(
+                              title: "Data Per Day",
+                              subtitle: "2016",
+                              iconColor: Color(0xFFFF8C00),
+                              number: "28,875 GB"),
+                          ChartCard(
+                              title: "Data Per Day",
+                              subtitle: "2020",
+                              iconColor: Color(0xFFFF8C00),
+                              number: "2.05 QB"),
+                        ],
                       ),
-                      Padding(
-                        padding: const EdgeInsets.only(bottom: 15.0),
-                        child: Wrap(
-                          runSpacing: 20.0,
-                          spacing: 20.0,
-                          children: <Widget>[
-                            ChartCard(
-                                title: "Data Per Day",
-                                subtitle: "1997",
-                                iconColor: Color(0xFFFF8C00),
-                                number: "100 GB"),
-                            ChartCard(
-                                title: "Data Per Hour",
-                                subtitle: "2002",
-                                iconColor: Color(0xFFFF8C00),
-                                number: "100 GB"),
-                            ChartCard(
-                                title: "Data Per Day",
-                                subtitle: "2016",
-                                iconColor: Color(0xFFFF8C00),
-                                number: "28,875 GB"),
-                            ChartCard(
-                                title: "Data Per Day",
-                                subtitle: "2020",
-                                iconColor: Color(0xFFFF8C00),
-                                number: "2.05 QB"),
-                          ],
-                        ),
-                      ),
-                      Center(
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(bottom: 15.0),
+                      child: Center(
                         child: Text(
                           "We demand privacy, yet we glorify those that break into computers.",
                           maxLines: 1,
@@ -1197,9 +1225,9 @@ class _HomePageState extends State<HomePage> {
                             fontSize: 11,
                           ),
                         ),
-                      )
-                    ],
-                  ),
+                      ),
+                    )
+                  ],
                 ),
               ),
             ),

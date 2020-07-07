@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:whats_you/PrivacyNews/PrivacyPageHome.dart';
 import 'NewsPage/NewsPageHome.dart';
 import 'home_page.dart';
 
@@ -17,6 +18,7 @@ class MyApp extends StatelessWidget {
       routes: <String, WidgetBuilder> {
         '/home' :  (BuildContext context) => HomePage(),
         '/newspage': (BuildContext context) => MyNewsPage(),
+        '/privacypage': (BuildContext context) => MyPrivacyPage(),
       },
       debugShowCheckedModeBanner: false,
     );

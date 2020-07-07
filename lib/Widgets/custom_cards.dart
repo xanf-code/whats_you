@@ -27,7 +27,7 @@ Widget customCard(String title, String spots, icon, String img) {
           children: <Widget>[
             Icon(
               icon,
-              size: 40.0,
+              size: 30.0,
               color: Colors.white,
             ),
             Column(

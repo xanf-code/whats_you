@@ -46,7 +46,7 @@ class NewsCardContainer extends StatelessWidget {
                 children: [
                   CircularProgressIndicator(),
                   SizedBox(height: 10),
-                  Text("Loading",style: GoogleFonts.ubuntu(fontWeight: FontWeight.bold),),
+                  Text("Loading",style: GoogleFonts.ubuntu(fontWeight: FontWeight.bold,color: Colors.white),),
                 ],
               ),
             );

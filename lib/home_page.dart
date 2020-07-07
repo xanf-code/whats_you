@@ -35,6 +35,11 @@ class _HomePageState extends State<HomePage> {
   ).createShader(Rect.fromLTWH(0.0, 0.0, 200.0, 70.0));
 
   @override
+  void initState() {
+    super.initState();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return WillPopScope(
       onWillPop: () {

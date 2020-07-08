@@ -298,7 +298,8 @@ class _HomePageState extends State<HomePage> {
                       child: FadeIn(
                         1,
                         Padding(
-                          padding: const EdgeInsets.only(left:8.0,right: 8,bottom: 8),
+                          padding: const EdgeInsets.only(
+                              left: 8.0, right: 8, bottom: 8),
                           child: Container(
                             height: 150,
                             width: double.infinity,
@@ -422,7 +423,8 @@ class _HomePageState extends State<HomePage> {
                       child: FadeIn(
                         2,
                         Padding(
-                          padding: const EdgeInsets.only(left:8.0,right: 8,bottom: 8),
+                          padding: const EdgeInsets.only(
+                              left: 8.0, right: 8, bottom: 8),
                           child: Container(
                             height: 150,
                             width: double.infinity,
@@ -546,7 +548,8 @@ class _HomePageState extends State<HomePage> {
                       child: FadeIn(
                         3,
                         Padding(
-                          padding: const EdgeInsets.only(left:8.0,right: 8,bottom: 8),
+                          padding: const EdgeInsets.only(
+                              left: 8.0, right: 8, bottom: 8),
                           child: Container(
                             height: 150,
                             width: double.infinity,
@@ -670,7 +673,8 @@ class _HomePageState extends State<HomePage> {
                       child: FadeIn(
                         4,
                         Padding(
-                          padding: const EdgeInsets.only(left:8.0,right: 8,bottom: 8),
+                          padding: const EdgeInsets.only(
+                              left: 8.0, right: 8, bottom: 8),
                           child: Container(
                             height: 150,
                             width: double.infinity,
@@ -794,7 +798,8 @@ class _HomePageState extends State<HomePage> {
                       child: FadeIn(
                         5,
                         Padding(
-                          padding: const EdgeInsets.only(left:8.0,right: 8,bottom: 8),
+                          padding: const EdgeInsets.only(
+                              left: 8.0, right: 8, bottom: 8),
                           child: Container(
                             height: 150,
                             width: double.infinity,
@@ -936,37 +941,52 @@ class _HomePageState extends State<HomePage> {
                       height: 19,
                     ),
                     FadeIn(
-                      5.5, Column(
+                      5.5,
+                      Column(
                         children: [
                           Row(
                             children: [
                               InkWell(
-                                onTap: () => Navigator.of(context).pushNamed('/newspage'),
+                                onTap: () => Navigator.of(context)
+                                    .pushNamed('/newspage'),
                                 child: Container(
                                   height: 180,
-                                  width: MediaQuery.of(context).size.width * 0.5,
-                                  child: customCard("News", "Trending Data Related News",
-                                      Icons.trending_up, "https://images.newscientist.com/wp-content/uploads/2016/03/internet-copy.gif"),
+                                  width:
+                                      MediaQuery.of(context).size.width * 0.5,
+                                  child: customCard(
+                                      "News",
+                                      "Trending Data Related News",
+                                      Icons.trending_up,
+                                      "https://cdn.dribbble.com/users/1751513/screenshots/9115861/media/a324a2f1cfed170e02f1dda3d4b81c22.png"),
                                 ),
                               ),
                               InkWell(
-                                onTap: () => Navigator.of(context).pushNamed('/privacypage'),
+                                onTap: () => Navigator.of(context)
+                                    .pushNamed('/privacypage'),
                                 child: Container(
                                   height: 180,
-                                  width: MediaQuery.of(context).size.width * 0.5,
-                                  child: customCard("Privacy", "Trending Privacy Related News",
-                                      Icons.security, "https://content.fortune.com/wp-content/uploads/2018/11/pri12_finalwider.gif"),
+                                  width:
+                                      MediaQuery.of(context).size.width * 0.5,
+                                  child: customCard(
+                                      "Privacy",
+                                      "Trending Privacy Related News",
+                                      Icons.security,
+                                      "https://cdn.dribbble.com/users/816927/screenshots/5726320/grinch1.png"),
                                 ),
                               ),
                             ],
                           ),
                           InkWell(
-                            onTap: () => Navigator.of(context).pushNamed('/databreach'),
+                            onTap: () =>
+                                Navigator.of(context).pushNamed('/databreach'),
                             child: Container(
                               height: 180,
                               width: MediaQuery.of(context).size.width,
-                              child: customCard("Data Breach Record", "Live Data Breach Record",
-                                  Icons.trending_up, "https://proseful-prd-images.s3.amazonaws.com/blogs/df373414-e77c-4d3d-8c7b-35cf55f23396/images/43bc1e57-5fef-4460-bf08-4f79f3654555.gif"),
+                              child: customCard(
+                                  "Data Breach Record",
+                                  "Live Data Breach Record",
+                                  Icons.trending_up,
+                                  "https://proseful-prd-images.s3.amazonaws.com/blogs/df373414-e77c-4d3d-8c7b-35cf55f23396/images/43bc1e57-5fef-4460-bf08-4f79f3654555.gif"),
                             ),
                           ),
                         ],
@@ -1005,12 +1025,11 @@ class _HomePageState extends State<HomePage> {
                     FadeIn(
                       6,
                       Padding(
-                        padding: const EdgeInsets.only(left:8.0,right: 8),
+                        padding: const EdgeInsets.only(left: 8.0, right: 8),
                         child: FAQCard(
                           text:
                               "We’re entering a new world in which data is more important than software.",
-                          image:
-                              "https://i.gifer.com/MXfm.gif",
+                          image: "https://i.gifer.com/MXfm.gif",
                           title: "Why data?",
                         ),
                       ),
@@ -1018,7 +1037,7 @@ class _HomePageState extends State<HomePage> {
                     FadeIn(
                       7,
                       Padding(
-                        padding: const EdgeInsets.only(left:8.0,right: 8),
+                        padding: const EdgeInsets.only(left: 8.0, right: 8),
                         child: FAQCard(
                           text:
                               "Goal is to turn data into Information, and Information into Insight.",
@@ -1031,7 +1050,7 @@ class _HomePageState extends State<HomePage> {
                     FadeIn(
                       8,
                       Padding(
-                        padding: const EdgeInsets.only(left:8.0,right: 8),
+                        padding: const EdgeInsets.only(left: 8.0, right: 8),
                         child: FAQCard(
                           text: "Too Much.",
                           image:
@@ -1106,23 +1125,21 @@ class _HomePageState extends State<HomePage> {
                                   CupertinoPageRoute(
                                       builder: (context) => Maps()));
                             },
-                            child:
-                            Padding(
-                              padding: const EdgeInsets.only(left:8.0,right: 8),
+                            child: Padding(
+                              padding:
+                                  const EdgeInsets.only(left: 8.0, right: 8),
                               child: Image.asset("assets/icons/map.png"),
                             )
 //                            CachedNetworkImage(imageUrl: "https://www.comodo.co.in/assets/images/about-us-map1.png",)
-                          ),
+                            ),
                       ],
                     ),
                     Padding(
                       padding: const EdgeInsets.only(top: 20, left: 15.0),
                       child: GestureDetector(
                         onTap: () {
-                          Navigator.push(
-                              context,
-                              CupertinoPageRoute(
-                                  builder: (context) => Maps()));
+                          Navigator.push(context,
+                              CupertinoPageRoute(builder: (context) => Maps()));
                         },
                         child: Row(
                           children: [
@@ -1149,7 +1166,8 @@ class _HomePageState extends State<HomePage> {
                       height: 20,
                     ),
                     Padding(
-                      padding: const EdgeInsets.only(top: 8.0, left: 15,bottom: 15),
+                      padding:
+                          const EdgeInsets.only(top: 8.0, left: 15, bottom: 15),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         crossAxisAlignment: CrossAxisAlignment.start,
@@ -1202,7 +1220,8 @@ class _HomePageState extends State<HomePage> {
                       height: 20,
                     ),
                     Padding(
-                      padding: const EdgeInsets.only(bottom: 15.0,left: 15,right: 15),
+                      padding: const EdgeInsets.only(
+                          bottom: 15.0, left: 15, right: 15),
                       child: Wrap(
                         runSpacing: 20.0,
                         spacing: 20.0,

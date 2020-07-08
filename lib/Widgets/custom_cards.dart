@@ -4,18 +4,22 @@ import 'package:google_fonts/google_fonts.dart';
 
 Widget customCard(String title, String spots, icon, String img) {
   return Card(
+    color: Color(0xFF121212),
     shape: RoundedRectangleBorder(
       borderRadius: BorderRadius.circular(10),
     ),
     margin: EdgeInsets.all(10.0),
     child: Container(
       decoration: BoxDecoration(
-        color: Colors.purple[400],
+        gradient: LinearGradient(
+            begin: Alignment.center,
+            end: Alignment.bottomCenter,
+            colors: [Colors.transparent, Colors.black]),
         borderRadius: BorderRadius.circular(10),
         image: DecorationImage(
           image: CachedNetworkImageProvider("$img"),
           colorFilter: ColorFilter.mode(
-              Colors.black.withOpacity(0.5), BlendMode.dstATop),
+              Colors.black.withOpacity(0.6), BlendMode.dstATop),
           fit: BoxFit.cover,
         ),
       ),

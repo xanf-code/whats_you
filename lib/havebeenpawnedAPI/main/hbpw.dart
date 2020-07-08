@@ -42,6 +42,7 @@ class _HBPState extends State<HBP> {
   @override
   Widget build(BuildContext context) {
     return CupertinoApp(
+      debugShowCheckedModeBanner: false,
       home: CupertinoPageScaffold(
           navigationBar: CupertinoNavigationBar(
             leading: GestureDetector(
@@ -422,7 +423,7 @@ class _HBPState extends State<HBP> {
                                 gradient: LinearGradient(
                                   colors: [
                                     Color(0xFF232526),
-                                    Color(0xFF414345),
+                                    Color(0xFF093637),
                                   ],
                                 ),
                                 borderRadius: BorderRadius.circular(10),

@@ -1,4 +1,3 @@
-import 'dart:developer';
 import 'dart:io';
 
 import 'package:flutter/cupertino.dart';
@@ -32,7 +31,6 @@ class _InAppWebViewExampleScreenState extends State<InAppWebViewExampleScreen> {
   ContextMenu contextMenu;
   String url = "";
   double progress = 0;
-  CookieManager _cookieManager = CookieManager.instance();
 
   @override
   void initState() {

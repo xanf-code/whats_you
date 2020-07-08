@@ -23,6 +23,8 @@ import 'package:whats_you/kaspersky_widget/widget.dart';
 import 'Widgets/ChartCard.dart';
 import 'Widgets/FAQCard.dart';
 import 'package:supercharged/supercharged.dart';
+import 'package:http/http.dart';
+import 'dart:convert';
 
 class HomePage extends StatefulWidget {
   @override
@@ -937,24 +939,37 @@ class _HomePageState extends State<HomePage> {
                       height: 19,
                     ),
                     FadeIn(
-                      5.5, Row(
+                      5.5, Column(
                         children: [
-                          InkWell(
-                            onTap: () => Navigator.of(context).pushNamed('/newspage'),
-                            child: Container(
-                              height: 180,
-                              width: MediaQuery.of(context).size.width * 0.5,
-                              child: customCard("News", "Trending Data Related News",
-                                  Icons.trending_up, "https://images.newscientist.com/wp-content/uploads/2016/03/internet-copy.gif"),
-                            ),
+                          Row(
+                            children: [
+                              InkWell(
+                                onTap: () => Navigator.of(context).pushNamed('/newspage'),
+                                child: Container(
+                                  height: 180,
+                                  width: MediaQuery.of(context).size.width * 0.5,
+                                  child: customCard("News", "Trending Data Related News",
+                                      Icons.trending_up, "https://images.newscientist.com/wp-content/uploads/2016/03/internet-copy.gif"),
+                                ),
+                              ),
+                              InkWell(
+                                onTap: () => Navigator.of(context).pushNamed('/privacypage'),
+                                child: Container(
+                                  height: 180,
+                                  width: MediaQuery.of(context).size.width * 0.5,
+                                  child: customCard("Privacy", "Trending Privacy Related News",
+                                      Icons.security, "https://content.fortune.com/wp-content/uploads/2018/11/pri12_finalwider.gif"),
+                                ),
+                              ),
+                            ],
                           ),
                           InkWell(
-                            onTap: () => Navigator.of(context).pushNamed('/privacypage'),
+                            onTap: () => Navigator.of(context).pushNamed('/databreach'),
                             child: Container(
                               height: 180,
-                              width: MediaQuery.of(context).size.width * 0.5,
-                              child: customCard("Privacy", "Trending Privacy Related News",
-                                  Icons.security, "https://content.fortune.com/wp-content/uploads/2018/11/pri12_finalwider.gif"),
+                              width: MediaQuery.of(context).size.width,
+                              child: customCard("Data Breach Record", "Live Data Breach Record",
+                                  Icons.trending_up, "https://proseful-prd-images.s3.amazonaws.com/blogs/df373414-e77c-4d3d-8c7b-35cf55f23396/images/43bc1e57-5fef-4460-bf08-4f79f3654555.gif"),
                             ),
                           ),
                         ],

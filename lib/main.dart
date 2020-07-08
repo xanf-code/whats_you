@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:whats_you/PrivacyNews/PrivacyPageHome.dart';
+import 'package:whats_you/havebeenpawnedAPI/main/hbpw.dart';
 import 'NewsPage/NewsPageHome.dart';
 import 'home_page.dart';
 
@@ -19,6 +20,7 @@ class MyApp extends StatelessWidget {
         '/home' :  (BuildContext context) => HomePage(),
         '/newspage': (BuildContext context) => MyNewsPage(),
         '/privacypage': (BuildContext context) => MyPrivacyPage(),
+        '/databreach': (BuildContext context) => HBP(),
       },
       debugShowCheckedModeBanner: false,
     );

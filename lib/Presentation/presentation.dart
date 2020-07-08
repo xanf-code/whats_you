@@ -1,10 +1,7 @@
 import 'package:delayed_display/delayed_display.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:whats_you/constants/constants.dart';
-import 'package:whats_you/home_page.dart';
 
 class Presentation extends StatefulWidget {
   @override

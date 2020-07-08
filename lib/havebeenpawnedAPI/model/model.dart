@@ -1,7 +1,3 @@
-// To parse this JSON data, do
-//
-//     final pawned = pawnedFromJson(jsonString);
-
 import 'dart:convert';
 
 List<Pawned> pawnedFromJson(String str) => List<Pawned>.from(json.decode(str).map((x) => Pawned.fromJson(x)));

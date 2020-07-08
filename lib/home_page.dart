@@ -1,4 +1,3 @@
-import 'package:cached_network_image/cached_network_image.dart';
 import 'package:delayed_display/delayed_display.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -23,8 +22,6 @@ import 'package:whats_you/kaspersky_widget/widget.dart';
 import 'Widgets/ChartCard.dart';
 import 'Widgets/FAQCard.dart';
 import 'package:supercharged/supercharged.dart';
-import 'package:http/http.dart';
-import 'dart:convert';
 
 class HomePage extends StatefulWidget {
   @override

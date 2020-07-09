@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:delayed_display/delayed_display.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -10,6 +11,7 @@ import 'package:simple_animations/simple_animations.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:whats_you/Extras/Licences.dart';
 import 'package:whats_you/Extras/TC.dart';
+import 'package:whats_you/Extras/about.dart';
 import 'package:whats_you/Presentation/presentation.dart';
 import 'package:whats_you/Webview/attackmap.dart';
 import 'package:whats_you/Widgets/custom_cards.dart';
@@ -90,28 +92,6 @@ class _HomePageState extends State<HomePage> {
                       ),
                       actions: <Widget>[
                         CupertinoActionSheetAction(
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: <Widget>[
-                                Icon(
-                                  Icons.star,
-                                  color: Colors.white,
-                                ),
-                                Text('Rate App',
-                                    style: GoogleFonts.ubuntu(
-                                        color: Colors.white)),
-                                Icon(
-                                  Icons.arrow_forward_ios,
-                                  color: Colors.white,
-                                ),
-                              ],
-                            ),
-                            onPressed: () {
-                              Navigator.pop(context);
-                              launch(
-                                  "https://play.google.com/store/apps/details?id=co 4m.you.whats_you");
-                            }),
-                        CupertinoActionSheetAction(
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: <Widget>[
@@ -132,29 +112,6 @@ class _HomePageState extends State<HomePage> {
                             Navigator.pop(context);
                             launch(
                                 "https://play.google.com/store/apps/dev?id=8692038640782019043");
-                          },
-                        ),
-                        CupertinoActionSheetAction(
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: <Widget>[
-                              Icon(
-                                BrandIcons.gmail,
-                                color: Colors.white,
-                              ),
-                              Text('Drop an E-Mail',
-                                  style:
-                                      GoogleFonts.ubuntu(color: Colors.white)),
-                              Icon(
-                                Icons.arrow_forward_ios,
-                                color: Colors.white,
-                              ),
-                            ],
-                          ),
-                          onPressed: () {
-                            Navigator.pop(context);
-                            launch(
-                                "mailto:darshanaswath@gmail.com?subject=App: WhatsYou App");
                           },
                         ),
                         CupertinoActionSheetAction(
@@ -237,12 +194,12 @@ class _HomePageState extends State<HomePage> {
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: <Widget>[
                               Icon(
-                                Icons.feedback,
+                                CupertinoIcons.info,
                                 color: Colors.white,
                               ),
-                              Text('Feedback',
+                              Text('About',
                                   style:
-                                      GoogleFonts.ubuntu(color: Colors.white)),
+                                  GoogleFonts.ubuntu(color: Colors.white)),
                               Icon(
                                 Icons.arrow_forward_ios,
                                 color: Colors.white,
@@ -251,6 +208,10 @@ class _HomePageState extends State<HomePage> {
                           ),
                           onPressed: () {
                             Navigator.pop(context);
+                            Navigator.push(
+                                context,
+                                CupertinoPageRoute(
+                                    builder: (context) => About()));
                           },
                         ),
                       ],
@@ -1061,8 +1022,7 @@ class _HomePageState extends State<HomePage> {
                       ),
                     ),
                     Padding(
-                      padding:
-                          const EdgeInsets.only(top: 8.0, left: 15, bottom: 15),
+                      padding: const EdgeInsets.only(top: 8.0, left: 15),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         crossAxisAlignment: CrossAxisAlignment.start,
@@ -1126,16 +1086,16 @@ class _HomePageState extends State<HomePage> {
                                       builder: (context) => Maps()));
                             },
                             child: Padding(
-                              padding:
-                                  const EdgeInsets.only(left: 8.0, right: 8),
-                              child: Image.asset("assets/icons/map.png"),
-                            )
-//                            CachedNetworkImage(imageUrl: "https://www.comodo.co.in/assets/images/about-us-map1.png",)
-                            ),
+                              padding: const EdgeInsets.all(10.0),
+                              child: CachedNetworkImage(
+                                imageUrl:
+                                    "https://www.cachefly.com/wp-content/uploads/2020/05/map.png",
+                              ),
+                            )),
                       ],
                     ),
                     Padding(
-                      padding: const EdgeInsets.only(top: 20, left: 15.0),
+                      padding: const EdgeInsets.only(left: 15.0),
                       child: GestureDetector(
                         onTap: () {
                           Navigator.push(context,

@@ -5,6 +5,7 @@ import 'package:flutter_html/flutter_html.dart';
 import 'package:flutter_html/style.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:url_launcher/url_launcher.dart';
 import 'package:whats_you/havebeenpawnedAPI/service/service.dart';
 import 'package:whats_you/havebeenpawnedAPI/model/model.dart';
 import 'package:whats_you/home_page.dart';
@@ -135,20 +136,21 @@ class _HBPState extends State<HBP> {
                                 context: context,
                                 builder: (context) => Container(
                                       decoration: BoxDecoration(
-                                        gradient: LinearGradient(
-                                            colors: [
-                                              Color(0xFF121212),
-                                              Color(0xFF1F1C18)
-                                            ],
-                                            begin: Alignment.topCenter,
-                                            end: Alignment.bottomCenter,
-                                            stops: [0.3, 0.7]),
                                         borderRadius: BorderRadius.all(
                                             Radius.circular(15)),
                                       ),
                                       height: 700,
                                       child: Container(
-                                        color: Color(0xFF121212),
+                                        decoration: BoxDecoration(
+                                          gradient: LinearGradient(
+                                              colors: [
+                                                Color(0xFF121212),
+                                                Color(0xFF1F1C18)
+                                              ],
+                                              begin: Alignment.topCenter,
+                                              end: Alignment.bottomCenter,
+                                              stops: [0.3, 0.7]),
+                                        ),
                                         child: Padding(
                                           padding: const EdgeInsets.all(8.0),
                                           child: SingleChildScrollView(
@@ -188,6 +190,9 @@ class _HBPState extends State<HBP> {
                                                   ),
                                                 ),
                                                 Html(
+                                                  onLinkTap: (url){
+                                                    launch(url);
+                                                  },
                                                   data: pawned.description,
                                                   style: {
                                                     "body": Style(
@@ -471,6 +476,7 @@ class _HBPState extends State<HBP> {
                                               color: Colors.white54),
                                         ),
                                       ),
+                                      SizedBox(height: 5,),
                                       Padding(
                                         padding:
                                             const EdgeInsets.only(left: 15),
@@ -478,13 +484,8 @@ class _HBPState extends State<HBP> {
                                           child: pawned.isSensitive == true
                                               ? Row(
                                                   children: [
-                                                    Container(
-                                                      width: 30,
-                                                      height: 30,
-                                                      alignment:
-                                                          Alignment.centerLeft,
-                                                      margin: EdgeInsets.only(
-                                                          top: 5),
+                                                    Padding(
+                                                      padding: const EdgeInsets.only(top: 4.0),
                                                       child: Container(
                                                         width: 15,
                                                         height: 15,
@@ -500,7 +501,7 @@ class _HBPState extends State<HBP> {
                                                     ),
                                                     Padding(
                                                       padding:
-                                                          const EdgeInsets.only(
+                                                          const EdgeInsets.only(left: 6,
                                                               top: 5),
                                                       child: Text(
                                                           "Sensitive Data",
@@ -517,20 +518,15 @@ class _HBPState extends State<HBP> {
                                                 )
                                               : Row(
                                                   children: [
-                                                    Container(
-                                                      width: 30,
-                                                      height: 30,
-                                                      alignment:
-                                                          Alignment.centerLeft,
-                                                      margin: EdgeInsets.only(
-                                                          top: 5),
+                                                    Padding(
+                                                      padding: const EdgeInsets.only(top: 4.0),
                                                       child: Container(
                                                         width: 15,
                                                         height: 15,
                                                         decoration: BoxDecoration(
                                                             shape:
                                                                 BoxShape.circle,
-                                                            color: Colors.blue,
+                                                            color: Colors.yellow,
                                                             border: Border.all(
                                                                 color: Colors
                                                                     .white,
@@ -539,7 +535,7 @@ class _HBPState extends State<HBP> {
                                                     ),
                                                     Padding(
                                                       padding:
-                                                          const EdgeInsets.only(
+                                                          const EdgeInsets.only(left: 6,
                                                               top: 5),
                                                       child: Text(
                                                           "Insensitive Data",

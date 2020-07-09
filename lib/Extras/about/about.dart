@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_brand_icons/flutter_brand_icons.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'package:whats_you/Extras/about/OSLUsed.dart';
+import 'package:whats_you/Extras/about/change.dart';
 
 class About extends StatefulWidget {
   @override
@@ -13,6 +15,9 @@ class _AboutState extends State<About> {
   final Shader linearGradient = LinearGradient(
     colors: <Color>[Color(0xFFec2F4B), Color(0xFF009FFF)],
   ).createShader(Rect.fromLTWH(0.0, 0.0, 500.0, 70.0));
+
+  Modal modal = new Modal();
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -44,7 +49,7 @@ class _AboutState extends State<About> {
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.only(left: 8.0, right: 8, top: 10),
+                padding: const EdgeInsets.only(left: 8.0, right: 8),
                 child: Container(
                   width: MediaQuery.of(context).size.width,
                   height: 190,
@@ -125,7 +130,7 @@ class _AboutState extends State<About> {
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.only(left: 8.0, right: 8, top: 15),
+                padding: const EdgeInsets.only(left: 8.0, right: 8, top: 8),
                 child: Container(
                   width: MediaQuery.of(context).size.width,
                   height: 170,
@@ -147,31 +152,31 @@ class _AboutState extends State<About> {
                           SizedBox(
                             height: 20,
                           ),
-                          Row(
-                            children: [
-                              Icon(
-                                Icons.track_changes,
-                                color: Colors.white,
-                                size: 30,
-                              ),
-                              SizedBox(
-                                width: 22,
-                              ),
-                              Text("Changelog",
-                                  style: GoogleFonts.ubuntu(
-                                      color: Colors.white,
-                                      fontSize: 18,
-                                      fontWeight: FontWeight.w300)),
-                            ],
+                          InkWell(
+                            onTap: () => modal.changeBottomSheet(context),
+                            child: Row(
+                              children: [
+                                Icon(
+                                  Icons.track_changes,
+                                  color: Colors.white,
+                                  size: 30,
+                                ),
+                                SizedBox(
+                                  width: 22,
+                                ),
+                                Text("Changelog",
+                                    style: GoogleFonts.ubuntu(
+                                        color: Colors.white,
+                                        fontSize: 18,
+                                        fontWeight: FontWeight.w300)),
+                              ],
+                            ),
                           ),
                           SizedBox(
                             height: 25,
                           ),
                           InkWell(
-                            onTap: () {
-                              launch(
-                                  "https://play.google.com/store/apps/details?id=com.you.whats_you");
-                            },
+                            onTap: () => Navigator.pushNamed(context, "/libs"),
                             child: Row(
                               children: [
                                 Icon(
@@ -182,7 +187,7 @@ class _AboutState extends State<About> {
                                 SizedBox(
                                   width: 22,
                                 ),
-                                Text("Open source libraries",
+                                Text("Open source libraries used",
                                     style: GoogleFonts.ubuntu(
                                         color: Colors.white,
                                         fontSize: 18,
@@ -197,7 +202,7 @@ class _AboutState extends State<About> {
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.only(left: 8.0, right: 8, top: 15),
+                padding: const EdgeInsets.only(left: 8.0, right: 8, top: 8),
                 child: Container(
                   width: MediaQuery.of(context).size.width,
                   height: 230,
@@ -219,22 +224,25 @@ class _AboutState extends State<About> {
                           SizedBox(
                             height: 20,
                           ),
-                          Row(
-                            children: [
-                              Icon(
-                                Icons.supervisor_account,
-                                color: Colors.white,
-                                size: 30,
-                              ),
-                              SizedBox(
-                                width: 22,
-                              ),
-                              Text("Darshan Aswath",
-                                  style: GoogleFonts.ubuntu(
-                                      color: Colors.white,
-                                      fontSize: 18,
-                                      fontWeight: FontWeight.w300)),
-                            ],
+                          InkWell(
+                            onTap: ()=> launch("https://github.com/xanf-code"),
+                            child: Row(
+                              children: [
+                                Icon(
+                                  Icons.supervisor_account,
+                                  color: Colors.white,
+                                  size: 30,
+                                ),
+                                SizedBox(
+                                  width: 22,
+                                ),
+                                Text("Darshan Aswath",
+                                    style: GoogleFonts.ubuntu(
+                                        color: Colors.white,
+                                        fontSize: 18,
+                                        fontWeight: FontWeight.w300)),
+                              ],
+                            ),
                           ),
                           SizedBox(
                             height: 25,
@@ -242,7 +250,7 @@ class _AboutState extends State<About> {
                           InkWell(
                             onTap: () {
                               launch(
-                                  "https://play.google.com/store/apps/details?id=com.you.whats_you");
+                                  "https://github.com/xanf-code/whats_you");
                             },
                             child: Row(
                               children: [
@@ -265,22 +273,25 @@ class _AboutState extends State<About> {
                           SizedBox(
                             height: 25,
                           ),
-                          Row(
-                            children: [
-                              Icon(
-                                Icons.email,
-                                size: 30,
-                                color: Colors.white,
-                              ),
-                              SizedBox(
-                                width: 22,
-                              ),
-                              Text("Send Email",
-                                  style: GoogleFonts.ubuntu(
-                                      color: Colors.white,
-                                      fontSize: 18,
-                                      fontWeight: FontWeight.w300)),
-                            ],
+                          InkWell(
+                            onTap: ()=> launch("mailto:darshanaswath@gmail.com?subject=WhatsYou App"),
+                            child: Row(
+                              children: [
+                                Icon(
+                                  Icons.email,
+                                  size: 30,
+                                  color: Colors.white,
+                                ),
+                                SizedBox(
+                                  width: 22,
+                                ),
+                                Text("Send Email",
+                                    style: GoogleFonts.ubuntu(
+                                        color: Colors.white,
+                                        fontSize: 18,
+                                        fontWeight: FontWeight.w300)),
+                              ],
+                            ),
                           ),
                         ],
                       ),
@@ -289,7 +300,7 @@ class _AboutState extends State<About> {
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.only(left: 8.0, right: 8, top: 15),
+                padding: const EdgeInsets.only(left: 8.0, right: 8, top: 8),
                 child: Container(
                   width: MediaQuery.of(context).size.width,
                   height: 220,
@@ -303,7 +314,7 @@ class _AboutState extends State<About> {
                           Align(
                             alignment: Alignment.centerLeft,
                             child: Text(
-                              "Logo Designer",
+                              "Logo Designer (Ronin)",
                               style: GoogleFonts.ubuntu(
                                   color: Colors.white, fontSize: 15),
                             ),
@@ -311,42 +322,19 @@ class _AboutState extends State<About> {
                           SizedBox(
                             height: 20,
                           ),
-                          Row(
-                            children: [
-                              Icon(
-                                BrandIcons.googleplus,
-                                color: Colors.white,
-                                size: 25,
-                              ),
-                              SizedBox(
-                                width: 22,
-                              ),
-                              Text("Google +",
-                                  style: GoogleFonts.ubuntu(
-                                      color: Colors.white,
-                                      fontSize: 18,
-                                      fontWeight: FontWeight.w300)),
-                            ],
-                          ),
-                          SizedBox(
-                            height: 25,
-                          ),
                           InkWell(
-                            onTap: () {
-                              launch(
-                                  "https://play.google.com/store/apps/details?id=com.you.whats_you");
-                            },
+                            onTap: ()=> launch("https://www.instagram.com/ron_in_7/"),
                             child: Row(
                               children: [
                                 Icon(
-                                  BrandIcons.twitter,
-                                  size: 25,
+                                  BrandIcons.instagram,
                                   color: Colors.white,
+                                  size: 25,
                                 ),
                                 SizedBox(
                                   width: 22,
                                 ),
-                                Text("Twitter",
+                                Text("Instagram",
                                     style: GoogleFonts.ubuntu(
                                         color: Colors.white,
                                         fontSize: 18,
@@ -357,22 +345,51 @@ class _AboutState extends State<About> {
                           SizedBox(
                             height: 25,
                           ),
-                          Row(
-                            children: [
-                              Icon(
-                                Icons.web,
-                                size: 25,
-                                color: Colors.white,
-                              ),
-                              SizedBox(
-                                width: 22,
-                              ),
-                              Text("Website",
-                                  style: GoogleFonts.ubuntu(
-                                      color: Colors.white,
-                                      fontSize: 18,
-                                      fontWeight: FontWeight.w300)),
-                            ],
+                          InkWell(
+                            onTap: () {
+                              launch(
+                                  "http://www.app-icon-designer.com/");
+                            },
+                            child: Row(
+                              children: [
+                                Icon(
+                                  BrandIcons.internetexplorer,
+                                  size: 25,
+                                  color: Colors.white,
+                                ),
+                                SizedBox(
+                                  width: 22,
+                                ),
+                                Text("Website",
+                                    style: GoogleFonts.ubuntu(
+                                        color: Colors.white,
+                                        fontSize: 18,
+                                        fontWeight: FontWeight.w300)),
+                              ],
+                            ),
+                          ),
+                          SizedBox(
+                            height: 25,
+                          ),
+                          InkWell(
+                            onTap: ()=> launch("mailto:roninjude07@gmail.com"),
+                            child: Row(
+                              children: [
+                                Icon(
+                                  Icons.mail,
+                                  size: 25,
+                                  color: Colors.white,
+                                ),
+                                SizedBox(
+                                  width: 22,
+                                ),
+                                Text("Email",
+                                    style: GoogleFonts.ubuntu(
+                                        color: Colors.white,
+                                        fontSize: 18,
+                                        fontWeight: FontWeight.w300)),
+                              ],
+                            ),
                           ),
                         ],
                       ),

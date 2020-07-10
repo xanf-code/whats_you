@@ -9,6 +9,13 @@ Watch Demo Video on Youtube : (https://youtu.be/VxLxu1kqZMg)
 
 [![alt text](resources/google.png "Banner")](https://play.google.com/store/apps/details?id=com.you.whats_you)
 
+## Main Features
+
+- Know what the internet Knows about you!
+- A lot of animations..A LOT!
+- Real time Website Breach data
+- Cupertino Model :heart:
+
 ## Demo
 
 ![alt Text](resources/demo.gif)

@@ -1,3 +1,5 @@
+[![Codemagic build status](https://api.codemagic.io/apps/5f085eb95b00866571cf7cb5/5f085eb95b00866571cf7cb4/status_badge.svg)](https://codemagic.io/apps/5f085eb95b00866571cf7cb5/5f085eb95b00866571cf7cb4/latest_build)
+
 # WhatsYou Flutter Data Privacy App
 
 ![alt text](resources/main.png "Banner")

@@ -38,6 +38,52 @@ class LibrariesUsed extends StatelessWidget {
                         child: Padding(
                           padding: const EdgeInsets.all(8.0),
                           child: Text(
+                            "Kaspersky Open APIs and libraries",
+                            style: GoogleFonts.ubuntu(color: Colors.white,fontSize: 18),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Container(
+                  height: 80,
+                  width: MediaQuery.of(context).size.width,
+                  child: Card(
+                    color: Colors.black54,
+                    child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Align(
+                        alignment: Alignment.centerLeft,
+                        child: Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Text(
+                            "HavebeenPwnd APIs",
+                            style: GoogleFonts.ubuntu(color: Colors.white,fontSize: 18),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Container(
+                  height: 80,
+                  width: MediaQuery.of(context).size.width,
+                  child: Card(
+                    color: Colors.black54,
+                    child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Align(
+                        alignment: Alignment.centerLeft,
+                        child: Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Text(
                             "URL Launcher",
                             style: GoogleFonts.ubuntu(color: Colors.white,fontSize: 18),
                           ),

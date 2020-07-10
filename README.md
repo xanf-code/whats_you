@@ -1,5 +1,8 @@
 [![Codemagic build status](https://api.codemagic.io/apps/5f085eb95b00866571cf7cb5/5f085eb95b00866571cf7cb4/status_badge.svg)](https://codemagic.io/apps/5f085eb95b00866571cf7cb5/5f085eb95b00866571cf7cb4/latest_build)
 
+[![Kaspersky Widget tag](https://i.ibb.co/LpfbDwJ/ksky.png)](https://www.kaspersky.co.in/)
+
+
 <h1 align="center">
   <br>
   <a href="https://github.com/xanf-code/whats_you"><img src="https://github.com/xanf-code/whats_you/blob/master/resources/logo.png" alt="WhatsYou Logo" width="200"></a>

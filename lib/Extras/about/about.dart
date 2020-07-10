@@ -42,11 +42,12 @@ class _AboutState extends State<About> {
                 padding: const EdgeInsets.only(top: 10.0),
                 child: CachedNetworkImage(
                   imageUrl:
-                      "https://webstockreview.net/images/google-logo-png-5.png",
+                      "https://raw.githubusercontent.com/xanf-code/whats_you/master/resources/logo.png",
                   height: 200,
                   width: 200,
                 ),
               ),
+              Text('WhatsYou Data Privacy',style: GoogleFonts.ubuntu(color: Colors.white54,fontSize: 12),),
               Padding(
                 padding: const EdgeInsets.only(left: 8.0, right: 8),
                 child: Container(

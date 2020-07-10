@@ -1,10 +1,6 @@
 # WhatsYou Flutter Data Privacy App
 
-[![N|Solid](https://cldup.com/dTxpPi9lDf.thumb.png)](https://nodesource.com/products/nsolid)
-
-
 ![alt text](resources/main.png "Banner")
-
 
 WhatsYou is a all in one Data Policy App which allows ou to see all of your Private data that is available Online to the Public.
 Watch Demo Video on Youtube : (https://youtu.be/VxLxu1kqZMg)

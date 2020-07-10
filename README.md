@@ -29,6 +29,7 @@ Data Privacy and Cyber Security Awareness App made in 2020 Kaspersky Hackathon(S
 ## Demo
 
 ![alt Text](resources/demo.gif)
+![alt Text](resources/demo2.gif)
 
 ## How To Use
 

@@ -58,6 +58,7 @@ $ flutter run
 - [x] About page
 - [x] Cyber Security/Data books(Google Books API)
 - [ ] Push Notification implementation
+- [ ] Implement Splash Screen
 
 ## Push Notification (Optional)
 

@@ -1,7 +1,3 @@
-[![Codemagic build status](https://api.codemagic.io/apps/5f085eb95b00866571cf7cb5/5f085eb95b00866571cf7cb4/status_badge.svg)](https://codemagic.io/apps/5f085eb95b00866571cf7cb5/5f085eb95b00866571cf7cb4/latest_build)
-
-[![Kaspersky Widget tag](https://i.ibb.co/LpfbDwJ/ksky.png)](https://www.kaspersky.co.in/)
-
 ![alt-text](https://api.codemagic.io/apps/5f085eb95b00866571cf7cb5/5f085eb95b00866571cf7cb4/status_badge.svg "Build Status") ![alt-text-2](https://i.ibb.co/LpfbDwJ/ksky.png "Kaspersky Widget")
 
 <h1 align="center">

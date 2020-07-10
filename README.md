@@ -3,7 +3,11 @@
 [![N|Solid](https://cldup.com/dTxpPi9lDf.thumb.png)](https://nodesource.com/products/nsolid)
 
 
+![alt text](resources/main.png "Banner")
+
+
 WhatsYou is a all in one Data Policy App which allows ou to see all of your Private data that is available Online to the Public.
+Watch Demo Video on Youtube : (https://youtu.be/VxLxu1kqZMg)
 
 [![alt text](resources/google.png "Banner")](https://play.google.com/store/apps/details?id=com.you.whats_you)
 
@@ -12,7 +16,7 @@ WhatsYou is a all in one Data Policy App which allows ou to see all of your Priv
 
 To clone and run this application, you'll need [Git](https://git-scm.com) and [Flutter](https://flutter.dev) on your computer. 
 
-Then you'll need to get an api key from [NewsAPI](https://newsapi.org) and specify it in the place of YOUR_API_KEY:
+Then you'll need to get a free API key from [NewsAPI](https://newsapi.org) and specify it in the place of Exisiting API Key.
    
 From your terminal:
 

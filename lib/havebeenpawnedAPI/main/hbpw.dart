@@ -1,4 +1,5 @@
 import 'package:cached_network_image/cached_network_image.dart';
+import 'package:delayed_display/delayed_display.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_html/flutter_html.dart';
@@ -61,9 +62,8 @@ class _HBPState extends State<HBP> {
           backgroundColor: Color(0xFF121212),
           child: Column(
             children: [
-              FadeIn(
-                1,
-                Container(
+              DelayedDisplay(
+                child : Container(
                   padding: EdgeInsets.all(10),
                   color: Color(0xFF121212),
                   child: Card(

@@ -14,7 +14,7 @@ Initial version of the app.
 - [x] Breach Reports
 - [x] Back Button Breach Page
 - [x] Breach Database page Search Box 
-- [ ] Twitter API integration~~
+- [ ] Twitter API integration
 - [x] Clickable hyperlinks
 - [x] Detail Screen UI
 - [x] About page

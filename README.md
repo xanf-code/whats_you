@@ -1,6 +1,12 @@
 [![Codemagic build status](https://api.codemagic.io/apps/5f085eb95b00866571cf7cb5/5f085eb95b00866571cf7cb4/status_badge.svg)](https://codemagic.io/apps/5f085eb95b00866571cf7cb5/5f085eb95b00866571cf7cb4/latest_build)
 
-# WhatsYou Flutter Data Privacy App
+<h1 align="center">
+  <br>
+  <a href="https://github.com/xanf-code/whats_you"><img src="https://github.com/xanf-code/whats_you/blob/master/resources/logo.png" alt="WhatsYou Logo" width="200"></a>
+  <br>
+  WhatsYou Data Privacy App
+  <br>
+</h1>
 
 ![alt text](resources/main.png "Banner")
 

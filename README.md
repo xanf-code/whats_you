@@ -11,10 +11,10 @@ Watch Demo Video on Youtube : (https://youtu.be/VxLxu1kqZMg)
 
 ## Main Features
 
-- Know what the internet Knows about you!
-- A lot of animations..A LOT!
-- Real time Website Breach data
-- Cupertino Model :heart:
+- ### Know what the internet knows about you!
+- ### A lot of animations..A LOT!
+- ### Real time Website Breach data
+- ### Cupertino Model :heart:
 
 ## Demo
 

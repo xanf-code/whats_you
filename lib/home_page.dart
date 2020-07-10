@@ -12,6 +12,7 @@ import 'package:simple_animations/simple_animations.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:whats_you/Extras/Licences.dart';
 import 'package:whats_you/Extras/TC.dart';
+import 'package:whats_you/Extras/about/about.dart';
 import 'package:whats_you/Presentation/presentation.dart';
 import 'package:whats_you/Webview/attackmap.dart';
 import 'package:whats_you/Widgets/custom_cards.dart';

@@ -18,7 +18,7 @@ Initial version of the app.
 - [x] Clickable hyperlinks
 - [x] Detail Screen UI
 - [x] About page
-- [ ] Cyber Security/Data books(Google Books API)
+- [x] Cyber Security/Data books(Google Books API)
 
 ## Version History : 
 

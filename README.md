@@ -1,16 +1,73 @@
-# whats_you
+# WhatsYou Flutter Data Privacy App
 
-App that shows how much of your information is available online
+[![N|Solid](https://cldup.com/dTxpPi9lDf.thumb.png)](https://nodesource.com/products/nsolid)
 
-## Getting Started
 
-This project is a starting point for a Flutter application.
+WhatsYou is a all in one Data Policy App which allows ou to see all of your Private data that is available Online to the Public.
 
-A few resources to get you started if this is your first Flutter project:
+[![alt text](resources/google.png "Banner")](https://play.google.com/store/apps/details?id=com.you.whats_you)
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## How To Use
+
+To clone and run this application, you'll need [Git](https://git-scm.com) and [Flutter](https://flutter.dev) on your computer. 
+
+Then you'll need to get an api key from [NewsAPI](https://newsapi.org) and specify it in the place of YOUR_API_KEY:
+   
+From your terminal:
+
+```bash
+# Clone this repository
+$ git clone https://github.com/xanf-code/whats_you
+
+# Go into the repository
+$ cd whats_you
+```
+Then
+```bash
+# Run the app
+$ flutter run
+```
+
+## Checklist: 
+
+- [x] News Article Implementation
+- [x] Main Page snapping fix
+- [x] Back button news
+- [x] Privacy to Data Privacy
+- [ ] IP lookup API(Feature)
+- [x] Breach Reports
+- [x] Back Button Breach Page
+- [x] Breach Database page Search Box 
+- [ ] Twitter API integration
+- [x] Clickable hyperlinks
+- [x] Detail Screen UI
+- [x] About page
+- [x] Cyber Security/Data books(Google Books API)
+- [ ] Push Notification implementation
+
+## Push Notification (Optional)
+
+This project uses firebase messenging for push notification.
+
+To integrate push notification from firebase follow the steps:
+- Go to firebase console
+- Generate and Download **google-services.json** file
+- Place **google-services.json** file inside android/app
+- It should be ready now. Test your push notification.
+
+For further instruction read documentation from https://pub.dev/packages/firebase_messaging
+
+# Screenshots
+
+|   |   |   |
+|---|---|---|
+|![alt text](resources/1.png "Screenshot 1")|![alt text](resources/2.png "Screenshot 2")|![alt text](resources/3.png "Screenshot 3")|
+|![alt text](resources/4.png "Screenshot 4")|![alt text](resources/5.png "Screenshot 5")|![alt text](resources/6.png "Screenshot 5")|
+
+# LICENCE
+
+Released under the [MIT](./LICENSE) License.<br>
+
+
+

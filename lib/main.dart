@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:whats_you/Extras/about/OSLUsed.dart';
+import 'package:whats_you/GoogleBooks/Books.dart';
 import 'package:whats_you/PrivacyNews/PrivacyPageHome.dart';
 import 'package:whats_you/havebeenpawnedAPI/main/hbpw.dart';
 import 'NewsPage/NewsPageHome.dart';
@@ -15,7 +16,6 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CupertinoApp(
-      title: 'Flutter Demo',
       home: HomePage(),
       routes: <String, WidgetBuilder> {
         '/home' :  (BuildContext context) => HomePage(),
@@ -23,6 +23,7 @@ class MyApp extends StatelessWidget {
         '/privacypage': (BuildContext context) => MyPrivacyPage(),
         '/databreach': (BuildContext context) => HBP(),
         '/libs': (BuildContext context) => LibrariesUsed(),
+        '/booksAPI' : (BuildContext context) => BooksApi(),
       },
       debugShowCheckedModeBanner: false,
     );

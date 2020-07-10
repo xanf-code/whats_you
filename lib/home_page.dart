@@ -2,6 +2,7 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:delayed_display/delayed_display.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/painting.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter_brand_icons/flutter_brand_icons.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -1018,6 +1019,22 @@ class _HomePageState extends State<HomePage> {
                               "https://media1.giphy.com/media/UTjmeapJahb8asynPo/giphy.gif",
                           title:
                               "How much of my personal information is available online and to the public?",
+                        ),
+                      ),
+                    ),
+                    FadeIn(
+                      8.5,
+                      InkWell(
+                        onTap: () => Navigator.pushNamed(context, '/booksAPI'),
+                        child: Padding(
+                          padding: const EdgeInsets.only(left: 8.0, right: 8),
+                          child: FAQCard(
+                            text: "Reference Materail",
+                            image:
+                            "https://webstockreview.net/images/clipart-book-gif-animation-4.gif",
+                            title:
+                            "Reference materials regarding Cyber Security and Cyber Privacy",
+                          ),
                         ),
                       ),
                     ),

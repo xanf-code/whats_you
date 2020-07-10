@@ -67,7 +67,7 @@ For further instruction read documentation from https://pub.dev/packages/firebas
 |   |   |   |
 |---|---|---|
 |![alt text](resources/1.png "Screenshot 1")|![alt text](resources/2.png "Screenshot 2")|![alt text](resources/3.png "Screenshot 3")|
-|![alt text](resources/4.png "Screenshot 4")|![alt text](resources/5.png "Screenshot 5")|![alt text](resources/6.png "Screenshot 5")|
+|![alt text](resources/4.png "Screenshot 4")|![alt text](resources/5.png "Screenshot 5")|![alt text](resources/6.png "Screenshot 6")|
 
 # LICENCE
 

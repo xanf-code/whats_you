@@ -1,6 +1,7 @@
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:whats_you/APIKeys/constants.dart';
 
 //TextStyle
 const mainHeadingStyle=TextStyle(color: Colors.black,fontSize: 40,fontFamily: 'Exo2');
@@ -8,9 +9,8 @@ const notificationText = TextStyle(fontSize: 10, color: Colors.white);
 
 
 
-const userImage ='https://content-static.upwork.com/uploads/2014/10/01073429/profilephoto2.jpg';
-const newsApiKey= '3967de67cdf44876bd374b9c83e08f55';
+const newsApiKey= NewsApi;
 
 String getNewsUrl(String category){
-  return 'https://newsapi.org/v2/everything?q=dataprivacy&apiKey=$newsApiKey';
+  return 'https://newsapi.org/v2/everything?q=dataprivacy&apiKey=$NewsApi';
 }

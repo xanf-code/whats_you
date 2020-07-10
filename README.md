@@ -10,7 +10,7 @@
 
 ![alt text](resources/main.png "Banner")
 
-WhatsYou is a all in one Data Privacy and Education App which allows ou to see all of your Private data that is available Online to the Public.
+WhatsYou is a all in one Data Privacy and Education App which allows you to see all of your Private data that is available Online to the Public.
 Watch Demo Video on Youtube : (https://youtu.be/VxLxu1kqZMg)
 
 ## Playstore: (Releasing Soon...)
@@ -31,7 +31,9 @@ Watch Demo Video on Youtube : (https://youtu.be/VxLxu1kqZMg)
 
 To clone and run this application, you'll need [Git](https://git-scm.com) and [Flutter](https://flutter.dev) on your computer. 
 
-Then you'll need to get a free API key from [NewsAPI](https://newsapi.org) and specify it in the place of Exisiting API Key.
+Then you'll need to get a free API key from [NewsAPI](https://newsapi.org) and specify it in the place of $NewsApi.
+
+Similarly you'll need to get a free Project ID and Secret Key at [WireDash](https://wiredash.io/) and replace projectId: "" and secret: "" in main.dart file 
    
 From your terminal:
 
@@ -54,17 +56,19 @@ $ flutter run
 - [x] Main Page snapping fix
 - [x] Back button news
 - [x] Privacy to Data Privacy
-- [ ] IP lookup API(Feature)
+- [ ] IP lookup API(Feature) -> Future
 - [x] Breach Reports
 - [x] Back Button Breach Page
 - [x] Breach Database page Search Box 
-- [ ] Twitter API integration
+- ~~[ ]Twitter API integration~~
 - [x] Clickable hyperlinks
 - [x] Detail Screen UI
 - [x] About page
+- [x] WireDash Feedback Implementation
+- [x] Splash Screen
 - [x] Cyber Security/Data books(Google Books API)
 - [ ] Push Notification implementation
-- [ ] Implement Splash Screen
+- [x] Implement Splash Screen
 
 ## Push Notification (Optional)
 

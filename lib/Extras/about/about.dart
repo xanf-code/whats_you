@@ -4,6 +4,7 @@ import 'package:flutter_brand_icons/flutter_brand_icons.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:whats_you/Extras/about/change.dart';
+import 'package:wiredash/wiredash.dart';
 
 class About extends StatefulWidget {
   @override
@@ -106,22 +107,27 @@ class _AboutState extends State<About> {
                           SizedBox(
                             height: 25,
                           ),
-                          Row(
-                            children: [
-                              Icon(
-                                Icons.bug_report,
-                                size: 30,
-                                color: Colors.white,
-                              ),
-                              SizedBox(
-                                width: 22,
-                              ),
-                              Text("Feedback",
-                                  style: GoogleFonts.ubuntu(
-                                      color: Colors.white,
-                                      fontSize: 18,
-                                      fontWeight: FontWeight.w300)),
-                            ],
+                          InkWell(
+                            onTap: () {
+                              Wiredash.of(context).show();
+                            },
+                            child: Row(
+                              children: [
+                                Icon(
+                                  Icons.bug_report,
+                                  size: 30,
+                                  color: Colors.white,
+                                ),
+                                SizedBox(
+                                  width: 22,
+                                ),
+                                Text("Feedback",
+                                    style: GoogleFonts.ubuntu(
+                                        color: Colors.white,
+                                        fontSize: 18,
+                                        fontWeight: FontWeight.w300)),
+                              ],
+                            ),
                           ),
                         ],
                       ),

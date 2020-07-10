@@ -47,6 +47,8 @@ dependencies:
   http: ^0.12.1
   flutter_spinkit: ^4.1.2
   flutter_markdown: ^0.4.2
+  splashscreen: ^1.2.0
+  wiredash: ^0.0.1+1
 
 dev_dependencies:
   flutter_test:

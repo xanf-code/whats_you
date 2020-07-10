@@ -947,7 +947,7 @@ class _HomePageState extends State<HomePage> {
                               child: customCard(
                                   "Data Breach Record",
                                   "Live Data Breach Record",
-                                  Icons.trending_up,
+                                  Icons.fingerprint,
                                   "https://proseful-prd-images.s3.amazonaws.com/blogs/df373414-e77c-4d3d-8c7b-35cf55f23396/images/43bc1e57-5fef-4460-bf08-4f79f3654555.gif"),
                             ),
                           ),

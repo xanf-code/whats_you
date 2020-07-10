@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_brand_icons/flutter_brand_icons.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:url_launcher/url_launcher.dart';
-import 'package:whats_you/Extras/about/OSLUsed.dart';
 import 'package:whats_you/Extras/about/change.dart';
 
 class About extends StatefulWidget {

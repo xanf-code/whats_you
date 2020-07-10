@@ -7,7 +7,8 @@
 WhatsYou is a all in one Data Privacy and Education App which allows ou to see all of your Private data that is available Online to the Public.
 Watch Demo Video on Youtube : (https://youtu.be/VxLxu1kqZMg)
 
-[![Releasing Soon](resources/google.png "Banner")](https://play.google.com/store/apps/details?id=com.you.whats_you)
+## Playstore: (Releasing Soon...)
+[![alt Text](resources/google.png "Banner")](https://play.google.com/store/apps/details?id=com.you.whats_you)
 
 ## Main Features
 

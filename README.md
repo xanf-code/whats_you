@@ -7,6 +7,9 @@ Watch Demo Video on Youtube : (https://youtu.be/VxLxu1kqZMg)
 
 [![alt text](resources/google.png "Banner")](https://play.google.com/store/apps/details?id=com.you.whats_you)
 
+## Demo
+
+![alt Text](resources/demo.gif)
 
 ## How To Use
 

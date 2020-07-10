@@ -1,4 +1,4 @@
-![alt-text](https://api.codemagic.io/apps/5f085eb95b00866571cf7cb5/5f085eb95b00866571cf7cb4/status_badge.svg "Build Status") ![alt-text-2](https://i.ibb.co/LpfbDwJ/ksky.png "Kaspersky Widget")
+[![Codemagic build status](https://api.codemagic.io/apps/5f085eb95b00866571cf7cb5/5f085eb95b00866571cf7cb4/status_badge.svg)](https://codemagic.io/apps/5f085eb95b00866571cf7cb5/5f085eb95b00866571cf7cb4/latest_build) ![alt-text-2](https://i.ibb.co/LpfbDwJ/ksky.png "Kaspersky Widget")
 
 <h1 align="center">
   <br>
@@ -13,8 +13,11 @@
 WhatsYou is a all in one Data Privacy and Education App which allows you to see all of your Private data that is available Online to the Public.
 Watch Demo Video on Youtube : (https://youtu.be/VxLxu1kqZMg)
 
+Data Privacy and Cyber Security Awareness App made in 2020 Kaspersky Hackathon(Secur'IT Cup) using Kaspersky Widgets and HBP APIs to display Cyber Threat Awareness :fire:
+
 ## Playstore: (Releasing Soon...)
-[![alt Text](resources/google.png "Banner")](https://play.google.com/store/apps/details?id=com.you.whats_you)
+
+<a href='https://play.google.com/store/apps/details?id=com.you.whats_you'><img alt='Get it on Google Play' src='https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png' width="200px"/></a>
 
 ## Main Features
 

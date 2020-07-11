@@ -1,5 +1,5 @@
 [![License](https://img.shields.io/badge/license-MIT-green.svg?style=flat)](https://github.com/xanf-code/whats_you/blob/master/LICENSE)
-[![Twitter: @darshanaswath](https://img.shields.io/badge/contact-@sadab_wasim-blue.svg?style=flat)](https://twitter.com/iamlardBendtner)
+[![Twitter: @darshanaswath](https://img.shields.io/badge/contact-@darshanaswath.svg?style=flat)](https://twitter.com/iamlardBendtner)
 [![Codemagic build status](https://api.codemagic.io/apps/5f085eb95b00866571cf7cb5/5f085eb95b00866571cf7cb4/status_badge.svg)](https://codemagic.io/apps/5f085eb95b00866571cf7cb5/5f085eb95b00866571cf7cb4/latest_build) ![alt-text-2](https://i.ibb.co/LpfbDwJ/ksky.png "Kaspersky Widget")
 
 <h1 align="center">

@@ -13,7 +13,7 @@
 WhatsYou is a all in one Data Privacy and Education App which allows you to see all of your Private data that is available Online to the Public.
 Watch Demo Video on Youtube : (https://youtu.be/VxLxu1kqZMg)
 
-Data Privacy and Cyber Security Awareness App made in 2020 Kaspersky Hackathon(Secur'IT Cup) using Kaspersky Widgets and HBP APIs to display Cyber Threat Awareness :fire:
+Data Privacy and Cyber Security Awareness App made in 2020 Kaspersky e-Hackathon(Secur'IT Cup) using Kaspersky Widgets and HBP APIs to display Cyber Threat Awareness :fire:
 
 ## Playstore: (Releasing Soon...)
 

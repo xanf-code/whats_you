@@ -74,6 +74,7 @@ $ flutter run
 - [x] Cyber Security/Data books(Google Books API)
 - [ ] Push Notification implementation
 - [x] Implement Splash Screen
+- [ ] Manage Device Demo
 
 ## Push Notification (Optional)
 

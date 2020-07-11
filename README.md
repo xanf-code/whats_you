@@ -76,6 +76,7 @@ $ flutter run
 - [ ] Material Page(Books) Animations
 - [ ] Breach Data Page Animation
 - [x] Implement Splash Screen
+- [ ] Manage Device Demo
 
 ## Push Notification (Optional)
 

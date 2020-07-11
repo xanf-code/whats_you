@@ -73,6 +73,8 @@ $ flutter run
 - [x] Splash Screen
 - [x] Cyber Security/Data books(Google Books API)
 - [ ] Push Notification implementation
+- [ ] Material Page(Books) Animations
+- [ ] Breach Data Page Animation
 - [x] Implement Splash Screen
 
 ## Push Notification (Optional)

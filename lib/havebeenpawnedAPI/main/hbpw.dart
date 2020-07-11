@@ -73,23 +73,25 @@ class _HBPState extends State<HBP> {
                         CupertinoIcons.search,
                         color: Colors.white,
                       ),
-                      title: TextField(
-                        style: GoogleFonts.ubuntu(color: Colors.white),
-                        controller: controller,
-                        decoration: InputDecoration(
-                          hintText: "Search by host name",
-                          hintStyle: GoogleFonts.ubuntu(color: Colors.white30),
-                          border: InputBorder.none,
+                      title: FadeIn(
+                        3, TextField(
+                          style: GoogleFonts.ubuntu(color: Colors.white),
+                          controller: controller,
+                          decoration: InputDecoration(
+                            hintText: "Search by host name",
+                            hintStyle: GoogleFonts.ubuntu(color: Colors.white30),
+                            border: InputBorder.none,
+                          ),
+                          onChanged: (text){
+                            text = text.toLowerCase();
+                            setState(() {
+                              _pawnedfordisplay = _pawned.where((_pawned) {
+                                var title = _pawned.title.toLowerCase();
+                                return title.contains(text);
+                              }).toList();
+                            });
+                          },
                         ),
-                        onChanged: (text){
-                          text = text.toLowerCase();
-                          setState(() {
-                            _pawnedfordisplay = _pawned.where((_pawned) {
-                              var title = _pawned.title.toLowerCase();
-                              return title.contains(text);
-                            }).toList();
-                          });
-                        },
                       ),
                     ),
                   ),
@@ -125,440 +127,442 @@ class _HBPState extends State<HBP> {
                           ),
                         ],
                       )
-                    : ListView.builder(
-                        physics: BouncingScrollPhysics(),
-                        itemCount:
-                            null == _pawned ? 0 : _pawnedfordisplay.length,
-                        itemBuilder: (context, index) {
-                          Pawned pawned = _pawnedfordisplay[index];
-                          return GestureDetector(
-                            onTap: () => showCupertinoModalPopup(
-                                context: context,
-                                builder: (context) => Container(
-                                      decoration: BoxDecoration(
-                                        borderRadius: BorderRadius.all(
-                                            Radius.circular(15)),
-                                      ),
-                                      height: 700,
-                                      child: Container(
+                    : DelayedDisplay(
+                      child: ListView.builder(
+                          physics: BouncingScrollPhysics(),
+                          itemCount:
+                              null == _pawned ? 0 : _pawnedfordisplay.length,
+                          itemBuilder: (context, index) {
+                            Pawned pawned = _pawnedfordisplay[index];
+                            return GestureDetector(
+                              onTap: () => showCupertinoModalPopup(
+                                  context: context,
+                                  builder: (context) => Container(
                                         decoration: BoxDecoration(
-                                          gradient: LinearGradient(
-                                              colors: [
-                                                Color(0xFF121212),
-                                                Color(0xFF1F1C18)
-                                              ],
-                                              begin: Alignment.topCenter,
-                                              end: Alignment.bottomCenter,
-                                              stops: [0.3, 0.7]),
+                                          borderRadius: BorderRadius.all(
+                                              Radius.circular(15)),
                                         ),
-                                        child: Padding(
-                                          padding: const EdgeInsets.all(8.0),
-                                          child: SingleChildScrollView(
-                                            physics: BouncingScrollPhysics(),
-                                            scrollDirection: Axis.vertical,
-                                            child: Column(
-                                              mainAxisAlignment:
-                                                  MainAxisAlignment.start,
-                                              crossAxisAlignment:
-                                                  CrossAxisAlignment.start,
-                                              children: [
-                                                Padding(
-                                                  padding:
-                                                      const EdgeInsets.all(8.0),
-                                                  child: Center(
-                                                    child: CachedNetworkImage(
-                                                      imageUrl: pawned.logoPath,
-                                                      height: 100,
-                                                      width: 145,
-                                                      fit: BoxFit.contain,
+                                        height: 700,
+                                        child: Container(
+                                          decoration: BoxDecoration(
+                                            gradient: LinearGradient(
+                                                colors: [
+                                                  Color(0xFF121212),
+                                                  Color(0xFF1F1C18)
+                                                ],
+                                                begin: Alignment.topCenter,
+                                                end: Alignment.bottomCenter,
+                                                stops: [0.3, 0.7]),
+                                          ),
+                                          child: Padding(
+                                            padding: const EdgeInsets.all(8.0),
+                                            child: SingleChildScrollView(
+                                              physics: BouncingScrollPhysics(),
+                                              scrollDirection: Axis.vertical,
+                                              child: Column(
+                                                mainAxisAlignment:
+                                                    MainAxisAlignment.start,
+                                                crossAxisAlignment:
+                                                    CrossAxisAlignment.start,
+                                                children: [
+                                                  Padding(
+                                                    padding:
+                                                        const EdgeInsets.all(8.0),
+                                                    child: Center(
+                                                      child: CachedNetworkImage(
+                                                        imageUrl: pawned.logoPath,
+                                                        height: 100,
+                                                        width: 145,
+                                                        fit: BoxFit.contain,
+                                                      ),
                                                     ),
                                                   ),
-                                                ),
-                                                Padding(
-                                                  padding:
-                                                      const EdgeInsets.all(8.0),
-                                                  child: Center(
-                                                    child: Text(
-                                                      pawned.domain,
-                                                      style: GoogleFonts.ubuntu(
-                                                          fontWeight:
-                                                              FontWeight.w500,
-                                                          fontSize: 20,
-                                                          color:
-                                                              Colors.white54),
+                                                  Padding(
+                                                    padding:
+                                                        const EdgeInsets.all(8.0),
+                                                    child: Center(
+                                                      child: Text(
+                                                        pawned.domain,
+                                                        style: GoogleFonts.ubuntu(
+                                                            fontWeight:
+                                                                FontWeight.w500,
+                                                            fontSize: 20,
+                                                            color:
+                                                                Colors.white54),
+                                                      ),
                                                     ),
                                                   ),
-                                                ),
-                                                Html(
-                                                  onLinkTap: (url){
-                                                    launch(url);
-                                                  },
-                                                  data: pawned.description,
-                                                  style: {
-                                                    "body": Style(
-                                                      color: Colors.white,
-                                                      fontSize: FontSize(17.0),
-                                                      fontWeight:
-                                                          FontWeight.w400,
-                                                    ),
-                                                  },
-                                                ),
-                                                Padding(
-                                                  padding:
-                                                      const EdgeInsets.all(8.0),
-                                                  child: Row(
-                                                    children: [
-                                                      Icon(
-                                                        CupertinoIcons.time,
+                                                  Html(
+                                                    onLinkTap: (url){
+                                                      launch(url);
+                                                    },
+                                                    data: pawned.description,
+                                                    style: {
+                                                      "body": Style(
                                                         color: Colors.white,
+                                                        fontSize: FontSize(17.0),
+                                                        fontWeight:
+                                                            FontWeight.w400,
                                                       ),
-                                                      SizedBox(
-                                                        width: 10,
-                                                      ),
-                                                      RichText(
-                                                        text:
-                                                            TextSpan(children: [
-                                                          TextSpan(
-                                                              text:
-                                                                  "Breach Date: ",
-                                                              style: GoogleFonts.ubuntu(
-                                                                  color: Colors
-                                                                      .white54,
-                                                                  fontSize: 19,
-                                                                  fontWeight:
-                                                                      FontWeight
-                                                                          .normal)),
-                                                          TextSpan(
-                                                              text:
-                                                                  "${pawned.breachDate.day}/${pawned.breachDate.month}/${pawned.breachDate.year}",
-                                                              style: GoogleFonts.ubuntu(
-                                                                  color: Colors
-                                                                      .white,
-                                                                  fontSize: 19,
-                                                                  fontWeight:
-                                                                      FontWeight
-                                                                          .normal)),
-                                                        ]),
-                                                      ),
-                                                    ],
+                                                    },
                                                   ),
-                                                ),
-                                                Padding(
-                                                  padding:
-                                                      const EdgeInsets.all(8.0),
-                                                  child: Row(
-                                                    children: [
-                                                      Icon(
-                                                        CupertinoIcons
-                                                            .person_solid,
-                                                        color: Colors.white,
-                                                      ),
-                                                      SizedBox(
-                                                        width: 10,
-                                                      ),
-                                                      RichText(
-                                                        text:
-                                                            TextSpan(children: [
-                                                          TextSpan(
-                                                              text:
-                                                                  "Compromised accounts: ",
-                                                              style: GoogleFonts.ubuntu(
-                                                                  color: Colors
-                                                                      .white54,
-                                                                  fontSize: 19,
-                                                                  fontWeight:
-                                                                      FontWeight
-                                                                          .normal)),
-                                                          TextSpan(
-                                                              text:
-                                                                  "${pawned.pwnCount.toString().replaceAllMapped(new RegExp(r'(\d{1,3})(?=(\d{3})+(?!\d))'), (Match m) => '${m[1]},')} accounts",
-                                                              style: GoogleFonts.ubuntu(
-                                                                  color: Colors
-                                                                      .white,
-                                                                  fontSize: 19,
-                                                                  fontWeight:
-                                                                      FontWeight
-                                                                          .normal)),
-                                                        ]),
-                                                      ),
-                                                    ],
+                                                  Padding(
+                                                    padding:
+                                                        const EdgeInsets.all(8.0),
+                                                    child: Row(
+                                                      children: [
+                                                        Icon(
+                                                          CupertinoIcons.time,
+                                                          color: Colors.white,
+                                                        ),
+                                                        SizedBox(
+                                                          width: 10,
+                                                        ),
+                                                        RichText(
+                                                          text:
+                                                              TextSpan(children: [
+                                                            TextSpan(
+                                                                text:
+                                                                    "Breach Date: ",
+                                                                style: GoogleFonts.ubuntu(
+                                                                    color: Colors
+                                                                        .white54,
+                                                                    fontSize: 19,
+                                                                    fontWeight:
+                                                                        FontWeight
+                                                                            .normal)),
+                                                            TextSpan(
+                                                                text:
+                                                                    "${pawned.breachDate.day}/${pawned.breachDate.month}/${pawned.breachDate.year}",
+                                                                style: GoogleFonts.ubuntu(
+                                                                    color: Colors
+                                                                        .white,
+                                                                    fontSize: 19,
+                                                                    fontWeight:
+                                                                        FontWeight
+                                                                            .normal)),
+                                                          ]),
+                                                        ),
+                                                      ],
+                                                    ),
                                                   ),
-                                                ),
-                                                Padding(
-                                                  padding:
-                                                      const EdgeInsets.all(8.0),
-                                                  child: Container(
-                                                    child: RichText(
-                                                      text: TextSpan(
-                                                        children: [
-                                                          TextSpan(
-                                                              text:
-                                                                  " Compromised data: ",
-                                                              style: GoogleFonts.ubuntu(
-                                                                  color: Colors
-                                                                      .white54,
-                                                                  fontSize: 19,
-                                                                  fontWeight:
-                                                                      FontWeight
-                                                                          .normal)),
-                                                          TextSpan(
-                                                              text: pawned.dataClasses[
-                                                                          0] ==
-                                                                      null
-                                                                  ? Container()
-                                                                  : "\n\n ${pawned.dataClasses.map((x) => x)}",
-                                                              style: GoogleFonts.ubuntu(
-                                                                  color: Colors
-                                                                      .white,
-                                                                  fontSize: 18,
-                                                                  fontWeight:
-                                                                      FontWeight
-                                                                          .w500)),
-                                                        ],
+                                                  Padding(
+                                                    padding:
+                                                        const EdgeInsets.all(8.0),
+                                                    child: Row(
+                                                      children: [
+                                                        Icon(
+                                                          CupertinoIcons
+                                                              .person_solid,
+                                                          color: Colors.white,
+                                                        ),
+                                                        SizedBox(
+                                                          width: 10,
+                                                        ),
+                                                        RichText(
+                                                          text:
+                                                              TextSpan(children: [
+                                                            TextSpan(
+                                                                text:
+                                                                    "Compromised accounts: ",
+                                                                style: GoogleFonts.ubuntu(
+                                                                    color: Colors
+                                                                        .white54,
+                                                                    fontSize: 19,
+                                                                    fontWeight:
+                                                                        FontWeight
+                                                                            .normal)),
+                                                            TextSpan(
+                                                                text:
+                                                                    "${pawned.pwnCount.toString().replaceAllMapped(new RegExp(r'(\d{1,3})(?=(\d{3})+(?!\d))'), (Match m) => '${m[1]},')} accounts",
+                                                                style: GoogleFonts.ubuntu(
+                                                                    color: Colors
+                                                                        .white,
+                                                                    fontSize: 19,
+                                                                    fontWeight:
+                                                                        FontWeight
+                                                                            .normal)),
+                                                          ]),
+                                                        ),
+                                                      ],
+                                                    ),
+                                                  ),
+                                                  Padding(
+                                                    padding:
+                                                        const EdgeInsets.all(8.0),
+                                                    child: Container(
+                                                      child: RichText(
+                                                        text: TextSpan(
+                                                          children: [
+                                                            TextSpan(
+                                                                text:
+                                                                    " Compromised data: ",
+                                                                style: GoogleFonts.ubuntu(
+                                                                    color: Colors
+                                                                        .white54,
+                                                                    fontSize: 19,
+                                                                    fontWeight:
+                                                                        FontWeight
+                                                                            .normal)),
+                                                            TextSpan(
+                                                                text: pawned.dataClasses[
+                                                                            0] ==
+                                                                        null
+                                                                    ? Container()
+                                                                    : "\n\n ${pawned.dataClasses.map((x) => x)}",
+                                                                style: GoogleFonts.ubuntu(
+                                                                    color: Colors
+                                                                        .white,
+                                                                    fontSize: 18,
+                                                                    fontWeight:
+                                                                        FontWeight
+                                                                            .w500)),
+                                                          ],
+                                                        ),
                                                       ),
                                                     ),
                                                   ),
-                                                ),
-                                                Padding(
-                                                  padding:
-                                                      const EdgeInsets.only(
-                                                          top: 8, left: 15),
-                                                  child: Container(
-                                                    child:
-                                                        pawned.isRetired == true
-                                                            ? Row(
-                                                                children: [
-                                                                  Container(
-                                                                    width: 30,
-                                                                    height: 30,
-                                                                    alignment:
-                                                                        Alignment
-                                                                            .centerLeft,
-                                                                    margin: EdgeInsets
-                                                                        .only(
-                                                                            top:
-                                                                                5),
-                                                                    child:
-                                                                        Container(
-                                                                      width: 15,
-                                                                      height:
-                                                                          15,
-                                                                      decoration: BoxDecoration(
-                                                                          shape: BoxShape
-                                                                              .circle,
-                                                                          color: Colors
-                                                                              .red,
-                                                                          border: Border.all(
-                                                                              color: Colors.white,
-                                                                              width: 1)),
-                                                                    ),
-                                                                  ),
-                                                                  Padding(
-                                                                    padding: const EdgeInsets
-                                                                            .only(
-                                                                        top: 5),
-                                                                    child: Text(
-                                                                        "Server Down",
-                                                                        style: GoogleFonts.ubuntu(
+                                                  Padding(
+                                                    padding:
+                                                        const EdgeInsets.only(
+                                                            top: 8, left: 15),
+                                                    child: Container(
+                                                      child:
+                                                          pawned.isRetired == true
+                                                              ? Row(
+                                                                  children: [
+                                                                    Container(
+                                                                      width: 30,
+                                                                      height: 30,
+                                                                      alignment:
+                                                                          Alignment
+                                                                              .centerLeft,
+                                                                      margin: EdgeInsets
+                                                                          .only(
+                                                                              top:
+                                                                                  5),
+                                                                      child:
+                                                                          Container(
+                                                                        width: 15,
+                                                                        height:
+                                                                            15,
+                                                                        decoration: BoxDecoration(
+                                                                            shape: BoxShape
+                                                                                .circle,
                                                                             color: Colors
-                                                                                .white,
-                                                                            fontSize:
-                                                                                17,
-                                                                            fontWeight:
-                                                                                FontWeight.bold)),
-                                                                  ),
-                                                                ],
-                                                              )
-                                                            : Row(
-                                                                children: [
-                                                                  Container(
-                                                                    width: 30,
-                                                                    height: 30,
-                                                                    alignment:
-                                                                        Alignment
-                                                                            .centerLeft,
-                                                                    margin: EdgeInsets
-                                                                        .only(
-                                                                            top:
-                                                                                5),
-                                                                    child:
-                                                                        Container(
-                                                                      width: 15,
-                                                                      height:
-                                                                          15,
-                                                                      decoration: BoxDecoration(
-                                                                          shape: BoxShape
-                                                                              .circle,
-                                                                          color: Colors
-                                                                              .lightGreen,
-                                                                          border: Border.all(
-                                                                              color: Colors.white,
-                                                                              width: 1)),
+                                                                                .red,
+                                                                            border: Border.all(
+                                                                                color: Colors.white,
+                                                                                width: 1)),
+                                                                      ),
                                                                     ),
-                                                                  ),
-                                                                  Padding(
-                                                                    padding: const EdgeInsets
-                                                                            .only(
-                                                                        top: 5),
-                                                                    child: Text(
-                                                                        "Server Running",
-                                                                        style: GoogleFonts.ubuntu(
+                                                                    Padding(
+                                                                      padding: const EdgeInsets
+                                                                              .only(
+                                                                          top: 5),
+                                                                      child: Text(
+                                                                          "Server Down",
+                                                                          style: GoogleFonts.ubuntu(
+                                                                              color: Colors
+                                                                                  .white,
+                                                                              fontSize:
+                                                                                  17,
+                                                                              fontWeight:
+                                                                                  FontWeight.bold)),
+                                                                    ),
+                                                                  ],
+                                                                )
+                                                              : Row(
+                                                                  children: [
+                                                                    Container(
+                                                                      width: 30,
+                                                                      height: 30,
+                                                                      alignment:
+                                                                          Alignment
+                                                                              .centerLeft,
+                                                                      margin: EdgeInsets
+                                                                          .only(
+                                                                              top:
+                                                                                  5),
+                                                                      child:
+                                                                          Container(
+                                                                        width: 15,
+                                                                        height:
+                                                                            15,
+                                                                        decoration: BoxDecoration(
+                                                                            shape: BoxShape
+                                                                                .circle,
                                                                             color: Colors
-                                                                                .white,
-                                                                            fontSize:
-                                                                                17,
-                                                                            fontWeight:
-                                                                                FontWeight.bold)),
-                                                                  ),
-                                                                ],
-                                                              ),
+                                                                                .lightGreen,
+                                                                            border: Border.all(
+                                                                                color: Colors.white,
+                                                                                width: 1)),
+                                                                      ),
+                                                                    ),
+                                                                    Padding(
+                                                                      padding: const EdgeInsets
+                                                                              .only(
+                                                                          top: 5),
+                                                                      child: Text(
+                                                                          "Server Running",
+                                                                          style: GoogleFonts.ubuntu(
+                                                                              color: Colors
+                                                                                  .white,
+                                                                              fontSize:
+                                                                                  17,
+                                                                              fontWeight:
+                                                                                  FontWeight.bold)),
+                                                                    ),
+                                                                  ],
+                                                                ),
+                                                    ),
                                                   ),
-                                                ),
-                                              ],
+                                                ],
+                                              ),
                                             ),
                                           ),
                                         ),
-                                      ),
-                                    )),
-                            child: Container(
-                              height: 150,
-                              margin: EdgeInsets.all(10.0),
-                              width: MediaQuery.of(context).size.width,
-                              decoration: BoxDecoration(
-                                gradient: LinearGradient(
-                                  colors: [
-                                    Color(0xFF232526),
-                                    Color(0xFF093637),
-                                  ],
-                                ),
-                                borderRadius: BorderRadius.circular(10),
-                              ),
-                              child: Row(
-                                children: [
-                                  Padding(
-                                    padding: const EdgeInsets.only(left: 14.0),
-                                    child: CachedNetworkImage(
-                                      imageUrl: pawned.logoPath,
-                                      height: 100,
-                                      width: 145,
-                                      fit: BoxFit.contain,
-                                    ),
+                                      )),
+                              child: Container(
+                                height: 150,
+                                margin: EdgeInsets.all(10.0),
+                                width: MediaQuery.of(context).size.width,
+                                decoration: BoxDecoration(
+                                  gradient: LinearGradient(
+                                    colors: [
+                                      Color(0xFF232526),
+                                      Color(0xFF093637),
+                                    ],
                                   ),
-                                  Column(
-                                    mainAxisAlignment: MainAxisAlignment.center,
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    children: [
-                                      Padding(
-                                        padding: const EdgeInsets.only(
-                                            top: 10.0, left: 15),
-                                        child: SizedBox(
-                                          width: 200,
-                                          child: Text(
-                                            "Host: ${_pawnedfordisplay[index].title}",
-                                            maxLines: 2,
-                                            overflow: TextOverflow.ellipsis,
-                                            style: GoogleFonts.ubuntu(
-                                                color: Colors.white,
-                                                fontSize: 20,
-                                                fontWeight: FontWeight.w500),
+                                  borderRadius: BorderRadius.circular(10),
+                                ),
+                                child: Row(
+                                  children: [
+                                    Padding(
+                                      padding: const EdgeInsets.only(left: 14.0),
+                                      child: CachedNetworkImage(
+                                        imageUrl: pawned.logoPath,
+                                        height: 100,
+                                        width: 145,
+                                        fit: BoxFit.contain,
+                                      ),
+                                    ),
+                                    Column(
+                                      mainAxisAlignment: MainAxisAlignment.center,
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      children: [
+                                        Padding(
+                                          padding: const EdgeInsets.only(
+                                              top: 10.0, left: 15),
+                                          child: SizedBox(
+                                            width: 200,
+                                            child: Text(
+                                              "Host: ${_pawnedfordisplay[index].title}",
+                                              maxLines: 2,
+                                              overflow: TextOverflow.ellipsis,
+                                              style: GoogleFonts.ubuntu(
+                                                  color: Colors.white,
+                                                  fontSize: 20,
+                                                  fontWeight: FontWeight.w500),
+                                            ),
                                           ),
                                         ),
-                                      ),
-                                      Padding(
-                                        padding: const EdgeInsets.only(
-                                            top: 15.0, left: 15, bottom: 5),
-                                        child: Text(
-                                          pawned.domain,
-                                          style: GoogleFonts.ubuntu(
-                                              fontWeight: FontWeight.w500,
-                                              fontSize: 20,
-                                              color: Colors.white54),
+                                        Padding(
+                                          padding: const EdgeInsets.only(
+                                              top: 15.0, left: 15, bottom: 5),
+                                          child: Text(
+                                            pawned.domain,
+                                            style: GoogleFonts.ubuntu(
+                                                fontWeight: FontWeight.w500,
+                                                fontSize: 20,
+                                                color: Colors.white54),
+                                          ),
                                         ),
-                                      ),
-                                      SizedBox(height: 5,),
-                                      Padding(
-                                        padding:
-                                            const EdgeInsets.only(left: 15),
-                                        child: Container(
-                                          child: pawned.isSensitive == true
-                                              ? Row(
-                                                  children: [
-                                                    Padding(
-                                                      padding: const EdgeInsets.only(top: 4.0),
-                                                      child: Container(
-                                                        width: 15,
-                                                        height: 15,
-                                                        decoration: BoxDecoration(
-                                                            shape:
-                                                                BoxShape.circle,
-                                                            color: Colors.red,
-                                                            border: Border.all(
-                                                                color: Colors
-                                                                    .white,
-                                                                width: 1)),
-                                                      ),
-                                                    ),
-                                                    Padding(
-                                                      padding:
-                                                          const EdgeInsets.only(left: 6,
-                                                              top: 5),
-                                                      child: Text(
-                                                          "Sensitive Data",
-                                                          style: GoogleFonts
-                                                              .ubuntu(
+                                        SizedBox(height: 5,),
+                                        Padding(
+                                          padding:
+                                              const EdgeInsets.only(left: 15),
+                                          child: Container(
+                                            child: pawned.isSensitive == true
+                                                ? Row(
+                                                    children: [
+                                                      Padding(
+                                                        padding: const EdgeInsets.only(top: 4.0),
+                                                        child: Container(
+                                                          width: 15,
+                                                          height: 15,
+                                                          decoration: BoxDecoration(
+                                                              shape:
+                                                                  BoxShape.circle,
+                                                              color: Colors.red,
+                                                              border: Border.all(
                                                                   color: Colors
                                                                       .white,
-                                                                  fontSize: 17,
-                                                                  fontWeight:
-                                                                      FontWeight
-                                                                          .bold)),
-                                                    ),
-                                                  ],
-                                                )
-                                              : Row(
-                                                  children: [
-                                                    Padding(
-                                                      padding: const EdgeInsets.only(top: 4.0),
-                                                      child: Container(
-                                                        width: 15,
-                                                        height: 15,
-                                                        decoration: BoxDecoration(
-                                                            shape:
-                                                                BoxShape.circle,
-                                                            color: Colors.yellow,
-                                                            border: Border.all(
-                                                                color: Colors
-                                                                    .white,
-                                                                width: 1)),
+                                                                  width: 1)),
+                                                        ),
                                                       ),
-                                                    ),
-                                                    Padding(
-                                                      padding:
-                                                          const EdgeInsets.only(left: 6,
-                                                              top: 5),
-                                                      child: Text(
-                                                          "Insensitive Data",
-                                                          style: GoogleFonts
-                                                              .ubuntu(
+                                                      Padding(
+                                                        padding:
+                                                            const EdgeInsets.only(left: 6,
+                                                                top: 5),
+                                                        child: Text(
+                                                            "Sensitive Data",
+                                                            style: GoogleFonts
+                                                                .ubuntu(
+                                                                    color: Colors
+                                                                        .white,
+                                                                    fontSize: 17,
+                                                                    fontWeight:
+                                                                        FontWeight
+                                                                            .bold)),
+                                                      ),
+                                                    ],
+                                                  )
+                                                : Row(
+                                                    children: [
+                                                      Padding(
+                                                        padding: const EdgeInsets.only(top: 4.0),
+                                                        child: Container(
+                                                          width: 15,
+                                                          height: 15,
+                                                          decoration: BoxDecoration(
+                                                              shape:
+                                                                  BoxShape.circle,
+                                                              color: Colors.yellow,
+                                                              border: Border.all(
                                                                   color: Colors
                                                                       .white,
-                                                                  fontSize: 17,
-                                                                  fontWeight:
-                                                                      FontWeight
-                                                                          .bold)),
-                                                    ),
-                                                  ],
-                                                ),
+                                                                  width: 1)),
+                                                        ),
+                                                      ),
+                                                      Padding(
+                                                        padding:
+                                                            const EdgeInsets.only(left: 6,
+                                                                top: 5),
+                                                        child: Text(
+                                                            "Insensitive Data",
+                                                            style: GoogleFonts
+                                                                .ubuntu(
+                                                                    color: Colors
+                                                                        .white,
+                                                                    fontSize: 17,
+                                                                    fontWeight:
+                                                                        FontWeight
+                                                                            .bold)),
+                                                      ),
+                                                    ],
+                                                  ),
+                                          ),
                                         ),
-                                      ),
-                                    ],
-                                  )
-                                ],
+                                      ],
+                                    )
+                                  ],
+                                ),
                               ),
-                            ),
-                          );
-                        }),
+                            );
+                          }),
+                    ),
               ),
             ],
           )),

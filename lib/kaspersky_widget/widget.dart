@@ -52,96 +52,116 @@ class _KPState extends State<KP> {
               ),
               Padding(
                 padding: const EdgeInsets.only(left: 12.0),
-                child: Row(
-                  children: [
-                    Text(
-                      "Legend",
-                      style: GoogleFonts.ubuntu(
-                          fontWeight: FontWeight.bold, fontSize: 21),
-                    ),
-                    SizedBox(width: 10,),
-                    Icon(Icons.arrow_drop_down,color: Colors.white,),
-                  ],
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.only(left: 12.0,top: 8,bottom: 8),
-                child: Text(
-                  "OAS - On Access Scan",
-                  style:
-                      GoogleFonts.ubuntu(fontWeight: FontWeight.w400, fontSize: 17),
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.only(left: 12.0,bottom: 8),
-                child: Text(
-                  "ODS - On Demand Scan",
-                  style:
-                      GoogleFonts.ubuntu(fontWeight: FontWeight.w400, fontSize: 17),
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.only(left: 12.0,bottom: 8),
-                child: Text(
-                  "MAV - Mail Antivirus",
-                  style:
-                      GoogleFonts.ubuntu(fontWeight: FontWeight.w400, fontSize: 17),
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.only(left: 12.0,bottom: 8),
-                child: Text(
-                  "WAV - Web Antivirus",
-                  style:
-                      GoogleFonts.ubuntu(fontWeight: FontWeight.w400, fontSize: 17),
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.only(left: 12.0,bottom: 8),
-                child: Text(
-                  "KAS - Kaspersky Anti-Spam",
-                  style:
-                      GoogleFonts.ubuntu(fontWeight: FontWeight.w400, fontSize: 17),
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.only(left: 12.0,bottom: 8),
-                child: Text(
-                  "BAD - Botnet Activity Detection",
-                  style:
-                  GoogleFonts.ubuntu(fontWeight: FontWeight.w400, fontSize: 17),
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.only(left: 12.0,bottom: 8),
-                child: Text(
-                  "IDS - Intrusion Detection Scan",
-                  style:
-                  GoogleFonts.ubuntu(fontWeight: FontWeight.w400, fontSize: 17),
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.only(left: 12.0,bottom: 8),
-                child: Text(
-                  "VUL - Vulnerability Scan",
-                  style:
-                  GoogleFonts.ubuntu(fontWeight: FontWeight.w400, fontSize: 17),
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.only(top:10,left: 12.0),
-                child: GestureDetector(
-                  onTap: ()=> launch("https://cybermap.kaspersky.com/stats/"),
+                child: DelayedDisplay(
                   child: Row(
-                    children:[
+                    children: [
                       Text(
-                        "For In-Detail Stats",
-                        style:
-                        GoogleFonts.ubuntu(color:Colors.blue,fontWeight: FontWeight.w400, fontSize: 17),
+                        "Legend",
+                        style: GoogleFonts.ubuntu(
+                            fontWeight: FontWeight.bold, fontSize: 21),
                       ),
-                      SizedBox(width: 7,),
-                      Icon(Icons.arrow_forward,color: Colors.blue,),
+                      SizedBox(width: 10,),
+                      DelayedDisplay(child: Icon(Icons.arrow_drop_down,color: Colors.white,)),
                     ],
+                  ),
+                ),
+              ),
+              DelayedDisplay(
+                child: Padding(
+                  padding: const EdgeInsets.only(left: 12.0,top: 8,bottom: 8),
+                  child: Text(
+                    "OAS - On Access Scan",
+                    style:
+                        GoogleFonts.ubuntu(fontWeight: FontWeight.w400, fontSize: 17),
+                  ),
+                ),
+              ),
+              DelayedDisplay(
+                child: Padding(
+                  padding: const EdgeInsets.only(left: 12.0,bottom: 8),
+                  child: Text(
+                    "ODS - On Demand Scan",
+                    style:
+                        GoogleFonts.ubuntu(fontWeight: FontWeight.w400, fontSize: 17),
+                  ),
+                ),
+              ),
+              DelayedDisplay(
+                child: Padding(
+                  padding: const EdgeInsets.only(left: 12.0,bottom: 8),
+                  child: Text(
+                    "MAV - Mail Antivirus",
+                    style:
+                        GoogleFonts.ubuntu(fontWeight: FontWeight.w400, fontSize: 17),
+                  ),
+                ),
+              ),
+              DelayedDisplay(
+                child: Padding(
+                  padding: const EdgeInsets.only(left: 12.0,bottom: 8),
+                  child: Text(
+                    "WAV - Web Antivirus",
+                    style:
+                        GoogleFonts.ubuntu(fontWeight: FontWeight.w400, fontSize: 17),
+                  ),
+                ),
+              ),
+              DelayedDisplay(
+                child: Padding(
+                  padding: const EdgeInsets.only(left: 12.0,bottom: 8),
+                  child: Text(
+                    "KAS - Kaspersky Anti-Spam",
+                    style:
+                        GoogleFonts.ubuntu(fontWeight: FontWeight.w400, fontSize: 17),
+                  ),
+                ),
+              ),
+              DelayedDisplay(
+                child: Padding(
+                  padding: const EdgeInsets.only(left: 12.0,bottom: 8),
+                  child: Text(
+                    "BAD - Botnet Activity Detection",
+                    style:
+                    GoogleFonts.ubuntu(fontWeight: FontWeight.w400, fontSize: 17),
+                  ),
+                ),
+              ),
+              DelayedDisplay(
+                child: Padding(
+                  padding: const EdgeInsets.only(left: 12.0,bottom: 8),
+                  child: Text(
+                    "IDS - Intrusion Detection Scan",
+                    style:
+                    GoogleFonts.ubuntu(fontWeight: FontWeight.w400, fontSize: 17),
+                  ),
+                ),
+              ),
+              DelayedDisplay(
+                child: Padding(
+                  padding: const EdgeInsets.only(left: 12.0,bottom: 8),
+                  child: Text(
+                    "VUL - Vulnerability Scan",
+                    style:
+                    GoogleFonts.ubuntu(fontWeight: FontWeight.w400, fontSize: 17),
+                  ),
+                ),
+              ),
+              DelayedDisplay(
+                child: Padding(
+                  padding: const EdgeInsets.only(top:10,left: 12.0),
+                  child: GestureDetector(
+                    onTap: ()=> launch("https://cybermap.kaspersky.com/stats/"),
+                    child: Row(
+                      children:[
+                        Text(
+                          "For In-Detail Stats",
+                          style:
+                          GoogleFonts.ubuntu(color:Colors.blue,fontWeight: FontWeight.w400, fontSize: 17),
+                        ),
+                        SizedBox(width: 7,),
+                        Icon(Icons.arrow_forward,color: Colors.blue,),
+                      ],
+                    ),
                   ),
                 ),
               ),

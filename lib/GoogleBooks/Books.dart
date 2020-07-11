@@ -2,6 +2,7 @@
 //https://www.googleapis.com/books/v1/volumes?q=cyber
 
 import 'package:cached_network_image/cached_network_image.dart';
+import 'package:delayed_display/delayed_display.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -63,57 +64,59 @@ class _BooksApiState extends State<BooksApi> {
             return InkWell(
               onTap: () =>
                   launch(booksData[index]['volumeInfo']['previewLink']),
-              child: Card(
-                color: Color(0xFF121212),
-                child: Container(
-                  padding: EdgeInsets.only(left: 10),
-                  margin: EdgeInsets.only(bottom: 19),
-                  height: 110,
-                  width: MediaQuery.of(context).size.width - 50,
-                  child: Row(
-                    children: [
-                      Container(
-                        height: 150,
-                        width: 90,
-                        decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(5),
-                            image: booksData[index]['volumeInfo']['imageLinks']
-                                        ['thumbnail'] ==
-                                    null
-                                ? CachedNetworkImage(
-                                    imageUrl:
-                                        "https://www.writersdigest.com/.image/t_share/MTcxMDY0NzcxMzIzNTY5NDEz/image-placeholder-title.jpg",
-                                  )
-                                : DecorationImage(
-                                    image: CachedNetworkImageProvider(
-                                        booksData[index]['volumeInfo']
-                                            ['imageLinks']['thumbnail']),
-                                  )),
-                      ),
-                      SizedBox(
-                        width: 21,
-                      ),
-                      Column(
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          SizedBox(
-                            width: 260,
-                            child: booksData[index]['volumeInfo']['title'] == null
-                                ? Text('Untitled')
-                                : Text(
-                                    booksData[index]['volumeInfo']['title'],
-                                    maxLines: 2,
-                                    overflow: TextOverflow.ellipsis,
-                                    style: GoogleFonts.ubuntu(
-                                        color: Colors.white,
-                                        fontSize: 16,
-                                        fontWeight: FontWeight.w500),
-                                  ),
-                          ),
-                          SizedBox(
-                            height: 5,
-                          ),
+              child: DelayedDisplay(
+                child: Card(
+                  color: Color(0xFF121212),
+                  child: Container(
+                    padding: EdgeInsets.only(left: 10),
+                    margin: EdgeInsets.only(bottom: 19),
+                    height: 110,
+                    width: MediaQuery.of(context).size.width - 50,
+                    child: Row(
+                      children: [
+                        Container(
+                          height: 150,
+                          width: 90,
+                          decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(12),
+                              image: booksData[index]['volumeInfo']
+                                          ['imageLinks']['thumbnail'] ==
+                                      null
+                                  ? CachedNetworkImage(
+                                      imageUrl:
+                                          "https://www.writersdigest.com/.image/t_share/MTcxMDY0NzcxMzIzNTY5NDEz/image-placeholder-title.jpg",
+                                    )
+                                  : DecorationImage(
+                                      image: CachedNetworkImageProvider(
+                                          booksData[index]['volumeInfo']
+                                              ['imageLinks']['thumbnail']),
+                                    )),
+                        ),
+                        SizedBox(
+                          width: 21,
+                        ),
+                        Column(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            SizedBox(
+                              width: 260,
+                              child: booksData[index]['volumeInfo']['title'] ==
+                                      null
+                                  ? Text('Untitled')
+                                  : Text(
+                                      booksData[index]['volumeInfo']['title'],
+                                      maxLines: 2,
+                                      overflow: TextOverflow.ellipsis,
+                                      style: GoogleFonts.ubuntu(
+                                          color: Colors.white,
+                                          fontSize: 16,
+                                          fontWeight: FontWeight.w500),
+                                    ),
+                            ),
+                            SizedBox(
+                              height: 5,
+                            ),
 //                      booksData[index]['volumeInfo']['subtitle'] == null
 //                          ? Container()
 //                          : SizedBox(
@@ -124,39 +127,48 @@ class _BooksApiState extends State<BooksApi> {
 //                                overflow: TextOverflow.ellipsis,
 //                                style: GoogleFonts.ubuntu(color: Colors.white),
 //                              )),
-                          Text(
-                            "${booksData[index]['volumeInfo']['authors']}",
-                            style: GoogleFonts.ubuntu(color: Colors.white),
-                          ),
-                          Row(
-                            children: [
-                              Icon(
-                                Icons.star,
-                                size: 15,
-                                color: Colors.yellowAccent,
-                              ),
-                              SizedBox(
-                                width: 5,
-                              ),
-                              booksData[index]['volumeInfo']['averageRating'] ==
-                                      null
-                                  ? Text(
-                                      'Not Yet Rated',
-                                      style:
-                                          GoogleFonts.ubuntu(color: Colors.white),
-                                    )
-                                  : Text(
-                                      booksData[index]['volumeInfo']
-                                              ['averageRating']
-                                          .toString(),
-                                      style:
-                                          GoogleFonts.ubuntu(color: Colors.white),
-                                    ),
-                            ],
-                          ),
-                        ],
-                      ),
-                    ],
+                            booksData[index]['volumeInfo']['authors'] == null
+                                ? Text(
+                                    'Unknown Author',
+                                    style:
+                                        GoogleFonts.ubuntu(color: Colors.white),
+                                  )
+                                : Text(
+                                    "${booksData[index]['volumeInfo']['authors']}",
+                                    style:
+                                        GoogleFonts.ubuntu(color: Colors.white),
+                                  ),
+                            Row(
+                              children: [
+                                Icon(
+                                  Icons.star,
+                                  size: 15,
+                                  color: Colors.yellowAccent,
+                                ),
+                                SizedBox(
+                                  width: 5,
+                                ),
+                                booksData[index]['volumeInfo']
+                                            ['averageRating'] ==
+                                        null
+                                    ? Text(
+                                        'Not Yet Rated',
+                                        style: GoogleFonts.ubuntu(
+                                            color: Colors.white),
+                                      )
+                                    : Text(
+                                        booksData[index]['volumeInfo']
+                                                ['averageRating']
+                                            .toString(),
+                                        style: GoogleFonts.ubuntu(
+                                            color: Colors.white),
+                                      ),
+                              ],
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
                   ),
                 ),
               ),

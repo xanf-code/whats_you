@@ -1,4 +1,5 @@
 import 'package:cached_network_image/cached_network_image.dart';
+import 'package:delayed_display/delayed_display.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:whats_you/PrivacyNews/util/getnewsitem.dart';
@@ -71,40 +72,42 @@ class CardListView extends StatelessWidget {
             Navigator.of(context).push(CupertinoPageRoute(
                 builder: (context) => NewsWebViewPage(model)));
           },
-          child: Container(
-            height: 250,
-            color: Colors.grey[200],
-            child: Stack(
-              fit: StackFit.expand,
-              children: <Widget>[
-                CachedNetworkImage(
-                  imageUrl: model.urlToImage,
-                  fit: BoxFit.cover,
-                  colorBlendMode: BlendMode.luminosity,
-                ),
-                Container(
-                  decoration: BoxDecoration(
-                    gradient: LinearGradient(
-                        begin: Alignment.center,
-                        end: Alignment.bottomCenter,
-                        colors: [Colors.transparent, Colors.black]),
+          child: DelayedDisplay(
+            child: Container(
+              height: 250,
+              color: Colors.grey[200],
+              child: Stack(
+                fit: StackFit.expand,
+                children: <Widget>[
+                  CachedNetworkImage(
+                    imageUrl: model.urlToImage,
+                    fit: BoxFit.cover,
+                    colorBlendMode: BlendMode.luminosity,
                   ),
-                  child: Padding(
-                    padding: const EdgeInsets.all(10.0),
-                    child: Align(
-                        alignment: Alignment.bottomCenter,
-                        child: Text(
-                          model.title,
-                          textAlign: TextAlign.justify,
-                          style: GoogleFonts.ubuntu(
-                            color: model.lightMutedColor,
-                            fontWeight: FontWeight.w500,
-                            fontSize: 20,
-                          ),
-                        )),
+                  Container(
+                    decoration: BoxDecoration(
+                      gradient: LinearGradient(
+                          begin: Alignment.center,
+                          end: Alignment.bottomCenter,
+                          colors: [Colors.transparent, Colors.black]),
+                    ),
+                    child: Padding(
+                      padding: const EdgeInsets.all(10.0),
+                      child: Align(
+                          alignment: Alignment.bottomCenter,
+                          child: Text(
+                            model.title,
+                            textAlign: TextAlign.justify,
+                            style: GoogleFonts.ubuntu(
+                              color: model.lightMutedColor,
+                              fontWeight: FontWeight.w500,
+                              fontSize: 20,
+                            ),
+                          )),
+                    ),
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
           ),
         ),

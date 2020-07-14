@@ -17,7 +17,7 @@ Watch Demo Video on Youtube : (https://youtu.be/VxLxu1kqZMg)
 
 Data Privacy and Cyber Security Awareness App made in 2020 Kaspersky e-Hackathon(Secur'IT Cup) using Kaspersky Widgets and HBP APIs to display Cyber Threat Awareness :fire:
 
-## Playstore: (Releasing Soon...)
+## Playstore:
 
 <a href='https://play.google.com/store/apps/details?id=com.you.whats_you'><img alt='Get it on Google Play' src='https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png' width="200px"/></a>
 

@@ -1,0 +1,7 @@
+*.java linguist-detectable=true
+*.js linguist-detectable=true
+*.html linguist-detectable=true
+*.xml linguist-detectable=false
+*.kotlin linguist-detectable=true
+*.swift linguist-detectable=true
+*.C++ linguist-detectable=true

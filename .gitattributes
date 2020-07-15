@@ -1,5 +1,5 @@
 * linguist-vendored
 *.js linguist-vendored=false
-*.kotlin linguist-vendored=true
+*.kt linguist-vendored=true
 *.swift linguist-vendored=true
 *.rb linguist-vendored=true

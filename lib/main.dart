@@ -25,8 +25,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return Wiredash(
       navigatorKey: _navigatorKey,
-      projectId: ID,
-      secret: secKey,
+      projectId: ID, //Your ID Here
+      secret: secKey, //Your Key here
       theme: WiredashThemeData(brightness: Brightness.dark,
       primaryColor: Color(0xFF232526),
       secondaryColor: Color(0xFF414345)),

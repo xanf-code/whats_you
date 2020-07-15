@@ -2,5 +2,4 @@
 *.js linguist-vendored=false
 *.kotlin linguist-vendored=true
 *.swift linguist-vendored=true
-*.dart linguist-vendored=true
-*.ruby linguist-vendored=true
+*.rb linguist-vendored=true

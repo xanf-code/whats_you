@@ -24,7 +24,6 @@ Data Privacy and Cyber Security Awareness App made in 2020 Kaspersky e-Hackathon
 ## Main Features
 
 - ### Know what the internet knows about you!
-- ### A lot of animations..A LOT!
 - ### Real time Website Breach data
 - ### Cupertino Model :heart:
 
